@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flamingo Grill</title>
+
+<style>
+  .facebook-btn {
+  background: #1877f2; /* Facebook-blå */
+  color: white;
+  margin-top: 10px;
+}
+
+.facebook-btn:hover {
+  background: #145dbf;
+}
+  .order-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff6b2d;
+  color: white;
+  padding: 15px 22px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  z-index: 999;
+  transition: 0.3s ease;
+}
+
+.order-button:hover {
+  background: #2df1ff;
+  color: black;
+  transform: scale(1.05);
+}
+  
+  .contact-info a {
+  color: #2df1ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info a:hover {
+  color: #ff6b2d;
+}
+  .button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ff6b2d;
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  background:#2df1ff; 
+  color: white;
+}
+
+  
+  .contact-section {
+  padding: 80px 20px;
+}  
+  @media (min-width: 768px) {
+  .order-button {
+    display: none;
+  }
+}
+  .map-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ff6b2d;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+  .footer {
+  background: #0a0a0a;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 60px;
+  font-size: 14px;
+  color: #777;
+  border-top: 1px solid #222;
+}
+  
+.map-button:hover {
+  background: #2df1ff;
+  color: black;
+}
+  
+  .food-img {
+  transition: 0.3s ease;
+}
+
+.food-img:hover {
+  transform: scale(1.03);
+}
+  
+  .food-img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+  html {
+  scroll-behavior: smooth;
+}        
+  body {
+  scroll-behavior: smooth;
+}      
+  .menu-category {
+  scroll-margin-top: 140px;
+}  
+  .menu-category {
+  background: #0f3d3e;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transition: 0.3s ease;
+}  
+  .menu-category:hover {
+  transform: translateY(-5px);
+}  
+  .menu-category h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff6b2d;
+  padding-bottom: 8px;
+  display: inline-block;
+}  
+  body {
+  background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}  
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+  
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dotted #444;
+  color: #ffffff;
+  flex-wrap: wrap;
+}
+  .menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+}
+
+.item-info {
+  max-width: 75%;
+}
+
+.item-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.ingredients {
+  font-size: 13px;
+  color: #aaa;
+  margin: 5px 0 0 0;
+}
+.menu-item span {
+  word-break: break-word;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  padding: 15px 30px;
+ 
+  position: sticky;
+  top: 0;
+  z-index: 1000;  
+}
+  .navbar {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+  .menu-categories {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  background: #1a1a1a;
+  padding: 15px;
+  margin-bottom: 20px;
+
+  position: sticky;
+  top: 80px; /* samma höjd som navbar */
+  z-index: 999;
+}
+  
+  .hero {
+  height: 60vh;
+  background-image: url(vagnen.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #ff6b2d;
+}
+  
+  .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-categories a:hover {
+  color: #ff6b2d;
+}  
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2df1ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #ff6b2d;
+}  
+@media (min-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+header {
+  background: linear-gradient(135deg, #2df1ff, #0d5d6b);
+  padding: 60px 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.menu-item {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.box {
+  background: #17454f;
+  color:#ffffff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 12px;
+}
+a.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background:2df1ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dotted #ddd;
+  font-size: 16px;
+}
+
+.price {
+  font-weight: bold;
+  color: #ff6b2d;
+}  
+.menu-item:hover {
+  transform: translateX(5px);
+  transition: 0.2s ease;
+}  
+.sub-item {
+  font-size: 14px;
+  color: #777;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px dotted #ddd;
+}
+
+.menu-item div {
+  display: flex;
+  flex-direction: column;
+}  
+ .menu-categories a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu-categories a:hover {
+  color: #ff6b2d; /* orange när man håller musen över */
+}  
+</style>
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="logo">Flamingo Grill</div>
+  <ul class="nav-links">
+    <li><a href="#">Hem</a></li>
+    <li><a href="#meny">Meny</a></li>
+    <li><a href="#om-oss">Om oss</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>  
+  
+  <section class="hero">
+  <div class="hero-content">
+    <h1>Välkommen till Flamingo Grill</h1>
+    <p>Smashburgare & Middle Eastern wraps</p>
+  </div>
+    
+</section>
+  <header>
+  <h1>Flamingo Grill</h1>
+  <p>Hos oss hittar du högkvalitetsburgare och smakrika Middle Eastern wraps – tillagade med färska råvaror, hemlagade såser och noggrant utvalt högrevskött.
+
+Vi kompromissar aldrig med smaken. Varje rätt görs med passion, kvalitet och respekt för hantverket.
+
+Hos oss kan du både ta med maten eller slå dig ner i vårt rum med sittplatser och njuta av en varm, välkomnande atmosfär.
+
+Vi jobbar varje dag för att ge våra kunder inte bara god mat – utan en upplevelse värd att komma tillbaka till.</p>
+</header>
+
+<section id="meny">
+  <h2>Meny</h2>
+<div class="menu-categories">
+  <a href="#menyburgare">Burgare Meny</a>  
+  <a href="#burgare">Endast Burgare</a>
+  <a href="#wraps">Wraps</a>
+  <a href="#sides">Tillbehör</a>
+</div>
+  
+
+  <div id="menyburgare" class="menu-category">
+  <h3>🍔 Burgare Meny 🍟🥤<h3> 
+    </div> 
+    <div class="menu-item">
+
+  <img src="CheeseMeal.jpg" alt="Cheese Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Cheese Meal</span>
+    <p class="ingredients">
+      120g högrevskött, cheddarost, sallad, tomat, lök & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">12,50€</span>
+
+</div>
+     <div class="menu-item">
+
+  <img src="Cheese&BaconMeal.jpg" alt="Cheese&Bacon Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Cheese & Bacon Meal</span>
+    <p class="ingredients">
+      120g högrevskött, cheddarost, bacon, sallad, tomat, lök & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">13,50€</span>
+
+</div>
+     <div class="menu-item">
+
+  <img src="ChipotleMeal.jpg" alt="Chipotle Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Chipotle Meal</span>
+    <p class="ingredients">
+      120g högrevskött, cheddarost, sallad, tomat, inlagt rödlök & Flamingos chipotle majo
+    </p>
+  </div>
+
+  <span class="price">13,50€</span>
+
+</div>
+     <div class="menu-item">
+
+  <img src="TryffelMeal.jpg" alt="Tryffel Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Tryffel Meal</span>
+    <p class="ingredients">
+      120g högrevskött, cheddarost, sallad, tomat, inlagt rödlök & Flamingos tryffel majo
+    </p>
+  </div>
+
+  <span class="price">13,50€</span>
+
+</div>
+      <div class="menu-item">
+
+  <img src="DoubleMeal.jpg" alt="Double Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Double Meal</span>
+    <p class="ingredients">
+      2x 120g högrevskött, 2x cheddarost, sallad, & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">15,50€</span>
+
+</div>    
+      <div class="menu-item">
+
+  <img src="BBQMeal.jpg" alt="BBQ Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">BBQ Meal</span>
+    <p class="ingredients">
+      120g högrevskött, cheddarost, sallad, tomat, lök, jalapeno & Flamingos bbq sås
+    </p>
+  </div>
+
+  <span class="price">13,50€</span>
+
+</div>        
+     <div class="menu-item">
+
+  <img src="HawaiiMeal.jpg" alt="Hawaii Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Hawaii Meal</span>
+    <p class="ingredients">
+      120g högrevskött, cheddarost, ananas, sallad, tomat, lök, saltgurka & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">13,50€</span>
+
+</div>            
+     <div class="menu-item">
+
+  <img src="BookmakerMeal.jpg" alt="Bookmaker Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Bookmaker Meal</span>
+    <p class="ingredients">
+      120g högrevskött, riven pepparot, stark senap, sallad, tomat, lök, saltgurka & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">13,50€</span>
+
+</div>            
+     <div class="menu-item">
+
+  <img src="KidsMeal.jpg" alt="Kids Meal Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Kids Meal</span>
+    <p class="ingredients">
+      80g högrevskött, cheddarost & ketchup
+    </p>
+  </div>
+
+  <span class="price">9,50€</span>
+
+</div>                 
+    <div class="menu-item">
+
+  <img src="HalloumiMeal.jpg" alt="Halloumi Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Halloumi Meal</span>
+    <p class="ingredients">
+      Halloumi ost, sallad, tomat, inlagt rödlök & Flamingos sweet chili majo
+    </p>
+  </div>
+
+  <span class="price">13,50€</span>
+
+</div>                       
+     <div class="menu-item">
+
+  <img src="VeganskMeal.jpg" alt="Vegansk Meal" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Vegansk Meal</span>
+    <p class="ingredients">
+      vegansk biff, sallad, tomat, inlagt rödlök & Flamingos dragon majo
+    </p>
+  </div>
+
+  <span class="price">14,00€</span>
+
+</div>                            
+    </div>    
+
+    <div id="burgare" class="menu-category">    
+      <h3>🍔 Endast Burgare 🍔</h3>
+    </div>   
+    <div class="menu-item">
+
+  <img src="Cheese.png" alt="Cheese Burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Cheese burgare</span>
+    <p class="ingredients">
+      120g högrevskött, cheddarost, sallad, tomat, lök & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">8,50€</span>
+
+</div>
+     <div class="menu-item">
+
+  <img src="Cheese&Bacon.jpg" alt="Cheese & bacon Burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Cheese & Bacon burgare</span>
+    <p class="ingredients">
+      120g högrevskött, cheddarost, bacon, sallad, tomat, lök & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">9,50€</span>
+
+</div>
+     <div class="menu-item">
+
+  <img src="Chipotle.jpg" alt="Chiptle Burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Chipotle burgare</span>
+    <p class="ingredients">
+       120g högrevskött, cheddarost, sallad, tomat, inlagt rödlök & Flamingos chipotle majo
+    </p>
+  </div>
+
+  <span class="price">9,50€</span>
+
+</div>
+   <div class="menu-item">
+
+  <img src="Tryffel.jpg" alt="Tyffel burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Tryffel burgare</span>
+    <p class="ingredients">
+     120g högrevskött, cheddarost, sallad, tomat,  inlagt rödlök & Flamingos tryffel majo
+    </p>
+  </div>
+
+  <span class="price">10,00€</span>
+
+</div>    
+    <div class="menu-item">
+
+  <img src="Double.jpg" alt="Double burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Double burgare</span>
+    <p class="ingredients">
+     2x 120g högrevskött, 2x cheddarost, sallad, & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">11,50€</span>
+
+</div>      
+    <div class="menu-item">
+
+  <img src="BBQ.jpg" alt="BBQ burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">BBQ burgare</span>
+    <p class="ingredients">
+    120g högrevskött, cheddarost, sallad, tomat, lök, jalapeno & Flamingos bbq sås
+    </p>
+  </div>
+
+  <span class="price">9,50€</span>
+
+</div>         
+     <div class="menu-item">
+
+  <img src="Hawaii b.jpg" alt="Hawaii burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Hawaii burgare</span>
+    <p class="ingredients">
+    120g högrevskött, cheddarost, ananas, sallad, tomat, lök, saltgurka & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">10,00€</span>
+
+</div>              
+     <div class="menu-item">
+
+  <img src="Bookmaker.jpg" alt="Bookmaker burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Bookmaker burgare</span>
+    <p class="ingredients">
+    120g högrevskött, riven pepparot, stark senap, sallad, tomat, lök, saltgurka & Flamingos dressing
+    </p>
+  </div>
+
+  <span class="price">10,00€</span>
+
+</div>                 
+      <div class="menu-item">
+
+  <img src="Kids.jpg" alt="Kids burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Barn burgare</span>
+    <p class="ingredients">
+    80g högrevskött, cheddarost & ketchup
+    </p>
+  </div>
+
+  <span class="price">6,00€</span>
+
+</div>                     
+        <div class="menu-item">
+
+  <img src="Halloumi.jpg" alt="Halloumi burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Halloumi burgare</span>
+    <p class="ingredients">
+    Halloumi ost, sallad, tomat, inlagt rödlök & Flamingos sweet chili majo
+    </p>
+  </div>
+
+  <span class="price">9,50€</span>
+
+</div>                         
+     <div class="menu-item">
+
+  <img src="Veg.jpg" alt="vegansk burger" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Vegansk burgare</span>
+    <p class="ingredients">
+   Vegansk biff, sallad, tomat, inlagt rödlök & Flamingos dragon majo
+    </p>
+  </div>
+
+  <span class="price">10,00€</span>
+
+</div>                            
+    </div>
+
+
+    <div id="wraps" class="menu-category">    
+      <h3>🌯 Wraps 🌯</h3>
+    </div>    
+    <div class="menu-item">
+
+  <img src="Shawrma.jpg" alt="Shawarma Wrap" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Shawarma kyckling wrap</span>
+    <p class="ingredients">
+      Marinererad kyckling, libanesisk saltgurka, pommes & libanesisk vitlök sås
+    </p>
+  </div>
+
+  <span class="price">8,50€</span>
+</div>
+    <div class="menu-item">
+
+  <img src="shichtawook.jpg" alt="Shich Tawook Wrap" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Shich Tawook wrap</span>
+    <p class="ingredients">
+      Marinerad kyckling, libanesisk saltgurka, coleslow sallad, pommes & libanesisk vitlök sås
+    </p>
+  </div>
+
+      <span class="price">9,00€</span>
+
+</div>
+    <div class="menu-item">
+
+  <img src="falafel.jpg" alt="Falafel Wrap" class="food-img">
+
+  <div class="item-info">
+    <span class="item-name">Falafel wrap</span>
+    <p class="ingredients">
+      Hemlagad falafel, hummos, sallad, tomat, libanesisk saltgurka & tarator sås ( sesam yoghurt )
+    </p>
+  </div>
+
+  <span class="price">9,00€</span>
+
+</div>
+    </div>
+
+    <div id="sides" class="menu-category">
+      <h3>🍟 Tillbehör 🍟</h3>
+    </div> 
+    <div class="menu-item">
+  <div>
+    <span>Pommes</span>
+    <div class="sub-item">1</div>
+  </div>
+  <div>
+    <div class="price">3,50€</div>
+  </div>
+</div>      
+        <div class="menu-item">
+  <div>
+    <span>Crispers</span>
+    <div class="sub-item">1</div>
+  </div>
+  <div>
+    <div class="price">3,90€</div>
+  </div>
+</div>     
+       <div class="menu-item">
+  <div>
+    <span>Chicken Nuggets (inkl. dipsås)</span>
+    <div class="sub-item">3 st</div>
+    <div class="sub-item">6 st</div>
+  </div>
+  <div>
+    <div class="price">3,50€</div>
+    <div class="price">6,20€</div>
+  </div>
+</div>  
+        <div class="menu-item">
+  <div>
+    <span>Chicken Wings (inkl. 1 dipsås)</span>
+    <div class="sub-item">3 st</div>
+    <div class="sub-item">6 st</div>
+  </div>
+  <div>
+    <div class="price">4,90€</div>
+    <div class="price">7,90€</div>
+  </div>
+</div>      
+         <div class="menu-item">
+  <div>
+    <span>Onion Rings (inkl. 1 dipsås)</span>
+    <div class="sub-item">3 st</div>
+    <div class="sub-item">6 st</div>
+  </div>
+  <div>
+    <div class="price">3,50€</div>
+    <div class="price">5,50€</div>
+  </div>
+</div>      
+         <div class="menu-item">
+  <div>
+    <span>Halloumi Sticks (inkl. 1 dipsås)</span>
+    <div class="sub-item">3 st</div>
+    <div class="sub-item">6 st</div>
+  </div>
+  <div>
+    <div class="price">3,90€</div>
+    <div class="price">7,90€</div>
+  </div>
+</div>     
+          <div class="menu-item">
+  <div>
+    <span>Cheddar Jalapeños (inkl. 1 dipsås)</span>
+    <div class="sub-item">3 st</div>
+    <div class="sub-item">6 st</div>
+  </div>
+  <div>
+    <div class="price">4,20€</div>
+    <div class="price">7,90€</div>
+  </div>
+</div>     
+    </div>
+    
+     <div id="dipp sås" class="menu-category">      
+      <h3>Dipp Såser</h3>
+    <div class="menu-item">
+  <span>Flamingos Dressing</span>
+  <span class="price">1,50€</span>
+</div>      
+     <div class="menu-item">
+        <span>Flamingos Jalapeonmajo</span>
+  <span class="price">1,50€</span>
+</div>              
+     <div class="menu-item">
+        <span>Flamingos Aioli</span>
+  <span class="price">1,50€</span>
+</div>              
+      <div class="menu-item">
+        <span>Flamingos Sweet chili</span>
+  <span class="price">1,50€</span>
+</div>          
+       <div class="menu-item">
+        <span>Flamingos BBQ</span>
+  <span class="price">1,50€</span>
+</div>          
+    </div>
+
+
+    <section id="om-oss" class="box">
+  <h2>Om oss</h2>
+  <p>
+    Flamingo Grill är mer än bara en foodtruck. 
+    Vi serverar högkvalitetsburgare och smakrika Middle Eastern wraps 
+    gjorda på färska råvaror, hemlagade såser och noggrant utvalt kött.
+  </p>
+
+  <p>
+    Hos oss kan du både ta med maten eller slå dig ner i vårt rum 
+    med sittplatser och njuta i en varm och välkomnande miljö.
+  </p>
+
+  <p>
+    Vårt mål är enkelt – att ge varje kund en smakupplevelse 
+    som är värd att komma tillbaka för.
+  </p>
+</section>
+
+    
+
+<section id="kontakt" class="contact-section">
+
+  <h2>📍 Hitta oss & Kontakt</h2>
+
+  <p class="location-text">
+    Vi står just nu i Mariehamn, Åland.
+  </p>
+
+  <a href="https://maps.app.goo.gl/fbeEeaCCaRqumc6T9?g_st=ic"
+     target="_blank"
+     class="map-button">
+     Öppna i Google Maps
+  </a>
+
+  <div class="contact-info">
+    <p>📞 045-75392162</p>
+    <p>📧 flamingo.grill.ax@gmail.com</p>
+
+    <p>⏰ Öppettider:</p>
+    <p>Stängt för tillfälligt</p>
+    <p>Mån–Fre: 10:30 – 20:00</p>
+    <p>Lör–Sön: 12:00 – 20:00</p>
+  </div>
+
+  <div class="social">
+    <a class="button facebook-btn" 
+   href="https://www.facebook.com/100076166498554/" 
+   target="_blank">
+   Följ oss på Facebook
+</a>
+    
+    <a class="button" href="https://instagram.com/" target="_blank">
+      Följ oss på Instagram
+    </a>
+  </div>
+
+</section>
+<footer class="footer">
+  <p>©️ 2026 Flamingo Grill – Mariehamn, Åland</p>
+</footer>    
+   <a href="tel:04575392162" class="order-button">
+  🍔 Beställ nu
+</a>    
+</body>
+</html>
