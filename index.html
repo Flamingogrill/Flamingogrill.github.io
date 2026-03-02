@@ -6,6 +6,41 @@
 <title>Flamingo Grill</title>
 
 <style>
+  /* Dölj hamburgermenyn på desktop */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobilvy */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #000;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+}
   @media (max-width: 768px) {
   #meny,
   #menyburgare,
@@ -393,12 +428,20 @@ a.button {
 <body>
 <nav class="navbar">
   <div class="logo">Flamingo Grill</div>
-  <ul class="nav-links">
+
+  <!-- Hamburger ikon -->
+  <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+
+  <!-- Menylänkar -->
+  <ul class="nav-links" id="navMenu">
     <li><a href="#">Hem</a></li>
     <li><a href="#meny">Meny</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
-</nav>  
+</nav>
+
   
   <section class="hero">
   <div class="hero-content">
