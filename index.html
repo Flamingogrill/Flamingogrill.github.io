@@ -8,25 +8,19 @@
 <style>
 
 
-  menu-categories {
+ .menu-categories {
   display: flex;
-  justify-content: flex-start;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 10px 15px;
-  margin-bottom: 20px;
+  justify-content: center; /* centrera */
+  gap: 10px;
 
   background: #1a1a1a;
+  padding: 10px;
+  margin: 0 auto 20px auto;
 
-  position: sticky;
-  top: 120px;
-  z-index: 999;
+  max-width: 100%;  
+  overflow-x: auto;
 
-  scrollbar-width: none; /* Firefox */
-}
-
-.menu-categories::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  border-radius: 12px;
 }
 
 
