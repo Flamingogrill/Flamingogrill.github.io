@@ -54,7 +54,7 @@
 .facebook-btn:hover {
   background: #145dbf;
 }
-  .order-button {
+.order-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -65,7 +65,8 @@
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  z-index: 999;
+  z-index: 9999; /* ÄNDRA DENNA */
+  pointer-events: auto; /* LÄGG TILL DENNA */
   transition: 0.3s ease;
 }
 
