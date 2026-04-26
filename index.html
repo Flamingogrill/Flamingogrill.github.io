@@ -161,11 +161,15 @@
   margin-bottom: 10px;
 }
 
-.menu-item {
+
+ .menu-item {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 25px;
-}
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+  gap: 10px;
+} 
   html {
   scroll-behavior: smooth;
 }        
@@ -205,25 +209,6 @@
   margin: auto;
   padding: 0 20px;
   box-sizing: border-box;
-}
-  
-}
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 8px 0;
-  border-bottom: 1px dotted #444;
-  color: #ffffff;
-  flex-wrap: wrap;
-}
-  .menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 12px 0;
-  border-bottom: 1px solid #333;
 }
 
 .item-info {
@@ -378,16 +363,6 @@ a.button {
   font-weight: bold;
 }
 
- 
- .menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px dotted #ddd;
-  font-size: 16px;
-}
-
 .price {
   font-weight: bold;
   color: #ff6b2d;
@@ -399,14 +374,6 @@ a.button {
 .sub-item {
   font-size: 14px;
   color: #777;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px 0;
-  border-bottom: 1px dotted #ddd;
 }
 
 .menu-item div {
