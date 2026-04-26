@@ -65,19 +65,23 @@
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  z-index: 9999; /* ÄNDRA DENNA */
-  pointer-events: auto; /* LÄGG TILL DENNA */
+  z-index: 9999;
+  pointer-events: auto;
   transition: 0.3s ease;
 }
- .order-button {
-  z-index: 9999 !important;
-}
+
 .order-button:hover {
   background: #2df1ff;
   color: black;
   transform: scale(1.05);
 }
-  
+
+@media (min-width: 768px) {
+  .order-button {
+    display: none;
+  }
+}
+
   .contact-info a {
   color: #2df1ff;
   text-decoration: none;
@@ -1046,8 +1050,10 @@ Vi jobbar varje dag för att ge våra kunder inte bara god mat – utan en upple
 <footer class="footer">
   <p>©️ 2026 Flamingo Grill – Mariehamn, Åland</p>
 </footer>    
-   <a href="tel:+3584573484221" class="order-button" onclick="window.location.href='tel:+3584573484221'; return false;">
+  <a href="tel:+3584573484221" class="order-button"
+   onclick="window.location.href='tel:+3584573484221'; return false;">
   🍔 Beställ nu
+</a>
 </a>
 </a>    
 
