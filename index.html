@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -124,11 +123,6 @@
   .contact-section {
   padding: 80px 20px;
 }  
-  @media (min-width: 768px) {
-  .order-button {
-    display: none;
-  }
-}
   .map-button {
   display: inline-block;
   margin-top: 10px;
@@ -558,6 +552,32 @@ a.button {
   margin: 0;
 }
 
+.cart-summary {
+  margin-top: 10px;
+}
+
+.cart-summary-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.cart-empty {
+  color: #aaa;
+  font-style: italic;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dotted #2d7a80;
+  font-size: 15px;
+}
+
+.cart-row:last-child {
+  border-bottom: none;
+}
+
 .order-summary {
   margin-top: 20px;
   padding-top: 15px;
@@ -618,7 +638,6 @@ a.button {
   <ul class="nav-links">
     <li><a href="#">Hem</a></li>
     <li><a href="#meny">Meny</a></li>
-    <li><a href="#bestall">Beställ</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
 </nav>
@@ -1190,19 +1209,21 @@ Vi jobbar varje dag för att ge våra kunder inte bara god mat – utan en upple
   <div id="order-menu"></div>
 
   <div class="order-details">
-    <label for="order-name">Namn</label>
+    <div class="cart-summary">
+      <div class="cart-summary-title">Din beställning:</div>
+      <div id="cart-list"><p class="cart-empty">Inget valt ännu – klicka på + vid rätterna ovan.</p></div>
+    </div>
+
+    <label for="order-name">Namn (valfritt)</label>
     <input type="text" id="order-name" placeholder="Ditt namn">
 
-    <label for="order-time">Önskad hämtningstid</label>
+    <label for="order-time">Önskad hämtningstid (valfritt)</label>
     <input type="time" id="order-time">
 
     <label>Betalningssätt</label>
-    <div class="payment-options">
-      <label><input type="radio" name="payment" value="Vid avhämtning (kort/kontant)" checked> Vid avhämtning (kort/kontant)</label>
-      <label><input type="radio" name="payment" value="MobilePay"> MobilePay</label>
-    </div>
+    <p style="margin:0;color:#ccc;">Betalning sker på plats vid avhämtning (kort eller kontant).</p>
 
-    <label for="order-notes">Allergier / övriga önskemål</label>
+    <label for="order-notes">Allergier / övriga önskemål (valfritt)</label>
     <textarea id="order-notes" placeholder="T.ex. ingen lök, glutenfri, etc."></textarea>
 
     <div class="order-summary">
@@ -1416,6 +1437,21 @@ Vi jobbar varje dag för att ge våra kunder inte bara god mat – utan en upple
     const total = items.reduce((sum, i) => sum + i.price * i.qty, 0);
     document.getElementById("order-total").textContent = formatPrice(total);
     document.getElementById("order-submit").disabled = items.length === 0;
+    renderCartList(items);
+  }
+
+  function renderCartList(items) {
+    const list = document.getElementById("cart-list");
+    if (items.length === 0) {
+      list.innerHTML = '<p class="cart-empty">Inget valt ännu – klicka på + vid rätterna ovan.</p>';
+      return;
+    }
+    list.innerHTML = items.map((i) => `
+      <div class="cart-row">
+        <span>${i.qty}x ${i.name}</span>
+        <span>${formatPrice(i.price * i.qty)}</span>
+      </div>
+    `).join("");
   }
 
   function buildWhatsAppMessage() {
@@ -1423,7 +1459,7 @@ Vi jobbar varje dag för att ge våra kunder inte bara god mat – utan en upple
     const name = document.getElementById("order-name").value.trim() || "(ej angivet)";
     const time = document.getElementById("order-time").value || "(ej angivet)";
     const notes = document.getElementById("order-notes").value.trim() || "Inga";
-    const payment = document.querySelector('input[name="payment"]:checked').value;
+    const payment = "På plats vid avhämtning (kort/kontant)";
     const total = items.reduce((sum, i) => sum + i.price * i.qty, 0);
 
     let msg = "Hej! Ny beställning från hemsidan 🍔\n\n";
