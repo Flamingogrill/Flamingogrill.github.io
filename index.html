@@ -19,10 +19,6 @@ content="Saftiga burgare, wraps, tallrikar och tillbehör på Åland.">
 
 <style>
 
-/* =====================================================
-   GLOBAL
-===================================================== */
-
 :root {
   --bg: #0f0f0f;
   --bg2: #151515;
@@ -48,8 +44,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    linear-gradient(to bottom, #0d0d0d, #191919);
+  background: linear-gradient(to bottom, #0d0d0d, #191919);
   color: var(--white);
   font-family: "Segoe UI", Arial, sans-serif;
   overflow-x: hidden;
@@ -80,33 +75,24 @@ section {
   padding: 80px 0;
 }
 
-/* =====================================================
-   NAVBAR
-===================================================== */
+/* NAVBAR */
 
 .navbar {
   position: sticky;
   top: 0;
   z-index: 99999;
-
   width: 100%;
-
   background: rgba(0,0,0,.95);
   backdrop-filter: blur(12px);
-
   border-bottom: 1px solid rgba(255,255,255,.08);
-
-  box-shadow:
-    0 4px 20px rgba(0,0,0,.45);
+  box-shadow: 0 4px 20px rgba(0,0,0,.45);
 }
 
 .nav-inner {
   min-height: 70px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 20px;
 }
 
@@ -124,18 +110,28 @@ section {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 25px;
-
+  gap: 22px;
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links li,
+.nav-links a {
+  white-space: nowrap;
 }
 
 .nav-links a {
   color: #fff;
   font-size: 15px;
   font-weight: 800;
-
   transition: .2s ease;
 }
 
@@ -146,31 +142,18 @@ section {
 .nav-order {
   background: var(--orange);
   color: #111 !important;
-
   padding: 10px 15px;
   border-radius: 10px;
 }
 
-.nav-order:hover {
-  background: var(--orange2);
-  color: #111 !important;
-}
-
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
 .hero {
   min-height: 650px;
-
   display: flex;
   align-items: center;
-
   background:
-    linear-gradient(
-      rgba(0,0,0,.55),
-      rgba(0,0,0,.72)
-    ),
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.72)),
     url("f.rum.jpg") center/cover no-repeat;
 }
 
@@ -181,27 +164,20 @@ section {
 
 .hero-badge {
   display: inline-block;
-
   padding: 8px 14px;
   margin-bottom: 20px;
-
   border-radius: 999px;
-
   background: rgba(255,107,45,.15);
   border: 1px solid rgba(255,107,45,.45);
-
   color: var(--orange2);
-
   font-size: 14px;
   font-weight: 800;
 }
 
 .hero h1 {
   margin: 0 0 18px;
-
-  font-size: clamp(48px, 8vw, 90px);
+  font-size: clamp(48px,8vw,90px);
   line-height: .94;
-
   font-weight: 950;
 }
 
@@ -211,10 +187,8 @@ section {
 
 .hero p {
   max-width: 650px;
-
-  font-size: clamp(18px, 2.5vw, 25px);
+  font-size: clamp(18px,2.5vw,25px);
   color: #ddd;
-
   margin-bottom: 30px;
 }
 
@@ -226,20 +200,14 @@ section {
 
 .btn {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   border: none;
   cursor: pointer;
-
   padding: 14px 21px;
-
   border-radius: 12px;
-
   font-size: 16px;
   font-weight: 900;
-
   transition: .2s ease;
 }
 
@@ -255,19 +223,11 @@ section {
 
 .btn-secondary {
   background: rgba(255,255,255,.08);
-
   border: 1px solid rgba(255,255,255,.15);
-
   color: white;
 }
 
-.btn-secondary:hover {
-  background: rgba(255,255,255,.15);
-}
-
-/* =====================================================
-   INTRO
-===================================================== */
+/* INTRO */
 
 .intro {
   background: var(--bg);
@@ -275,17 +235,13 @@ section {
 
 .intro-grid {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 50px;
-
   align-items: center;
 }
 
 .intro-text h2 {
   margin-top: 0;
-
   font-size: clamp(32px,5vw,48px);
 }
 
@@ -297,11 +253,8 @@ section {
 
 .info-box {
   background: var(--card);
-
   border: 1px solid var(--border);
-
   border-radius: 22px;
-
   padding: 30px;
 }
 
@@ -316,52 +269,35 @@ section {
 
 .info-item {
   color: #ddd;
-
   display: flex;
   gap: 10px;
-
   align-items: center;
 }
 
-/* =====================================================
-   MONTH BURGER
-===================================================== */
+/* FEATURED */
 
 .featured {
   background:
-    radial-gradient(
-      circle at top right,
-      rgba(255,107,45,.16),
-      transparent 45%
-    ),
+    radial-gradient(circle at top right,rgba(255,107,45,.16),transparent 45%),
     #141414;
 }
 
 .featured-card {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   overflow: hidden;
-
   border-radius: 25px;
-
   background: var(--card);
-
   border: 1px solid var(--border);
 }
 
 .featured-image {
   min-height: 430px;
-
-  background:
-    url("augm.jpg")
-    center/cover no-repeat;
+  background: url("oktm.jpg") center/cover no-repeat;
 }
 
 .featured-content {
   padding: 45px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -369,12 +305,9 @@ section {
 
 .featured-label {
   color: var(--orange);
-
   text-transform: uppercase;
-
   font-weight: 900;
   letter-spacing: 1px;
-
   font-size: 13px;
 }
 
@@ -388,9 +321,7 @@ section {
   line-height: 1.7;
 }
 
-/* =====================================================
-   MENU
-===================================================== */
+/* MENU */
 
 .menu-section {
   background: #101010;
@@ -403,124 +334,72 @@ section {
 
 .section-title h2 {
   margin: 0 0 10px;
-
   font-size: clamp(34px,5vw,52px);
 }
 
 .section-title p {
   max-width: 650px;
-
   margin: auto;
-
   color: var(--muted);
 }
 
-/* MENU CATEGORY NAV */
-
 .menu-categories {
   position: sticky;
-
   top: 70px;
-
   z-index: 999;
-
   display: flex;
-
   justify-content: center;
-
   gap: 8px;
-
   width: fit-content;
   max-width: 100%;
-
   margin: 0 auto 35px;
-
   padding: 9px;
-
   overflow-x: auto;
-
   background: rgba(25,25,25,.96);
-
   backdrop-filter: blur(10px);
-
   border: 1px solid var(--border);
-
   border-radius: 13px;
 }
 
 .menu-categories a {
   white-space: nowrap;
-
   padding: 10px 14px;
-
   border-radius: 9px;
-
   color: #ccc;
-
   font-size: 14px;
   font-weight: 800;
-
-  transition: .2s ease;
 }
 
 .menu-categories a:hover {
   background: var(--orange);
-
   color: #111;
 }
 
-/* MENU CATEGORY */
-
 .menu-category {
   scroll-margin-top: 140px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #142f31,
-      #102425
-    );
-
+  background: linear-gradient(135deg,#142f31,#102425);
   padding: 25px;
-
   margin-bottom: 20px;
-
   border-radius: 20px;
-
   border: 1px solid rgba(45,241,255,.08);
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
 .menu-category h3 {
   margin: 0 0 20px;
-
   padding-bottom: 10px;
-
   display: inline-block;
-
   font-size: 24px;
-
-  border-bottom:
-    2px solid var(--orange);
+  border-bottom: 2px solid var(--orange);
 }
-
-/* MENU ITEM */
 
 .menu-item {
   display: grid;
-
-  grid-template-columns: 180px 1fr auto;
-
+  grid-template-columns: 180px 1fr auto auto;
   gap: 20px;
-
   align-items: center;
-
   padding: 18px 0;
-
   border-bottom: 1px dotted #555;
-
   transition: .2s ease;
 }
 
@@ -535,11 +414,8 @@ section {
 .food-img {
   width: 180px;
   height: 135px;
-
   object-fit: cover;
-
   border-radius: 14px;
-
   transition: .25s ease;
 }
 
@@ -553,765 +429,526 @@ section {
 
 .item-name {
   display: block;
-
   font-size: 19px;
   font-weight: 900;
-
   margin-bottom: 7px;
 }
 
 .ingredients {
   color: #aaa;
-
   font-size: 14px;
-
   line-height: 1.5;
-
   margin: 0;
+}
+
+.menu-add {
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--cyan);
+  color: #071014;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(45,241,255,.18);
+  transition: transform .18s ease,box-shadow .18s ease;
+}
+
+.menu-add:hover {
+  transform: scale(1.08);
+}
+
+.menu-add:active {
+  transform: scale(.96);
 }
 
 .price {
   color: var(--orange);
-
   font-size: 18px;
-
   font-weight: 900;
-
   white-space: nowrap;
 }
 
-.sub-item {
-  color: #999;
-
-  font-size: 14px;
-
-  margin-top: 3px;
+.drink-info-category {
+  padding-bottom: 22px;
 }
 
-/* =====================================================
-   ORDER
-===================================================== */
-
-.order-section {
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(255,107,45,.15),
-      transparent 40%
-    ),
-    #0d0d0d;
+.category-note {
+  color: #aaa;
+  line-height: 1.6;
+  margin: -4px 0 16px;
 }
 
-.order-wrapper {
-  max-width: 900px;
-  margin: auto;
-}
-
-.order-box {
-  background: var(--card);
-
-  border: 1px solid var(--border);
-
-  border-radius: 24px;
-
-  padding: 32px;
-}
-
-/* ORDER CATEGORY */
-
-.order-category {
-  background: #102d2f;
-
-  padding: 20px;
-
-  border-radius: 15px;
-
-  margin-bottom: 18px;
-}
-
-.order-category h3 {
-  margin: 0 0 15px;
-
-  padding-bottom: 8px;
-
-  display: inline-block;
-
-  border-bottom: 2px solid var(--orange);
-}
-
-.order-row {
+.drink-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-  justify-content: space-between;
-
+.drink-list span {
+  display: inline-flex;
   align-items: center;
-
-  gap: 15px;
-
-  padding: 12px 0;
-
-  border-bottom: 1px dotted #444;
-}
-
-.order-row:last-child {
-  border-bottom: none;
-}
-
-.order-row-info {
-  flex: 1;
-}
-
-.order-row-name {
+  padding: 10px 13px;
+  border: 1px solid rgba(45,241,255,.18);
+  border-radius: 999px;
+  background: rgba(45,241,255,.06);
+  color: #eee;
   font-weight: 800;
 }
 
-.order-row-price {
-  color: var(--orange);
+/* MODALS */
 
-  font-size: 14px;
-
-  margin-top: 3px;
+body.modal-open {
+  overflow: hidden;
 }
 
-.qty-control {
-  display: flex;
-
+.side-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: none;
   align-items: center;
-
-  gap: 10px;
-
-  background: #181818;
-
-  padding: 5px 7px;
-
-  border-radius: 30px;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0,0,0,.78);
+  backdrop-filter: blur(8px);
 }
 
-.qty-btn {
-  width: 31px;
-  height: 31px;
+.side-modal.is-open {
+  display: flex;
+}
 
-  border: none;
+.side-modal-card {
+  width: min(560px,100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #102a2c;
+  border: 1px solid rgba(45,241,255,.15);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 25px 80px rgba(0,0,0,.6);
+}
 
+.modal-close {
+  float: right;
+  width: 38px;
+  height: 38px;
+  border: 0;
   border-radius: 50%;
-
-  background: var(--orange);
-
-  color: #111;
-
-  font-size: 20px;
-
-  font-weight: 900;
-
+  background: rgba(255,255,255,.1);
+  color: white;
+  font-size: 24px;
   cursor: pointer;
 }
 
-.qty-btn:hover {
-  background: var(--cyan);
+.modal-title {
+  margin: 0 45px 8px 0;
+  font-size: 28px;
 }
 
-.qty-value {
-  min-width: 18px;
-
-  text-align: center;
-
-  font-weight: 900;
+.modal-subtitle {
+  color: #aaa;
+  margin-bottom: 22px;
 }
 
-/* FORM */
-
-.order-details {
-  margin-top: 25px;
-
-  padding: 25px;
-
-  border-radius: 18px;
-
-  background: #17454f;
+.option-grid {
+  display: grid;
+  gap: 10px;
 }
 
-.order-details label {
-  display: block;
-
-  margin-top: 17px;
-  margin-bottom: 7px;
-
+.option-btn {
+  width: 100%;
+  text-align: left;
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: white;
+  cursor: pointer;
   font-weight: 800;
 }
 
-.order-details label:first-child {
-  margin-top: 0;
+.option-btn.selected {
+  border-color: var(--orange);
+  background: rgba(255,107,45,.16);
 }
 
-.order-details input[type="text"],
-.order-details input[type="tel"],
-.order-details input[type="time"],
-.order-details textarea {
+.modal-confirm {
   width: 100%;
-
-  padding: 12px 13px;
-
-  border: none;
-
-  border-radius: 9px;
-
-  background: white;
-
+  margin-top: 20px;
+  padding: 15px;
+  border: 0;
+  border-radius: 13px;
+  background: var(--orange);
   color: #111;
-
-  font-size: 15px;
-}
-
-.order-details textarea {
-  resize: vertical;
-
-  min-height: 75px;
-}
-
-.order-details input:focus,
-.order-details textarea:focus {
-  outline: 2px solid var(--orange);
-}
-
-/* CART */
-
-.cart-summary {
-  margin-bottom: 20px;
-}
-
-.cart-summary-title {
   font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  margin-bottom: 8px;
+/* ORDER */
+
+.order-section {
+  background: #0d0d0d;
+}
+
+.order-box {
+  max-width: 900px;
+  margin: auto;
+  background: linear-gradient(135deg,#142f31,#102425);
+  border: 1px solid rgba(45,241,255,.08);
+  border-radius: 24px;
+  padding: 30px;
+}
+
+.order-box h2 {
+  margin-top: 0;
+  font-size: 34px;
+}
+
+.cart-box {
+  background: rgba(0,0,0,.25);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 25px;
 }
 
 .cart-empty {
-  color: #aaa;
-
-  font-style: italic;
+  color: #999;
+  margin: 0;
 }
 
 .cart-row {
   display: flex;
-
   justify-content: space-between;
-
   gap: 15px;
-
-  padding: 7px 0;
-
-  border-bottom: 1px dotted #2d7a80;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-/* TOTAL */
+.cart-row:last-child {
+  border-bottom: 0;
+}
 
-.order-summary {
+.cart-total {
   display: flex;
-
   justify-content: space-between;
-
-  margin-top: 22px;
-
-  padding-top: 18px;
-
-  border-top: 2px solid var(--orange);
-
-  font-size: 21px;
-
+  margin-top: 18px;
+  font-size: 22px;
   font-weight: 900;
 }
 
-/* CONFIRMATION */
-
-.confirm-row {
-  display: flex;
-
-  gap: 10px;
-
-  align-items: flex-start;
-
-  margin-top: 20px;
-
-  font-size: 14px;
-
-  color: #ddd;
-}
-
-.confirm-row input {
-  margin-top: 4px;
-
-  accent-color: var(--orange);
-}
-
-.security-box {
-  margin-top: 20px;
-
-  padding: 17px;
-
-  border-radius: 12px;
-
-  background: rgba(0,0,0,.22);
-}
-
-.security-box p {
-  margin: 0 0 8px;
-
-  color: #ccc;
-
-  font-size: 13px;
-}
-
-.whatsapp-submit {
-  display: block;
-
-  width: 100%;
-
-  margin-top: 22px;
-
-  padding: 16px;
-
-  border: none;
-
-  border-radius: 11px;
-
-  background: #25D366;
-
-  color: white;
-
-  font-size: 17px;
-
-  font-weight: 900;
-
-  cursor: pointer;
-
-  transition: .2s ease;
-}
-
-.whatsapp-submit:hover {
-  background: #1ebe57;
-
-  transform: translateY(-1px);
-}
-
-.whatsapp-submit:disabled {
-  background: #555;
-
-  cursor: not-allowed;
-
-  transform: none;
-}
-
-.order-note {
-  text-align: center;
-
-  margin: 12px 0 0;
-
-  color: #aaa;
-
-  font-size: 13px;
-}
-
-.confirmation-message {
-  display: none;
-
-  margin-top: 15px;
-
-  padding: 15px;
-
-  border-radius: 10px;
-
-  background: rgba(50,180,90,.12);
-
-  border: 1px solid rgba(50,180,90,.3);
-
-  color: #bff2ca;
-}
-
-/* HONEYPOT */
-
-.hp-field {
-  position: absolute !important;
-
-  left: -9999px !important;
-
-  width: 1px !important;
-
-  height: 1px !important;
-
-  opacity: 0 !important;
-}
-
-/* =====================================================
-   ROOM
-===================================================== */
-
-.room {
-  background: #151515;
-}
-
-.room-grid {
+.order-form {
   display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 45px;
-
-  align-items: center;
+  gap: 14px;
 }
 
-.room-image {
-  min-height: 420px;
-
-  border-radius: 22px;
-
-  background:
-    url("f.rum.jpg")
-    center/cover no-repeat;
+.order-form label {
+  font-weight: 800;
 }
 
-.room-content h2 {
-  font-size: 42px;
+.order-form input,
+.order-form textarea,
+.order-form select {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 11px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #111;
+  color: white;
+  outline: none;
 }
 
-.room-content p {
+.order-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
   color: #ccc;
-
-  line-height: 1.7;
+  font-size: 14px;
 }
 
-/* =====================================================
-   CONTACT
-===================================================== */
+.checkbox-row input {
+  width: auto;
+  margin-top: 3px;
+}
+
+.confirmation {
+  display: none;
+  margin-top: 15px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(45,241,255,.1);
+  color: #dffcff;
+}
+
+/* ROOM */
+
+.room-section {
+  background:
+    radial-gradient(circle at top left,rgba(45,241,255,.08),transparent 40%),
+    #111;
+}
+
+.room-story {
+  max-width: 820px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.room-story h2 {
+  font-size: clamp(34px,5vw,52px);
+  margin-bottom: 15px;
+}
+
+.room-story p {
+  color: #ccc;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.room-artist {
+  color: var(--orange2);
+  font-weight: 900;
+}
+
+.room-gallery {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 14px;
+}
+
+.room-gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.08);
+  transition: .25s ease;
+}
+
+.room-gallery img:hover {
+  transform: scale(1.02);
+}
+
+/* CONTACT */
 
 .contact-section {
-  text-align: center;
-
   background: #101010;
 }
 
 .contact-grid {
   display: grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap: 18px;
-
-  margin-top: 35px;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
 }
 
 .contact-card {
-  padding: 25px;
-
   background: var(--card);
-
   border: 1px solid var(--border);
-
-  border-radius: 18px;
+  border-radius: 20px;
+  padding: 28px;
 }
 
 .contact-card h3 {
   margin-top: 0;
 }
 
-.contact-card p {
-  color: #bbb;
-
-  line-height: 1.7;
+.contact-line {
+  margin: 13px 0;
+  color: #ddd;
 }
 
-.contact-card a {
-  color: var(--cyan);
-}
-
-.social {
+.social-links {
   display: flex;
-
-  justify-content: center;
-
-  gap: 12px;
-
   flex-wrap: wrap;
-
-  margin-top: 25px;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.social .button {
-  display: inline-block;
-
-  padding: 12px 22px;
-
+.social-links a {
+  padding: 11px 15px;
   border-radius: 10px;
+  background: rgba(255,255,255,.08);
+  font-weight: 800;
+}
 
+.social-links a:hover {
   background: var(--orange);
-
   color: #111;
-
-  font-weight: 900;
 }
 
-.social .button:hover {
-  background: var(--cyan);
-}
+/* FOOTER */
 
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.footer {
-  background: #080808;
-
+footer {
+  padding: 55px 0;
   text-align: center;
-
-  padding: 30px 15px;
-
+  background: #080808;
   color: #777;
-
-  border-top: 1px solid #222;
 }
 
-/* =====================================================
-   FLOATING ORDER
-===================================================== */
+/* FLOATING ORDER */
 
-.order-button {
+.floating-order {
   position: fixed;
-
   right: 18px;
   bottom: 18px;
-
   z-index: 99998;
-
-  background: var(--orange);
-
-  color: #111;
-
-  padding: 14px 20px;
-
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 17px 23px;
   border-radius: 999px;
-
-  font-weight: 900;
-
-  box-shadow:
-    0 6px 25px rgba(0,0,0,.5);
-
-  transition: .2s ease;
+  background: var(--orange);
+  color: #111;
+  font-size: 18px;
+  font-weight: 950;
+  box-shadow: 0 12px 35px rgba(0,0,0,.45);
 }
 
-.order-button:hover {
-  background: var(--cyan);
-
-  transform: scale(1.04);
+.floating-order:hover {
+  background: var(--orange2);
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* RESPONSIVE */
 
-@media (max-width: 850px) {
-
-  .nav-inner {
-    min-height: 62px;
-  }
-
-  .logo {
-    font-size: 19px;
-  }
-
-  .nav-links {
-    gap: 12px;
-  }
-
-  .nav-links a {
-    font-size: 13px;
-  }
-
-  .nav-order {
-    display: none;
-  }
-
-  .menu-categories {
-    top: 62px;
-
-    justify-content: flex-start;
-
-    width: 100%;
-
-    border-radius: 0;
-
-    margin-bottom: 25px;
-  }
+@media (max-width:900px) {
 
   .intro-grid,
   .featured-card,
-  .room-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .featured-image {
-    min-height: 300px;
-  }
-
-  .room-image {
-    min-height: 300px;
-  }
-
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
-  .menu-item {
-    grid-template-columns: 120px 1fr auto;
-
-    gap: 13px;
+  .featured-image {
+    min-height: 330px;
   }
 
-  .food-img {
-    width: 120px;
-    height: 100px;
+  .room-gallery {
+    grid-template-columns: repeat(2,1fr);
   }
 
-  .item-name {
-    font-size: 16px;
-  }
-
-  .ingredients {
-    font-size: 12px;
-  }
-
-  .price {
-    font-size: 16px;
-  }
 }
 
-@media (max-width: 600px) {
+@media (max-width:700px) {
 
   section {
     padding: 60px 0;
   }
+
+  .nav-inner {
+    overflow-x: auto;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .menu-item {
+    grid-template-columns: 92px 1fr auto;
+    gap: 12px;
+  }
+
+  .food-img {
+    width: 92px;
+    height: 92px;
+  }
+
+  .menu-item .price {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .menu-add {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  .order-box {
+    padding: 22px;
+  }
+
+}
+
+@media (max-width:520px) {
 
   .hero {
     min-height: 570px;
   }
 
   .hero-content {
-    padding: 65px 0;
+    padding: 70px 0;
   }
 
-  .hero h1 {
-    font-size: 55px;
+  .featured-content {
+    padding: 28px;
   }
 
-  .featured-content,
-  .order-box {
-    padding: 24px;
+  .featured-content h2 {
+    font-size: 34px;
   }
 
-  .menu-item {
-    grid-template-columns: 95px 1fr;
-
-    align-items: start;
+  .room-gallery {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .food-img {
-    width: 95px;
-    height: 90px;
-  }
-
-  .price {
-    grid-column: 2;
-  }
-
-  .order-row {
-    align-items: flex-start;
-  }
-
-  .order-button {
+  .floating-order {
     right: 12px;
     bottom: 12px;
-
-    padding: 13px 16px;
-  }
-
-  .nav-links {
-    gap: 10px;
-  }
-
-  .nav-links a {
-    font-size: 12px;
+    padding: 15px 19px;
   }
 
 }
 
 </style>
-
-<!-- Google Analytics -->
-
-<script async
-src="https://www.googletagmanager.com/gtag/js?id=G-WP8XVNNBSH"></script>
-
-<script>
-
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){
-  dataLayer.push(arguments);
-}
-
-gtag('js', new Date());
-
-gtag('config', 'G-WP8XVNNBSH');
-
-</script>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- NAVBAR -->
 
 <nav class="navbar">
 
   <div class="container nav-inner">
 
-    <a href="#" class="logo">
+    <a href="#hem" class="logo">
       FLAMINGO<span>GRILL</span>
     </a>
 
     <ul class="nav-links">
 
       <li>
-        <a href="#">
-          Hem
-        </a>
+        <a href="#hem">Hem</a>
       </li>
 
       <li>
-        <a href="#meny">
-          Meny
-        </a>
+        <a href="#meny">Meny</a>
       </li>
 
       <li>
-        <a href="#rummet">
-          Flamingo-rum
-        </a>
+        <a href="#rummet">Rummet</a>
       </li>
 
       <li>
-        <a href="#kontakt">
-          Kontakt
-        </a>
+        <a href="#kontakt">Kontakt</a>
       </li>
 
       <li>
-        <a href="#bestall" class="nav-order">
-          Beställ
-        </a>
+        <a href="#bestall" class="nav-order">Beställ</a>
       </li>
 
     </ul>
@@ -1321,39 +958,36 @@ gtag('config', 'G-WP8XVNNBSH');
 </nav>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="hem">
 
   <div class="container">
 
     <div class="hero-content">
 
       <div class="hero-badge">
-        📍 Mariehamn · Åland
+        🦩 Flamingo Grill · Mariehamn
       </div>
 
       <h1>
-        FLAMINGO<br>
-        <span>GRILL</span>
+        Riktigt bra
+        <span>burgare.</span>
       </h1>
 
       <p>
-        Smashburgare & Middle Eastern food
+        Saftiga burgare, wraps, tallrikar och tillbehör –
+        lagat med kärlek på Åland.
       </p>
 
       <div class="hero-buttons">
 
-        <a href="#bestall"
-           class="btn btn-primary">
-          🍔 Beställ nu
+        <a href="#meny" class="btn btn-primary">
+          🍔 Se menyn
         </a>
 
-        <a href="#meny"
-           class="btn btn-secondary">
-          Se menyn
+        <a href="#bestall" class="btn btn-secondary">
+          🛒 Beställ nu
         </a>
 
       </div>
@@ -1365,9 +999,7 @@ gtag('config', 'G-WP8XVNNBSH');
 </section>
 
 
-<!-- =====================================================
-     INTRO
-===================================================== -->
+<!-- INTRO -->
 
 <section class="intro">
 
@@ -1376,26 +1008,17 @@ gtag('config', 'G-WP8XVNNBSH');
     <div class="intro-text">
 
       <h2>
-        Mat som gör dig hungrig. 🔥
+        Välkommen till Flamingo Grill 🦩
       </h2>
 
       <p>
-        Hos oss hittar du högkvalitetsburgare och
-        smakrika Middle Eastern wraps – tillagade
-        med färska råvaror, hemlagade såser och
-        noggrant utvalt högrevskött.
+        Hos oss hittar du burgare gjorda på 120 g högrevsbiff,
+        wraps, tallrikar och goda tillbehör.
       </p>
 
       <p>
-        Vi kompromissar aldrig med smaken.
-        Varje rätt görs med passion, kvalitet
-        och respekt för hantverket.
-      </p>
-
-      <p>
-        Du kan både ta med maten eller slå dig ner
-        i vårt rum med sittplatser och njuta av en
-        varm och välkomnande atmosfär.
+        Vi lagar maten när du beställer och serverar den varm
+        och nylagad.
       </p>
 
     </div>
@@ -1403,30 +1026,20 @@ gtag('config', 'G-WP8XVNNBSH');
 
     <div class="info-box">
 
-      <h3>
-        🔥 Därför Flamingo Grill
-      </h3>
+      <h3>Öppettider</h3>
 
       <div class="info-list">
 
         <div class="info-item">
-          🍔 Saftiga burgare
+          🕓 <strong>Tisdag–Fredag:</strong> 16:00–20:00
         </div>
 
         <div class="info-item">
-          🌯 Wraps & Middle Eastern food
+          🕛 <strong>Lördag:</strong> 12:00–21:00
         </div>
 
         <div class="info-item">
-          🍟 Krispiga tillbehör
-        </div>
-
-        <div class="info-item">
-          🥩 Högrevskött
-        </div>
-
-        <div class="info-item">
-          ❤️ Tillagat med passion
+          🕓 <strong>Söndag:</strong> 16:00–20:00
         </div>
 
       </div>
@@ -1438,9 +1051,7 @@ gtag('config', 'G-WP8XVNNBSH');
 </section>
 
 
-<!-- =====================================================
-     MONTH BURGER
-===================================================== -->
+<!-- MÅNADENS BURGARE -->
 
 <section class="featured">
 
@@ -1453,23 +1064,29 @@ gtag('config', 'G-WP8XVNNBSH');
       <div class="featured-content">
 
         <div class="featured-label">
-          Månadens burgare
+          Oktober · Månadens
         </div>
 
         <h2>
-          Månadens Meal
+          Månadens Burger 🍔
         </h2>
 
         <p>
-          120g högrevs biff, cheddarost,
-          saltgurka, färsk lök, tomat,
-          issallad, rostad lök och Bearnaise sås.
+          120 g högrevsbiff, cheddarost, bacon,
+          karamelliserad lök, saltgurka, tomat,
+          issallad, BBQ-sås, BBQ-majo och rostad lök
+          på toppen.
         </p>
 
-        <strong
-          style="font-size:26px;color:#ff6b2d;">
-          14,90€
-        </strong>
+        <div class="price">
+          14,90 € som Meal
+        </div>
+
+        <br>
+
+        <a href="#meny" class="btn btn-primary">
+          Se Månadens
+        </a>
 
       </div>
 
@@ -1480,22 +1097,19 @@ gtag('config', 'G-WP8XVNNBSH');
 </section>
 
 
-<!-- =====================================================
-     MENU
-===================================================== -->
+<!-- MENU -->
 
-<section id="meny" class="menu-section">
+<section class="menu-section" id="meny">
 
   <div class="container">
 
     <div class="section-title">
 
-      <h2>
-        MENY
-      </h2>
+      <h2>🍔 Meny</h2>
 
       <p>
-        Välj din favorit och beställ enkelt.
+        Välj vad du vill ha och tryck på + för att lägga
+        till direkt i beställningen.
       </p>
 
     </div>
@@ -1503,11 +1117,11 @@ gtag('config', 'G-WP8XVNNBSH');
 
     <div class="menu-categories">
 
-      <a href="#menyburgare">
+      <a href="#burgare-meny">
         🍔 Burgare Meny
       </a>
 
-      <a href="#burgare">
+      <a href="#endast-burgare">
         🍔 Endast Burgare
       </a>
 
@@ -1519,1136 +1133,73 @@ gtag('config', 'G-WP8XVNNBSH');
         🍽️ Tallrikar
       </a>
 
-      <a href="#sides">
+      <a href="#tillbehor">
         🍟 Tillbehör
+      </a>
+
+      <a href="#drycker">
+        🥤 Drycker
       </a>
 
     </div>
 
 
-    <!-- BURGER MEALS -->
+    <div id="menu-container"></div>
 
-    <div id="menyburgare"
-         class="menu-category">
+  </div>
 
-      <h3>
-        🍔 Burgare Meny 🍟🥤
-      </h3>
+</section>
 
 
-      <div class="menu-item">
+<!-- ROOM -->
 
-        <img src="augm.jpg"
-             alt="Månadens Meal"
-             class="food-img">
+<section class="room-section" id="rummet">
 
-        <div class="item-info">
+  <div class="container">
 
-          <span class="item-name">
-            Månadens Meal
-          </span>
+    <div class="room-story">
 
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            saltgurka, färsk lök, tomat,
-            issallad, rostad lök och Bearnaise sås.
-          </p>
+      <h2>
+        Flamingo-rummet 🦩
+      </h2>
 
-        </div>
+      <p>
+        Mer än bara en plats att äta.
+      </p>
 
-        <span class="price">
-          14,90€
-        </span>
+      <p>
+        Flamingo-rummet är handmålat från grunden.
+        Varje vägg har sin egen känsla och sina egna detaljer.
+        Flamingos, färger och motiv är målade för hand och
+        gör rummet till en unik del av Flamingo Grill.
+      </p>
 
-      </div>
+      <p>
+        Konsten är skapad av
+        <span class="room-artist">RG Salazar</span>,
+        en konstnär med passion för att teckna och skapa.
+      </p>
 
-
-      <div class="menu-item">
-
-        <img src="CheeseMeal.jpg"
-             alt="Cheese Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Cheese Meal
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            sallad, tomat, lök & Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          13,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Cheese&BaconMeal.jpg"
-             alt="Cheese & Bacon Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Cheese & Bacon Meal
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            bacon, sallad, tomat, lök &
-            Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          14,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="ChipotleMeal.jpg"
-             alt="Chipotle Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Chipotle Meal
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            sallad, tomat, inlagt rödlök &
-            Flamingos chipotle majo
-          </p>
-
-        </div>
-
-        <span class="price">
-          14,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="TryffelMeal.jpg"
-             alt="Tryffel Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Tryffel Meal
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            sallad, tomat, inlagt rödlök &
-            Flamingos tryffel majo
-          </p>
-
-        </div>
-
-        <span class="price">
-          14,90€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="DoubleMeal.jpg"
-             alt="Double Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Double Meal
-          </span>
-
-          <p class="ingredients">
-            2x 120g högrevs biff,
-            2x cheddarost, sallad &
-            Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          16,90€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="BBQMeal.jpg"
-             alt="BBQ Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            BBQ Meal
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            sallad, tomat, lök, jalapeno &
-            Flamingos BBQ sås
-          </p>
-
-        </div>
-
-        <span class="price">
-          14,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="HawaiiMeal.jpg"
-             alt="Hawaii Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Hawaii Meal
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            ananas, sallad, tomat, lök,
-            saltgurka & Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          14,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="BookmakerMeal.jpg"
-             alt="Bookmaker Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Bookmaker Meal
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, riven pepparrot,
-            stark senap, sallad, tomat, lök,
-            saltgurka & Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          14,90€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="KidsMeal.jpg"
-             alt="Kids Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Kids Meal
-          </span>
-
-          <p class="ingredients">
-            80g högrevs biff,
-            cheddarost & ketchup
-          </p>
-
-        </div>
-
-        <span class="price">
-          10,00€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="HalloumiMeal.jpg"
-             alt="Halloumi Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Halloumi Meal
-          </span>
-
-          <p class="ingredients">
-            Halloumi ost, sallad, tomat,
-            inlagt rödlök & Flamingos sweet chili majo
-          </p>
-
-        </div>
-
-        <span class="price">
-          14,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="VeganskMeal.jpg"
-             alt="Vegansk Meal"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Vegansk Meal
-          </span>
-
-          <p class="ingredients">
-            Vegansk biff, sallad, tomat,
-            inlagt rödlök & tarator sås
-          </p>
-
-        </div>
-
-        <span class="price">
-          14,90€
-        </span>
-
-      </div>
+      <p>
+        Resultatet är ett rum som inte känns som någon annanstans –
+        en del av vår identitet och en plats där maten och
+        kreativiteten möts.
+      </p>
 
     </div>
 
 
-    <!-- BURGERS -->
-
-    <div id="burgare"
-         class="menu-category">
-
-      <h3>
-        🍔 Endast Burgare 🍔
-      </h3>
-
-
-      <div class="menu-item">
-
-        <img src="aug.jpg"
-             alt="Månadens burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Månadens burgare
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            saltgurka, färsk lök, tomat,
-            issallad, rostad lök och Bearnaise sås
-          </p>
-
-        </div>
-
-        <span class="price">
-          11,00€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Cheese.png"
-             alt="Cheese burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Cheese burgare
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            sallad, tomat, lök &
-            Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          9,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Cheese&Bacon.jpg"
-             alt="Cheese & Bacon burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Cheese & Bacon burgare
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            bacon, sallad, tomat, lök &
-            Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          10,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Chipotle.jpg"
-             alt="Chipotle burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Chipotle burgare
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            sallad, tomat, inlagt rödlök &
-            Flamingos chipotle majo
-          </p>
-
-        </div>
-
-        <span class="price">
-          10,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Tryffel.jpg"
-             alt="Tryffel burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Tryffel burgare
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            sallad, tomat, inlagt rödlök &
-            Flamingos tryffel majo
-          </p>
-
-        </div>
-
-        <span class="price">
-          11,00€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Double.jpg"
-             alt="Double burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Double burgare
-          </span>
-
-          <p class="ingredients">
-            2x 120g högrevs biffar,
-            2x cheddarost, sallad &
-            Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          12,90€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="BBQ.jpg"
-             alt="BBQ burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            BBQ burgare
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            sallad, tomat, lök, jalapeno &
-            Flamingos BBQ sås
-          </p>
-
-        </div>
-
-        <span class="price">
-          10,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Hawaii b.jpg"
-             alt="Hawaii burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Hawaii burgare
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, cheddarost,
-            ananas, sallad, tomat, lök,
-            saltgurka & Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          11,00€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Bookmaker.jpg"
-             alt="Bookmaker burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Bookmaker burgare
-          </span>
-
-          <p class="ingredients">
-            120g högrevs biff, riven pepparrot,
-            stark senap, sallad, tomat, lök,
-            saltgurka & Flamingos dressing
-          </p>
-
-        </div>
-
-        <span class="price">
-          11,00€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Kids.jpg"
-             alt="Barn burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Barn burgare
-          </span>
-
-          <p class="ingredients">
-            80g högrevs biff,
-            cheddarost & ketchup
-          </p>
-
-        </div>
-
-        <span class="price">
-          6,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Halloumi.jpg"
-             alt="Halloumi burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Halloumi burgare
-          </span>
-
-          <p class="ingredients">
-            Halloumi ost, sallad, tomat,
-            inlagt rödlök &
-            Flamingos sweet chili majo
-          </p>
-
-        </div>
-
-        <span class="price">
-          10,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="Veg.jpg"
-             alt="Vegansk burgare"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Vegansk burgare
-          </span>
-
-          <p class="ingredients">
-            Vegansk biff, sallad, tomat,
-            inlagt rödlök &
-            Flamingos dragon majo
-          </p>
-
-        </div>
-
-        <span class="price">
-          11,00€
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <!-- WRAPS -->
-
-    <div id="wraps"
-         class="menu-category">
-
-      <h3>
-        🌯 Wraps 🌯
-      </h3>
-
-
-      <div class="menu-item">
-
-        <img src="Shawrma.jpg"
-             alt="Shawarma kyckling wrap"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Shawarma kyckling wrap
-          </span>
-
-          <p class="ingredients">
-            Marinerad kyckling,
-            libanesisk saltgurka,
-            pommes & libanesisk vitlökssås
-          </p>
-
-        </div>
-
-        <span class="price">
-          9,00€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="shichtawook.jpg"
-             alt="Shich Tawook wrap"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Shich Tawook wrap
-          </span>
-
-          <p class="ingredients">
-            Marinerad kyckling,
-            libanesisk saltgurka,
-            coleslaw, pommes &
-            libanesisk vitlökssås
-          </p>
-
-        </div>
-
-        <span class="price">
-          10,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="falafel.jpg"
-             alt="Falafel wrap"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Falafel wrap
-          </span>
-
-          <p class="ingredients">
-            Hemlagad falafel,
-            hummus, sallad, tomat,
-            libanesisk saltgurka &
-            tarator sås
-          </p>
-
-        </div>
-
-        <span class="price">
-          10,00€
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <!-- TALLRIKAR -->
-
-    <div id="tallrikar"
-         class="menu-category">
-
-      <h3>
-        🍽️ Tallrikar
-      </h3>
-
-
-      <div class="menu-item">
-
-        <img src="shawarma-tallrik.jpg"
-             alt="Shawarma Tallrik"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Shawarma Tallrik
-          </span>
-
-          <p class="ingredients">
-            Hackad shawarma wrap i bitar,
-            pommes, sallad, tomat,
-            picklad rödlök, lök, jalapeño,
-            libanesisk saltgurka &
-            vitlökssås
-          </p>
-
-        </div>
-
-        <span class="price">
-          12,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="tawook.jpg"
-             alt="Shich Tawook Tallrik"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Shich Tawook Tallrik
-          </span>
-
-          <p class="ingredients">
-            Grillade marinerade
-            Shish Tawook kycklingbitar,
-            pommes, coleslaw, sallad,
-            tomat, picklad rödlök,
-            lök, jalapeño, saltgurka &
-            vitlökssås
-          </p>
-
-        </div>
-
-        <span class="price">
-          13,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <img src="falafeltal.jpg"
-             alt="Falafel Tallrik"
-             class="food-img">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Falafel Tallrik
-          </span>
-
-          <p class="ingredients">
-            Hemlagad falafel,
-            pommes, hummus, sallad,
-            tomat, picklad rödlök,
-            lök, jalapeño, saltgurka &
-            taratorsås
-          </p>
-
-        </div>
-
-        <span class="price">
-          13,50€
-        </span>
-
-      </div>
-
-    </div>
-
-
-    <!-- SIDES -->
-
-    <div id="sides"
-         class="menu-category">
-
-      <h3>
-        🍟 Tillbehör 🍟
-      </h3>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Pommes
-          </span>
-
-          <div class="sub-item">
-            1 portion
-          </div>
-
-        </div>
-
-        <span class="price">
-          4,00€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Crispers
-          </span>
-
-          <div class="sub-item">
-            1 portion
-          </div>
-
-        </div>
-
-        <span class="price">
-          4,90€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Chicken Nuggets
-          </span>
-
-          <div class="sub-item">
-            3 st – 3,50€
-          </div>
-
-          <div class="sub-item">
-            6 st – 6,20€
-          </div>
-
-          <div class="sub-item">
-            inkl. dipsås
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Chicken Wings
-          </span>
-
-          <div class="sub-item">
-            3 st – 4,90€
-          </div>
-
-          <div class="sub-item">
-            6 st – 7,90€
-          </div>
-
-          <div class="sub-item">
-            inkl. dipsås
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Onion Rings
-          </span>
-
-          <div class="sub-item">
-            3 st – 3,50€
-          </div>
-
-          <div class="sub-item">
-            6 st – 5,50€
-          </div>
-
-          <div class="sub-item">
-            inkl. dipsås
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Halloumi Sticks
-          </span>
-
-          <div class="sub-item">
-            3 st – 3,90€
-          </div>
-
-          <div class="sub-item">
-            6 st – 7,90€
-          </div>
-
-          <div class="sub-item">
-            inkl. dipsås
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-
-          <span class="item-name">
-            Cheddar Jalapeños
-          </span>
-
-          <div class="sub-item">
-            3 st – 4,20€
-          </div>
-
-          <div class="sub-item">
-            6 st – 7,90€
-          </div>
-
-          <div class="sub-item">
-            inkl. dipsås
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- DIPS -->
-
-    <div class="menu-category">
-
-      <h3>
-        🥫 Dipp Såser
-      </h3>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-          <span class="item-name">
-            Flamingos Dressing
-          </span>
-        </div>
-
-        <span class="price">
-          1,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-          <span class="item-name">
-            Flamingos Jalapeonmajo
-          </span>
-        </div>
-
-        <span class="price">
-          1,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-          <span class="item-name">
-            Flamingos Aioli
-          </span>
-        </div>
-
-        <span class="price">
-          1,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-          <span class="item-name">
-            Flamingos Sweet chili
-          </span>
-        </div>
-
-        <span class="price">
-          1,50€
-        </span>
-
-      </div>
-
-
-      <div class="menu-item">
-
-        <div class="item-info">
-          <span class="item-name">
-            Flamingos BBQ
-          </span>
-        </div>
-
-        <span class="price">
-          1,50€
-        </span>
-
-      </div>
+    <div class="room-gallery">
+
+      <img src="rum1.jpg" alt="Flamingo-rummet">
+      <img src="rum2.jpg" alt="Flamingo-rummet">
+      <img src="rum3.jpg" alt="Flamingo-rummet">
+      <img src="rum4.jpg" alt="Flamingo-rummet">
+      <img src="rum5.jpg" alt="Flamingo-rummet">
+      <img src="rum6.jpg" alt="Flamingo-rummet">
+      <img src="rum7.jpg" alt="Flamingo-rummet">
+      <img src="rum8.jpg" alt="Flamingo-rummet">
+      <img src="rum9.jpg" alt="Flamingo-rummet">
 
     </div>
 
@@ -2657,24 +1208,19 @@ gtag('config', 'G-WP8XVNNBSH');
 </section>
 
 
-<!-- =====================================================
-     ORDER
-===================================================== -->
+<!-- ORDER -->
 
-<section id="bestall"
-         class="order-section">
+<section class="order-section" id="bestall">
 
-  <div class="container order-wrapper">
+  <div class="container">
 
     <div class="section-title">
 
-      <h2>
-        🛒 Beställ
-      </h2>
+      <h2>🛒 Beställ</h2>
 
       <p>
-        Välj vad du vill ha och skicka
-        beställningen direkt till oss via WhatsApp.
+        Lägg till dina favoriter från menyn.
+        Beställningen skickas sedan till oss via WhatsApp.
       </p>
 
     </div>
@@ -2682,190 +1228,128 @@ gtag('config', 'G-WP8XVNNBSH');
 
     <div class="order-box">
 
-      <div id="order-menu"></div>
+      <h2>Din beställning</h2>
 
+      <div class="cart-box">
 
-      <div class="order-details">
+        <div id="cart-list">
 
-        <div class="cart-summary">
-
-          <div class="cart-summary-title">
-            Din beställning:
-          </div>
-
-          <div id="cart-list">
-
-            <p class="cart-empty">
-              Inget valt ännu –
-              klicka på + vid rätterna ovan.
-            </p>
-
-          </div>
+          <p class="cart-empty">
+            Inget valt ännu – klicka på + vid rätterna ovan.
+          </p>
 
         </div>
 
 
-        <!-- NAME -->
+        <div class="cart-total">
+
+          <span>Totalt</span>
+
+          <span id="order-total">
+            0,00 €
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="order-form">
 
         <label for="order-name">
-          Namn *
+          Namn
         </label>
 
         <input
-          type="text"
           id="order-name"
+          type="text"
           placeholder="Ditt namn"
-          autocomplete="name"
         >
 
-
-        <!-- PHONE -->
 
         <label for="order-phone">
-          Telefonnummer *
+          Telefonnummer
         </label>
 
         <input
-          type="tel"
           id="order-phone"
-          placeholder="+358..."
-          autocomplete="tel"
+          type="tel"
+          placeholder="Telefonnummer"
         >
 
-
-        <!-- TIME -->
 
         <label for="order-time">
-          Önskad hämtningstid *
+          Önskad hämtningstid
         </label>
 
         <input
-          type="time"
           id="order-time"
+          type="time"
         >
 
 
-        <!-- PAYMENT -->
-
-        <label>
-          Betalningssätt
-        </label>
-
-        <p style="margin:0;color:#ccc;">
-          Betalning sker på plats vid avhämtning
-          (kort eller kontant).
-        </p>
-
-
-        <!-- NOTES -->
-
         <label for="order-notes">
-          Allergier / övriga önskemål
+          Allergier / önskemål
         </label>
 
         <textarea
           id="order-notes"
-          placeholder="T.ex. ingen lök, glutenfri, etc."
+          placeholder="Skriv här om du har allergier eller andra önskemål."
         ></textarea>
 
 
-        <!-- ANTI BOT -->
+        <label>
+          Kontrollfråga
+        </label>
 
-        <div class="security-box">
-
-          <p>
-            🔐 Snabb säkerhetskontroll
-          </p>
-
-          <label
-            for="anti-bot"
-            style="margin-top:0;"
-          >
-            Vad blir 3 + 4?
-          </label>
-
-          <input
-            type="text"
-            id="anti-bot"
-            inputmode="numeric"
-            placeholder="Skriv svaret"
-            autocomplete="off"
-          >
-
+        <div style="color:#ccc;">
+          Vad är 3 + 4?
         </div>
 
-
-        <!-- HONEYPOT -->
-
         <input
+          id="anti-bot"
           type="text"
-          id="website"
-          class="hp-field"
-          tabindex="-1"
-          autocomplete="off"
+          placeholder="Skriv svaret"
         >
 
 
-        <!-- CONFIRM -->
+        <input
+          id="website"
+          type="text"
+          autocomplete="off"
+          tabindex="-1"
+          style="position:absolute;left:-9999px;"
+        >
 
-        <div class="confirm-row">
+
+        <label class="checkbox-row">
 
           <input
-            type="checkbox"
             id="order-confirmed"
+            type="checkbox"
           >
-
-          <label
-            for="order-confirmed"
-            style="margin:0;"
-          >
-            Jag har kontrollerat min beställning,
-            telefonnummer och hämtningstid och
-            allt stämmer.
-          </label>
-
-        </div>
-
-
-        <!-- TOTAL -->
-
-        <div class="order-summary">
 
           <span>
-            Totalt:
+            Jag har kontrollerat min beställning och
+            bekräftar att uppgifterna är korrekta.
           </span>
 
-          <span id="order-total">
-            0,00€
-          </span>
+        </label>
 
-        </div>
-
-
-        <!-- SEND -->
 
         <button
           type="button"
-          class="whatsapp-submit"
+          class="btn btn-primary"
           id="order-submit"
         >
-          📲 Bekräfta & skicka beställning
+          🔥 Skicka beställning via WhatsApp
         </button>
 
 
         <div
+          class="confirmation"
           id="confirmation-message"
-          class="confirmation-message"
         ></div>
-
-
-        <p class="order-note">
-
-          ⚠️ Beställningen är inte bekräftad
-          förrän Flamingo Grill har bekräftat
-          den via WhatsApp.
-
-        </p>
 
       </div>
 
@@ -2876,58 +1360,18 @@ gtag('config', 'G-WP8XVNNBSH');
 </section>
 
 
-<!-- =====================================================
-     ROOM
-===================================================== -->
+<!-- KONTAKT -->
 
-<section id="rummet"
-         class="room">
-
-  <div class="container room-grid">
-
-    <div class="room-image"></div>
-
-
-    <div class="room-content">
-
-      <h2>
-        Ät i Flamingo-rummet 🦩
-      </h2>
-
-      <p>
-        Vill du sitta och äta på plats?
-        Välkommen in i vårt Flamingo-rum.
-      </p>
-
-      <p>
-        Slå dig ner och njut av maten
-        i en varm och välkomnande miljö.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section id="kontakt"
-         class="contact-section">
+<section class="contact-section" id="kontakt">
 
   <div class="container">
 
     <div class="section-title">
 
-      <h2>
-        📍 Hitta oss & Kontakt
-      </h2>
+      <h2>📍 Kontakt</h2>
 
       <p>
-        Vi finns i Mariehamn, Åland.
+        Har du frågor? Kontakta oss direkt.
       </p>
 
     </div>
@@ -2935,103 +1379,87 @@ gtag('config', 'G-WP8XVNNBSH');
 
     <div class="contact-grid">
 
-
       <div class="contact-card">
 
-        <h3>
-          📍 Hitta oss
-        </h3>
+        <h3>Flamingo Grill 🦩</h3>
 
-        <p>
-          Mariehamn<br>
-          Åland
-        </p>
-
-        <a
-          class="btn btn-secondary"
-          href="https://maps.app.goo.gl/fbeEeaCCaRqumc6T9?g_st=ic"
-          target="_blank"
-          rel="noopener"
-        >
-          Öppna Google Maps
-        </a>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <h3>
-          📞 Kontakt
-        </h3>
-
-        <p>
-
+        <div class="contact-line">
+          📞
           <a href="tel:+3584573484221">
             045-73484221
           </a>
+        </div>
 
-          <br><br>
-
+        <div class="contact-line">
+          📞
           <a href="tel:+3584575392162">
             045-75392162
           </a>
+        </div>
 
-          <br><br>
-
+        <div class="contact-line">
+          ✉️
           <a href="mailto:info@flamingogrill.ax">
             info@flamingogrill.ax
           </a>
+        </div>
 
-        </p>
+        <div class="contact-line">
+          📍 Mariehamn, Åland
+        </div>
+
+
+        <div class="social-links">
+
+          <a
+            href="https://instagram.com/flamingogrill_aland"
+            target="_blank"
+            rel="noopener"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://www.facebook.com/100076166498554/"
+            target="_blank"
+            rel="noopener"
+          >
+            Facebook
+          </a>
+
+          <a
+            href="https://maps.app.goo.gl/fbeEeaCCaRqumc6T9?g_st=ic"
+            target="_blank"
+            rel="noopener"
+          >
+            Google Maps
+          </a>
+
+        </div>
 
       </div>
 
 
       <div class="contact-card">
 
-        <h3>
-          ⏰ Öppettider
-        </h3>
+        <h3>Öppettider</h3>
 
-        <p>
-          Tis–Fre:
-          16:00 – 20:00
-          <br><br>
+        <div class="contact-line">
+          <strong>Tisdag–Fredag:</strong><br>
+          16:00–20:00
+        </div>
 
-          Lör:
-          12:00 – 21:00
-          <br><br>
+        <div class="contact-line">
+          <strong>Lördag:</strong><br>
+          12:00–21:00
+        </div>
 
-          Sön:
-          16:00 – 20:00
-        </p>
+        <div class="contact-line">
+          <strong>Söndag:</strong><br>
+          16:00–20:00
+        </div>
 
       </div>
-
-    </div>
-
-
-    <div class="social">
-
-      <a
-        class="button"
-        href="https://www.facebook.com/100076166498554/"
-        target="_blank"
-        rel="noopener"
-      >
-        Följ oss på Facebook
-      </a>
-
-
-      <a
-        class="button"
-        href="https://instagram.com/flamingogrill_aland"
-        target="_blank"
-        rel="noopener"
-      >
-        📸 Instagram
-      </a>
 
     </div>
 
@@ -3040,37 +1468,201 @@ gtag('config', 'G-WP8XVNNBSH');
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
-<footer class="footer">
+<footer>
 
-  <p>
-    ©️ 2026 Flamingo Grill –
-    Mariehamn, Åland
-  </p>
+  © 2026 Flamingo Grill – Mariehamn, Åland
 
 </footer>
 
 
-<!-- FLOATING ORDER -->
+<!-- FLOATING BUTTON -->
 
 <a
   href="#bestall"
-  class="order-button"
+  class="floating-order"
 >
   🍔 Beställ nu
 </a>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<!-- MEAL CONFIGURATOR -->
+
+<div
+  class="side-modal"
+  id="meal-drink-modal"
+>
+
+  <div class="side-modal-card">
+
+    <button
+      type="button"
+      class="modal-close"
+      onclick="closeMealConfigurator()"
+    >
+      ×
+    </button>
+
+    <h2
+      class="modal-title"
+      id="meal-modal-title"
+    >
+      Välj dryck
+    </h2>
+
+    <p class="modal-subtitle">
+      Dryck ingår i måltiden.
+      Välj din dryck nedan.
+    </p>
+
+
+    <div
+      class="option-grid drink-choice-grid"
+      id="meal-drink-options"
+    ></div>
+
+
+    <div style="margin-top:22px;">
+
+      <strong>
+        Extra dippsås
+      </strong>
+
+      <p
+        style="color:#aaa;margin:7px 0 12px;"
+      >
+        Valfritt – 1,50 € per dippsås.
+      </p>
+
+      <div
+        class="option-grid"
+        id="meal-dip-options"
+      ></div>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="modal-confirm"
+      onclick="confirmMealConfigurator()"
+    >
+      Lägg till i beställningen
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- SIDE CONFIGURATOR -->
+
+<div
+  class="side-modal"
+  id="side-config-modal"
+>
+
+  <div class="side-modal-card">
+
+    <button
+      type="button"
+      class="modal-close"
+      onclick="closeSideConfigurator()"
+    >
+      ×
+    </button>
+
+    <h2
+      class="modal-title"
+      id="side-modal-title"
+    >
+      Välj tillbehör
+    </h2>
+
+    <p class="modal-subtitle">
+      Välj 3 eller 6 st och välj din dippsås.
+    </p>
+
+
+    <div
+      class="option-grid"
+      id="side-qty-options"
+    ></div>
+
+
+    <div style="margin-top:22px;">
+
+      <strong>
+        Dippsås
+      </strong>
+
+      <p
+        style="color:#aaa;margin:7px 0 12px;"
+      >
+        Välj en dippsås.
+      </p>
+
+      <div
+        class="option-grid"
+        id="side-dip-options"
+      ></div>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="modal-confirm"
+      onclick="confirmSideConfigurator()"
+    >
+      Lägg till i beställningen
+    </button>
+
+  </div>
+
+</div>
+
 
 <script>
 
-const WHATSAPP_NUMBER = "3584573484221";
+/* =====================================================
+   GOOGLE ANALYTICS
+===================================================== */
+
+(function() {
+
+  const script = document.createElement("script");
+
+  script.async = true;
+
+  script.src =
+    "https://www.googletagmanager.com/gtag/js?id=G-WP8XVNNBSH";
+
+  document.head.appendChild(script);
+
+  window.dataLayer =
+    window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  window.gtag = gtag;
+
+  gtag("js", new Date());
+
+  gtag("config", "G-WP8XVNNBSH");
+
+})();
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+const WHATSAPP_NUMBER =
+  "3584573484221";
 
 
 /* =====================================================
@@ -3080,343 +1672,1332 @@ const WHATSAPP_NUMBER = "3584573484221";
 const menuData = [
 
   {
-    category: "🍔 Burgare Meny 🍟🥤",
-
+    id: "burgare-meny",
+    title: "🍔 Burgare Meny",
     items: [
 
-      { name:"Månadens Meal", price:14.90 },
+      {
+        name: "Månadens Meal",
+        price: 14.90,
+        image: "oktm.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, bacon, karamelliserad lök, saltgurka, tomat, issallad, BBQ-sås, BBQ-majo och rostad lök."
+      },
 
-      { name:"Cheese Meal", price:13.50 },
+      {
+        name: "Cheese Meal",
+        price: 13.50,
+        image: "cheesem.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, sallad, tomat, lök, saltgurka och Flamingos dressing."
+      },
 
-      { name:"Cheese & Bacon Meal", price:14.50 },
+      {
+        name: "Cheese & Bacon Meal",
+        price: 14.50,
+        image: "cheesebaconm.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, bacon, sallad, tomat, lök, saltgurka och Flamingos dressing."
+      },
 
-      { name:"Chipotle Meal", price:14.50 },
+      {
+        name: "Chipotle Meal",
+        price: 14.50,
+        image: "chipotlem.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, sallad, tomat, lök, jalapeño och chipotle."
+      },
 
-      { name:"Tryffel Meal", price:14.90 },
+      {
+        name: "Tryffel Meal",
+        price: 14.90,
+        image: "tryffelm.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, sallad, tomat, lök och tryffelmajo."
+      },
 
-      { name:"Double Meal", price:16.90 },
+      {
+        name: "Double Meal",
+        price: 16.90,
+        image: "doublem.jpg",
+        ingredients:
+          "Två 120 g högrevsbiffar, cheddarost, sallad, tomat, lök, saltgurka och Flamingos dressing."
+      },
 
-      { name:"BBQ Meal", price:14.50 },
+      {
+        name: "BBQ Meal",
+        price: 14.50,
+        image: "bbqm.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, bacon, sallad, tomat, lök och BBQ-sås."
+      },
 
-      { name:"Hawaii Meal", price:14.50 },
+      {
+        name: "Hawaii Meal",
+        price: 14.50,
+        image: "hawaiim.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, ananas, sallad, tomat, lök och Flamingos dressing."
+      },
 
-      { name:"Bookmaker Meal", price:14.90 },
+      {
+        name: "Bookmaker Meal",
+        price: 14.90,
+        image: "bookmakerm.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, stekt ägg, sallad, tomat, lök och senap."
+      },
 
-      { name:"Kids Meal", price:10.00 },
+      {
+        name: "Kids Meal",
+        price: 10.00,
+        image: "kidsm.jpg",
+        ingredients:
+          "Barnburgare med 120 g högrevsbiff och cheddarost."
+      },
 
-      { name:"Halloumi Meal", price:14.50 },
+      {
+        name: "Halloumi Meal",
+        price: 14.50,
+        image: "halloumim.jpg",
+        ingredients:
+          "Halloumi, sallad, tomat, lök och Flamingos dressing."
+      },
 
-      { name:"Vegansk Meal", price:14.90 }
+      {
+        name: "Vegetarisk Meal",
+        price: 14.90,
+        image: "vegetariskm.jpg",
+        ingredients:
+          "Vegetarisk burgare med sallad, tomat, lök och Flamingos dressing."
+      }
 
     ]
-
   },
 
 
   {
-    category: "🍔 Endast Burgare",
-
+    id: "endast-burgare",
+    title: "🍔 Endast Burgare",
     items: [
 
-      { name:"Månadens burgare", price:11.00 },
+      {
+        name: "Månadens burgare",
+        price: 11.00,
+        image: "oktb.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, bacon, karamelliserad lök, saltgurka, tomat, issallad, BBQ-sås, BBQ-majo och rostad lök."
+      },
 
-      { name:"Cheese burgare", price:9.50 },
+      {
+        name: "Cheese burgare",
+        price: 9.50,
+        image: "cheese.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, sallad, tomat, lök, saltgurka och Flamingos dressing."
+      },
 
-      { name:"Cheese & Bacon burgare", price:10.50 },
+      {
+        name: "Cheese & Bacon burgare",
+        price: 10.50,
+        image: "cheesebacon.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, bacon, sallad, tomat, lök, saltgurka och Flamingos dressing."
+      },
 
-      { name:"Chipotle burgare", price:10.50 },
+      {
+        name: "Chipotle burgare",
+        price: 10.50,
+        image: "chipotle.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, sallad, tomat, lök, jalapeño och chipotle."
+      },
 
-      { name:"Tryffel burgare", price:11.00 },
+      {
+        name: "Tryffel burgare",
+        price: 11.00,
+        image: "tryffel.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, sallad, tomat, lök och tryffelmajo."
+      },
 
-      { name:"Double burgare", price:12.90 },
+      {
+        name: "Double burgare",
+        price: 12.90,
+        image: "double.jpg",
+        ingredients:
+          "Två 120 g högrevsbiffar, cheddarost, sallad, tomat, lök, saltgurka och Flamingos dressing."
+      },
 
-      { name:"BBQ burgare", price:10.50 },
+      {
+        name: "BBQ burgare",
+        price: 10.50,
+        image: "bbq.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, bacon, sallad, tomat, lök och BBQ-sås."
+      },
 
-      { name:"Hawaii burgare", price:11.00 },
+      {
+        name: "Hawaii burgare",
+        price: 11.00,
+        image: "hawaii.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, ananas, sallad, tomat, lök och Flamingos dressing."
+      },
 
-      { name:"Bookmaker burgare", price:11.00 },
+      {
+        name: "Bookmaker burgare",
+        price: 11.00,
+        image: "bookmaker.jpg",
+        ingredients:
+          "120 g högrevsbiff, cheddarost, stekt ägg, sallad, tomat, lök och senap."
+      },
 
-      { name:"Barn burgare", price:6.50 },
+      {
+        name: "Barn burgare",
+        price: 6.50,
+        image: "kids.jpg",
+        ingredients:
+          "Barnburgare med högrevsbiff och cheddarost."
+      },
 
-      { name:"Halloumi burgare", price:10.50 },
+      {
+        name: "Halloumi burgare",
+        price: 10.50,
+        image: "halloumi.jpg",
+        ingredients:
+          "Halloumi, sallad, tomat, lök och Flamingos dressing."
+      },
 
-      { name:"Vegansk burgare", price:11.00 }
+      {
+        name: "Vegetarisk burgare",
+        price: 11.00,
+        image: "vegetarisk.jpg",
+        ingredients:
+          "Vegetarisk burgare med sallad, tomat, lök och Flamingos dressing."
+      }
 
     ]
-
   },
 
 
   {
-    category: "🌯 Wraps",
-
+    id: "wraps",
+    title: "🌯 Wraps",
     items: [
 
-      { name:"Shawarma kyckling wrap", price:9.00 },
+      {
+        name: "Shawarma kyckling wrap",
+        price: 9.00,
+        image: "shawarma.jpg",
+        ingredients:
+          "Kyckling shawarma, sallad, tomat, lök och sås."
+      },
 
-      { name:"Shich Tawook wrap", price:10.50 },
+      {
+        name: "Shich Tawook wrap",
+        price: 10.50,
+        image: "tawook.jpg",
+        ingredients:
+          "Marinerad kyckling, sallad, tomat, lök och sås."
+      },
 
-      { name:"Falafel wrap", price:10.00 }
+      {
+        name: "Falafel wrap",
+        price: 10.00,
+        image: "falafel.jpg",
+        ingredients:
+          "Falafel, sallad, tomat, lök och sås."
+      }
 
     ]
-
   },
 
 
   {
-    category: "🍽️ Tallrikar",
-
+    id: "tallrikar",
+    title: "🍽️ Tallrikar",
     items: [
 
-      { name:"Shawarma Tallrik", price:12.50 },
+      {
+        name: "Shawarma Tallrik",
+        price: 12.50,
+        image: "shawarmat.jpg",
+        ingredients:
+          "Kyckling shawarma, pommes, sallad, tomat, lök och sås."
+      },
 
-      { name:"Shich Tawook Tallrik", price:13.50 },
+      {
+        name: "Shich Tawook Tallrik",
+        price: 13.50,
+        image: "tawookt.jpg",
+        ingredients:
+          "Marinerad kyckling, pommes, sallad, tomat, lök och sås."
+      },
 
-      { name:"Falafel Tallrik", price:13.50 }
+      {
+        name: "Falafel Tallrik",
+        price: 13.50,
+        image: "falafelt.jpg",
+        ingredients:
+          "Falafel, pommes, sallad, tomat, lök och sås."
+      }
 
     ]
-
   },
 
 
   {
-    category: "🍟 Tillbehör",
-
+    id: "tillbehor",
+    title: "🍟 Tillbehör",
     items: [
 
-      { name:"Pommes", price:4.00 },
+      {
+        name: "Pommes",
+        price: 4.00,
+        image: "pommes.jpg",
+        ingredients:
+          "Crispy pommes frites."
+      },
 
-      { name:"Crispers", price:4.90 },
+      {
+        name: "Crispers",
+        price: 4.90,
+        image: "crispers.jpg",
+        ingredients:
+          "Crispy potato crispers."
+      },
 
-      { name:"Chicken Nuggets 3 st", price:3.50 },
+      {
+        name: "Chicken Nuggets",
+        price: 0,
+        image: "nuggets.jpg",
+        ingredients:
+          "3 st – 3,50 € · 6 st – 6,20 € · Välj en dippsås."
+      },
 
-      { name:"Chicken Nuggets 6 st", price:6.20 },
+      {
+        name: "Chicken Wings",
+        price: 0,
+        image: "wings.jpg",
+        ingredients:
+          "3 st – 4,90 € · 6 st – 7,90 € · Välj en dippsås."
+      },
 
-      { name:"Chicken Wings 3 st", price:4.90 },
+      {
+        name: "Onion Rings",
+        price: 0,
+        image: "onionrings.jpg",
+        ingredients:
+          "3 st – 3,50 € · 6 st – 5,50 € · Välj en dippsås."
+      },
 
-      { name:"Chicken Wings 6 st", price:7.90 },
+      {
+        name: "Halloumi Sticks",
+        price: 0,
+        image: "halloumisti.jpg",
+        ingredients:
+          "3 st – 3,90 € · 6 st – 7,90 € · Välj en dippsås."
+      },
 
-      { name:"Onion Rings 3 st", price:3.50 },
+      {
+        name: "Cheddar Jalapeños",
+        price: 0,
+        image: "cheddarjalapenos.jpg",
+        ingredients:
+          "3 st – 4,20 € · 6 st – 7,90 € · Välj en dippsås."
+      },
 
-      { name:"Onion Rings 6 st", price:5.50 },
+      {
+        name: "Flamingos Dressing",
+        price: 1.50,
+        image: "dressing.jpg",
+        ingredients:
+          "Dippsås."
+      },
 
-      { name:"Halloumi Sticks 3 st", price:3.90 },
+      {
+        name: "Flamingos Jalapeonmajo",
+        price: 1.50,
+        image: "jalapeno.jpg",
+        ingredients:
+          "Dippsås."
+      },
 
-      { name:"Halloumi Sticks 6 st", price:7.90 },
+      {
+        name: "Flamingos Aioli",
+        price: 1.50,
+        image: "aioli.jpg",
+        ingredients:
+          "Dippsås."
+      },
 
-      { name:"Cheddar Jalapeños 3 st", price:4.20 },
+      {
+        name: "Flamingos Sweet chili",
+        price: 1.50,
+        image: "sweetchili.jpg",
+        ingredients:
+          "Dippsås."
+      },
 
-      { name:"Cheddar Jalapeños 6 st", price:7.90 }
+      {
+        name: "Flamingos BBQ",
+        price: 1.50,
+        image: "bbq-dip.jpg",
+        ingredients:
+          "Dippsås."
+      }
 
     ]
-
   },
 
 
   {
-    category: "Dipp Såser",
-
+    id: "drycker",
+    title: "🥤 Drycker",
     items: [
 
-      { name:"Flamingos Dressing", price:1.50 },
+      {
+        name: "Cola",
+        price: 2.70,
+        image: "cola.jpg",
+        ingredients:
+          "Kall läsk."
+      },
 
-      { name:"Flamingos Jalapeonmajo", price:1.50 },
+      {
+        name: "Cola Zero",
+        price: 2.70,
+        image: "colazero.jpg",
+        ingredients:
+          "Kall läsk utan socker."
+      },
 
-      { name:"Flamingos Aioli", price:1.50 },
+      {
+        name: "Fanta",
+        price: 2.70,
+        image: "fanta.jpg",
+        ingredients:
+          "Kall läsk."
+      },
 
-      { name:"Flamingos Sweet chili", price:1.50 },
+      {
+        name: "Ponqa – bubbelvatten",
+        price: 2.70,
+        image: "ponqa.jpg",
+        ingredients:
+          "Kolsyrat vatten."
+      },
 
-      { name:"Flamingos BBQ", price:1.50 }
+      {
+        name: "Trip",
+        price: 2.00,
+        image: "trip.jpg",
+        ingredients:
+          "Fruktdryck."
+      }
 
     ]
-
   }
 
 ];
 
 
+/* =====================================================
+   CART
+===================================================== */
+
 const cart = {};
+
+let configuredItems = [];
+
+let selectedMealName = null;
+
+let selectedMealDrink = null;
+
+let selectedMealDip = null;
+
+let selectedSideName = null;
+
+let selectedSideQty = null;
+
+let selectedSideDip = null;
 
 
 /* =====================================================
-   PRICE
+   FORMAT PRICE
 ===================================================== */
 
-function formatPrice(number) {
+function formatPrice(price) {
 
-  return number
+  return price
     .toFixed(2)
-    .replace(".", ",") + "€";
+    .replace(".", ",") + " €";
 
 }
 
 
 /* =====================================================
-   RENDER ORDER MENU
+   SIDE DIPS
+===================================================== */
+
+const sideDipOptions = [
+
+  {
+    name: "Flamingos Dressing",
+    price: 0
+  },
+
+  {
+    name: "Flamingos Jalapeonmajo",
+    price: 0
+  },
+
+  {
+    name: "Flamingos Aioli",
+    price: 0
+  },
+
+  {
+    name: "Flamingos Sweet chili",
+    price: 0
+  },
+
+  {
+    name: "Flamingos BBQ",
+    price: 0
+  }
+
+];
+
+
+/* =====================================================
+   MEAL DIPS
+===================================================== */
+
+const mealDipOptions = [
+
+  {
+    name: "Ingen extra dippsås",
+    price: 0
+  },
+
+  {
+    name: "Flamingos Dressing",
+    price: 1.50
+  },
+
+  {
+    name: "Flamingos Jalapeonmajo",
+    price: 1.50
+  },
+
+  {
+    name: "Flamingos Aioli",
+    price: 1.50
+  },
+
+  {
+    name: "Flamingos Sweet chili",
+    price: 1.50
+  },
+
+  {
+    name: "Flamingos BBQ",
+    price: 1.50
+  }
+
+];
+
+
+/* =====================================================
+   DRINKS
+===================================================== */
+
+const drinkOptions = [
+
+  {
+    name: "Cola",
+    price: 0,
+    icon: "🥤"
+  },
+
+  {
+    name: "Cola Zero",
+    price: 0,
+    icon: "🥤"
+  },
+
+  {
+    name: "Fanta",
+    price: 0,
+    icon: "🥤"
+  },
+
+  {
+    name: "Ponqa – bubbelvatten",
+    price: 0,
+    icon: "💧"
+  },
+
+  {
+    name: "Trip",
+    price: 0,
+    icon: "🧃"
+  }
+
+];
+
+
+/* =====================================================
+   MAIN MENU
 ===================================================== */
 
 function renderMenu() {
 
   const container =
-    document.getElementById("order-menu");
+    document.getElementById("menu-container");
 
   container.innerHTML = "";
 
 
-  menuData.forEach((category, categoryIndex) => {
+  menuData.forEach(
+    (category, categoryIndex) => {
 
-    const categoryDiv =
-      document.createElement("div");
+      const categoryDiv =
+        document.createElement("div");
 
-    categoryDiv.className =
-      "order-category";
+      categoryDiv.className =
+        "menu-category";
 
-
-    const title =
-      document.createElement("h3");
-
-    title.textContent =
-      category.category;
-
-    categoryDiv.appendChild(title);
+      categoryDiv.id =
+        category.id;
 
 
-    category.items.forEach(
-      (item, itemIndex) => {
+      const title =
+        document.createElement("h3");
 
-        const key =
-          categoryIndex + "-" + itemIndex;
+      title.textContent =
+        category.title;
 
-
-        const row =
-          document.createElement("div");
-
-        row.className =
-          "order-row";
+      categoryDiv.appendChild(title);
 
 
-        row.innerHTML = `
+      if (category.id === "drycker") {
 
-          <div class="order-row-info">
+        const note =
+          document.createElement("p");
 
-            <div class="order-row-name">
-              ${item.name}
-            </div>
+        note.className =
+          "category-note";
 
-            <div class="order-row-price">
-              ${formatPrice(item.price)}
-            </div>
+        note.textContent =
+          "Dryck kan köpas separat. Dryck ingår också i alla våra måltider.";
 
-          </div>
-
-
-          <div class="qty-control">
-
-            <button
-              type="button"
-              class="qty-btn"
-              data-action="minus"
-              data-key="${key}"
-            >
-              −
-            </button>
-
-
-            <span
-              class="qty-value"
-              id="qty-${key}"
-            >
-              0
-            </span>
-
-
-            <button
-              type="button"
-              class="qty-btn"
-              data-action="plus"
-              data-key="${key}"
-            >
-              +
-            </button>
-
-          </div>
-
-        `;
-
-
-        categoryDiv.appendChild(row);
+        categoryDiv.appendChild(note);
 
       }
-    );
 
 
-    container.appendChild(categoryDiv);
+      category.items.forEach(
+        (item, itemIndex) => {
 
-  });
+          const row =
+            document.createElement("div");
+
+          row.className =
+            "menu-item";
 
 
-  container.addEventListener(
-    "click",
-    handleQuantityClick
+          const image =
+            document.createElement("img");
+
+          image.className =
+            "food-img";
+
+          image.src =
+            item.image;
+
+          image.alt =
+            item.name;
+
+          row.appendChild(image);
+
+
+          const info =
+            document.createElement("div");
+
+          info.className =
+            "item-info";
+
+
+          const name =
+            document.createElement("span");
+
+          name.className =
+            "item-name";
+
+          name.textContent =
+            item.name;
+
+          info.appendChild(name);
+
+
+          const ingredients =
+            document.createElement("p");
+
+          ingredients.className =
+            "ingredients";
+
+          ingredients.textContent =
+            item.ingredients;
+
+          info.appendChild(ingredients);
+
+          row.appendChild(info);
+
+
+          const price =
+            document.createElement("div");
+
+          price.className =
+            "price";
+
+
+          if (
+            category.id === "tillbehor" &&
+            item.price === 0
+          ) {
+
+            price.textContent =
+              "Välj 3 eller 6 st";
+
+          } else {
+
+            price.textContent =
+              formatPrice(item.price);
+
+          }
+
+
+          row.appendChild(price);
+
+
+          const button =
+            document.createElement("button");
+
+          button.type =
+            "button";
+
+          button.className =
+            "menu-add";
+
+          button.textContent =
+            "+";
+
+          button.dataset.categoryIndex =
+            categoryIndex;
+
+          button.dataset.itemIndex =
+            itemIndex;
+
+          button.dataset.key =
+            categoryIndex + "-" + itemIndex;
+
+
+          row.appendChild(button);
+
+          categoryDiv.appendChild(row);
+
+        }
+      );
+
+
+      container.appendChild(categoryDiv);
+
+    }
   );
 
 }
 
 
 /* =====================================================
-   QUANTITY
+   MAIN MENU BUTTONS
 ===================================================== */
 
-function handleQuantityClick(event) {
+function addFromMainMenu(key) {
 
-  const button =
-    event.target.closest(".qty-btn");
+  cart[key] =
+    (cart[key] || 0) + 1;
 
-  if (!button) return;
+  updateTotal();
+
+  updateMainMenuButtons();
+
+  const order =
+    document.getElementById("bestall");
+
+  if (order) {
+
+    order.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+
+  }
+
+}
 
 
-  const key =
-    button.dataset.key;
+function updateMainMenuButtons() {
 
-  const action =
-    button.dataset.action;
+  document
+    .querySelectorAll(".menu-add")
+    .forEach(button => {
+
+      const key =
+        button.dataset.key;
+
+      const count =
+        cart[key] || 0;
+
+      button.innerHTML =
+        count > 0
+          ? `+<span class="add-count">${count}</span>`
+          : "+";
+
+    });
+
+}
 
 
-  const current =
-    cart[key] || 0;
+/* =====================================================
+   MEAL CONFIGURATOR
+===================================================== */
+
+function openMealConfigurator(name) {
+
+  selectedMealName =
+    name;
+
+  selectedMealDrink =
+    null;
+
+  selectedMealDip =
+    mealDipOptions[0];
 
 
-  let next;
+  const modal =
+    document.getElementById(
+      "meal-drink-modal"
+    );
+
+  const options =
+    document.getElementById(
+      "meal-drink-options"
+    );
+
+  const dips =
+    document.getElementById(
+      "meal-dip-options"
+    );
 
 
-  if (action === "plus") {
+  document.getElementById(
+    "meal-modal-title"
+  ).textContent =
+    name;
 
-    next =
-      current + 1;
 
-  } else {
+  options.innerHTML =
+    drinkOptions.map(
+      (drink,index) => `
+        <button
+          type="button"
+          class="option-btn"
+          data-drink-index="${index}"
+        >
+          ${drink.icon} ${drink.name}
+        </button>
+      `
+    ).join("");
 
-    next =
-      Math.max(0, current - 1);
+
+  dips.innerHTML =
+    mealDipOptions.map(
+      (dip,index) => `
+        <button
+          type="button"
+          class="option-btn ${index === 0 ? "selected" : ""}"
+          data-meal-dip-index="${index}"
+        >
+          ${dip.name}${dip.price > 0 ? " – " + formatPrice(dip.price) : ""}
+        </button>
+      `
+    ).join("");
+
+
+  selectedMealDip =
+    mealDipOptions[0];
+
+
+  dips
+    .querySelectorAll("[data-meal-dip-index]")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          dips
+            .querySelectorAll(".option-btn")
+            .forEach(
+              b => b.classList.remove("selected")
+            );
+
+          button.classList.add("selected");
+
+          selectedMealDip =
+            mealDipOptions[
+              Number(
+                button.dataset.mealDipIndex
+              )
+            ];
+
+        }
+      );
+
+    });
+
+
+  modal.classList.add(
+    "is-open"
+  );
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+}
+
+
+function confirmMealConfigurator() {
+
+  if (!selectedMealDrink) {
+
+    alert(
+      "Välj en dryck till måltiden."
+    );
+
+    return;
 
   }
 
 
-  cart[key] = next;
+  const menuItem =
+    findMenuItemByName(
+      selectedMealName
+    );
+
+
+  if (!menuItem) return;
+
+
+  let price =
+    menuItem.price;
+
+
+  price +=
+    selectedMealDip.price;
+
+
+  configuredItems.push({
+
+    id:
+      "meal-" +
+      Date.now(),
+
+    name:
+      selectedMealName +
+      " – " +
+      selectedMealDrink.name +
+      (
+        selectedMealDip.price > 0
+          ? " + " +
+            selectedMealDip.name
+          : ""
+      ),
+
+    price:
+      price,
+
+    qty:
+      1
+
+  });
+
+
+  closeMealConfigurator();
+
+  updateTotal();
+
+  updateMainMenuButtons();
+
+}
+
+
+function closeMealConfigurator() {
+
+  const modal =
+    document.getElementById(
+      "meal-drink-modal"
+    );
+
+  if (modal) {
+
+    modal.classList.remove(
+      "is-open"
+    );
+
+  }
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+  selectedMealName =
+    null;
+
+  selectedMealDrink =
+    null;
+
+  selectedMealDip =
+    null;
+
+}
+
+
+/* =====================================================
+   SIDE CONFIGURATOR
+===================================================== */
+
+function openSideConfigurator(name) {
+
+  selectedSideName =
+    name;
+
+  selectedSideQty =
+    null;
+
+  selectedSideDip =
+    null;
+
+
+  const modal =
+    document.getElementById(
+      "side-config-modal"
+    );
+
+  const qtyOptions =
+    document.getElementById(
+      "side-qty-options"
+    );
+
+  const dipOptions =
+    document.getElementById(
+      "side-dip-options"
+    );
 
 
   document.getElementById(
-    "qty-" + key
-  ).textContent = next;
+    "side-modal-title"
+  ).textContent =
+    name;
 
+
+  const prices = {
+
+    "Chicken Nuggets": {
+      3: 3.50,
+      6: 6.20
+    },
+
+    "Chicken Wings": {
+      3: 4.90,
+      6: 7.90
+    },
+
+    "Onion Rings": {
+      3: 3.50,
+      6: 5.50
+    },
+
+    "Halloumi Sticks": {
+      3: 3.90,
+      6: 7.90
+    },
+
+    "Cheddar Jalapeños": {
+      3: 4.20,
+      6: 7.90
+    }
+
+  };
+
+
+  const sidePrices =
+    prices[name];
+
+
+  qtyOptions.innerHTML = [3,6]
+    .map(
+      qty => `
+        <button
+          type="button"
+          class="option-btn"
+          data-side-qty="${qty}"
+        >
+          ${qty} st – ${formatPrice(sidePrices[qty])}
+        </button>
+      `
+    )
+    .join("");
+
+
+  dipOptions.innerHTML =
+    sideDipOptions.map(
+      (dip,index) => `
+        <button
+          type="button"
+          class="option-btn"
+          data-side-dip-index="${index}"
+        >
+          ${dip.name}
+        </button>
+      `
+    )
+    .join("");
+
+
+  qtyOptions
+    .querySelectorAll("[data-side-qty]")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          qtyOptions
+            .querySelectorAll(".option-btn")
+            .forEach(
+              b => b.classList.remove("selected")
+            );
+
+          button.classList.add(
+            "selected"
+          );
+
+          selectedSideQty =
+            Number(
+              button.dataset.sideQty
+            );
+
+        }
+      );
+
+    });
+
+
+  dipOptions
+    .querySelectorAll("[data-side-dip-index]")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          dipOptions
+            .querySelectorAll(".option-btn")
+            .forEach(
+              b => b.classList.remove("selected")
+            );
+
+          button.classList.add(
+            "selected"
+          );
+
+          selectedSideDip =
+            sideDipOptions[
+              Number(
+                button.dataset.sideDipIndex
+              )
+            ];
+
+        }
+      );
+
+    });
+
+
+  modal.classList.add(
+    "is-open"
+  );
+
+  document.body.classList.add(
+    "modal-open"
+  );
+
+}
+
+
+function confirmSideConfigurator() {
+
+  if (!selectedSideQty) {
+
+    alert(
+      "Välj 3 eller 6 st."
+    );
+
+    return;
+
+  }
+
+
+  if (!selectedSideDip) {
+
+    alert(
+      "Välj en dippsås."
+    );
+
+    return;
+
+  }
+
+
+  const prices = {
+
+    "Chicken Nuggets": {
+      3: 3.50,
+      6: 6.20
+    },
+
+    "Chicken Wings": {
+      3: 4.90,
+      6: 7.90
+    },
+
+    "Onion Rings": {
+      3: 3.50,
+      6: 5.50
+    },
+
+    "Halloumi Sticks": {
+      3: 3.90,
+      6: 7.90
+    },
+
+    "Cheddar Jalapeños": {
+      3: 4.20,
+      6: 7.90
+    }
+
+  };
+
+
+  const price =
+    prices[
+      selectedSideName
+    ][
+      selectedSideQty
+    ];
+
+
+  configuredItems.push({
+
+    id:
+      "side-" +
+      Date.now(),
+
+    name:
+      selectedSideName +
+      " " +
+      selectedSideQty +
+      " st – " +
+      selectedSideDip.name,
+
+    price:
+      price,
+
+    qty:
+      1
+
+  });
+
+
+  closeSideConfigurator();
 
   updateTotal();
 
 }
 
 
+function closeSideConfigurator() {
+
+  const modal =
+    document.getElementById(
+      "side-config-modal"
+    );
+
+  if (modal) {
+
+    modal.classList.remove(
+      "is-open"
+    );
+
+  }
+
+  document.body.classList.remove(
+    "modal-open"
+  );
+
+  selectedSideName =
+    null;
+
+  selectedSideQty =
+    null;
+
+  selectedSideDip =
+    null;
+
+}
+
+
 /* =====================================================
-   CART
+   HELPERS
+===================================================== */
+
+function findMenuItemByName(name) {
+
+  for (
+    const category of menuData
+  ) {
+
+    const item =
+      category.items.find(
+        item => item.name === name
+      );
+
+    if (item) return item;
+
+  }
+
+  return null;
+
+}
+
+
+/* =====================================================
+   ORDER CART
 ===================================================== */
 
 function getCartItems() {
@@ -3424,49 +3005,78 @@ function getCartItems() {
   const result = [];
 
 
-  Object.keys(cart).forEach(key => {
+  Object.keys(cart).forEach(
+    key => {
 
-    const quantity =
-      cart[key];
+      const quantity =
+        cart[key];
 
-
-    if (quantity <= 0) return;
-
-
-    const parts =
-      key.split("-");
+      if (quantity <= 0) return;
 
 
-    const categoryIndex =
-      Number(parts[0]);
+      const parts =
+        key.split("-");
 
 
-    const itemIndex =
-      Number(parts[1]);
+      const categoryIndex =
+        Number(parts[0]);
 
 
-    const item =
-      menuData[
-        categoryIndex
-      ].items[
-        itemIndex
-      ];
+      const itemIndex =
+        Number(parts[1]);
 
 
-    result.push({
+      const item =
+        menuData[
+          categoryIndex
+        ].items[
+          itemIndex
+        ];
 
-      name: item.name,
 
-      price: item.price,
+      result.push({
 
-      qty: quantity
+        name:
+          item.name,
 
-    });
+        price:
+          item.price,
 
-  });
+        qty:
+          quantity
+
+      });
+
+    }
+  );
+
+
+  configuredItems.forEach(
+    item =>
+      result.push({
+        ...item
+      })
+  );
 
 
   return result;
+
+}
+
+
+/* =====================================================
+   REMOVE CONFIGURED ITEM
+===================================================== */
+
+function removeConfiguredItem(id) {
+
+  configuredItems =
+    configuredItems.filter(
+      item =>
+        item.id !== id
+    );
+
+  updateTotal();
 
 }
 
@@ -3484,7 +3094,9 @@ function updateTotal() {
   const total =
     items.reduce(
       (sum,item) =>
-        sum + item.price * item.qty,
+        sum +
+        item.price *
+        item.qty,
       0
     );
 
@@ -3495,7 +3107,9 @@ function updateTotal() {
     formatPrice(total);
 
 
-  renderCartList(items);
+  renderCartList(
+    items
+  );
 
 }
 
@@ -3512,7 +3126,9 @@ function renderCartList(items) {
     );
 
 
-  if (items.length === 0) {
+  if (
+    items.length === 0
+  ) {
 
     list.innerHTML = `
 
@@ -3529,23 +3145,72 @@ function renderCartList(items) {
 
 
   list.innerHTML =
-    items.map(item => `
+    items.map(
+      item => {
 
-      <div class="cart-row">
+        const removeButton =
+          item.id
 
-        <span>
-          ${item.qty}x ${item.name}
-        </span>
+          ? `
+            <button
+              type="button"
+              class="cart-remove"
+              data-remove-side="${item.id}"
+              aria-label="Ta bort ${item.name}"
+            >
+              ×
+            </button>
+          `
 
-        <span>
-          ${formatPrice(
-            item.price * item.qty
-          )}
-        </span>
+          : "";
 
-      </div>
 
-    `).join("");
+        return `
+
+          <div class="cart-row">
+
+            <span>
+              ${item.qty}x ${item.name}
+            </span>
+
+            <span>
+              ${formatPrice(
+                item.price *
+                item.qty
+              )}
+
+              ${removeButton}
+
+            </span>
+
+          </div>
+
+        `;
+
+      }
+    ).join("");
+
+
+  list
+    .querySelectorAll(
+      "[data-remove-side]"
+    )
+    .forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            removeConfiguredItem(
+              button.dataset.removeSide
+            );
+
+          }
+        );
+
+      }
+    );
 
 }
 
@@ -3560,7 +3225,9 @@ function validateOrder() {
     getCartItems();
 
 
-  if (items.length === 0) {
+  if (
+    items.length === 0
+  ) {
 
     alert(
       "Lägg till minst en vara i beställningen."
@@ -3572,42 +3239,60 @@ function validateOrder() {
 
 
   const name =
-    document.getElementById(
-      "order-name"
-    ).value.trim();
+    document
+      .getElementById(
+        "order-name"
+      )
+      .value
+      .trim();
 
 
   const phone =
-    document.getElementById(
-      "order-phone"
-    ).value.trim();
+    document
+      .getElementById(
+        "order-phone"
+      )
+      .value
+      .trim();
 
 
   const time =
-    document.getElementById(
-      "order-time"
-    ).value;
+    document
+      .getElementById(
+        "order-time"
+      )
+      .value;
 
 
   const answer =
-    document.getElementById(
-      "anti-bot"
-    ).value.trim();
+    document
+      .getElementById(
+        "anti-bot"
+      )
+      .value
+      .trim();
 
 
   const confirmed =
-    document.getElementById(
-      "order-confirmed"
-    ).checked;
+    document
+      .getElementById(
+        "order-confirmed"
+      )
+      .checked;
 
 
   const honeypot =
-    document.getElementById(
-      "website"
-    ).value.trim();
+    document
+      .getElementById(
+        "website"
+      )
+      .value
+      .trim();
 
 
-  if (honeypot !== "") {
+  if (
+    honeypot !== ""
+  ) {
 
     alert(
       "Något gick fel. Försök igen."
@@ -3625,7 +3310,9 @@ function validateOrder() {
     );
 
     document
-      .getElementById("order-name")
+      .getElementById(
+        "order-name"
+      )
       .focus();
 
     return false;
@@ -3640,14 +3327,18 @@ function validateOrder() {
     );
 
 
-  if (phoneDigits.length < 7) {
+  if (
+    phoneDigits.length < 7
+  ) {
 
     alert(
       "Fyll i ett giltigt telefonnummer."
     );
 
     document
-      .getElementById("order-phone")
+      .getElementById(
+        "order-phone"
+      )
       .focus();
 
     return false;
@@ -3662,7 +3353,9 @@ function validateOrder() {
     );
 
     document
-      .getElementById("order-time")
+      .getElementById(
+        "order-time"
+      )
       .focus();
 
     return false;
@@ -3670,14 +3363,18 @@ function validateOrder() {
   }
 
 
-  if (answer !== "7") {
+  if (
+    answer !== "7"
+  ) {
 
     alert(
       "Kontrollfrågan är inte rätt."
     );
 
     document
-      .getElementById("anti-bot")
+      .getElementById(
+        "anti-bot"
+      )
       .focus();
 
     return false;
@@ -3713,27 +3410,35 @@ function buildWhatsAppMessage() {
 
   const name =
     document
-      .getElementById("order-name")
+      .getElementById(
+        "order-name"
+      )
       .value
       .trim();
 
 
   const phone =
     document
-      .getElementById("order-phone")
+      .getElementById(
+        "order-phone"
+      )
       .value
       .trim();
 
 
   const time =
     document
-      .getElementById("order-time")
+      .getElementById(
+        "order-time"
+      )
       .value;
 
 
   const notes =
     document
-      .getElementById("order-notes")
+      .getElementById(
+        "order-notes"
+      )
       .value
       .trim();
 
@@ -3741,7 +3446,9 @@ function buildWhatsAppMessage() {
   const total =
     items.reduce(
       (sum,item) =>
-        sum + item.price * item.qty,
+        sum +
+        item.price *
+        item.qty,
       0
     );
 
@@ -3758,16 +3465,19 @@ function buildWhatsAppMessage() {
 `;
 
 
-  items.forEach(item => {
+  items.forEach(
+    item => {
 
-    message +=
+      message +=
 
 `${item.qty}x ${item.name} – ${formatPrice(
-  item.price * item.qty
+  item.price *
+  item.qty
 )}
 `;
 
-  });
+    }
+  );
 
 
   message +=
@@ -3805,17 +3515,20 @@ Vänligen bekräfta beställningen via WhatsApp.`;
 
 
 /* =====================================================
-   SEND
+   SEND ORDER
 ===================================================== */
 
 document
-  .getElementById("order-submit")
+  .getElementById(
+    "order-submit"
+  )
   .addEventListener(
     "click",
     function() {
 
-
-      if (!validateOrder()) {
+      if (
+        !validateOrder()
+      ) {
 
         return;
 
@@ -3830,7 +3543,9 @@ document
         "https://wa.me/" +
         WHATSAPP_NUMBER +
         "?text=" +
-        encodeURIComponent(message);
+        encodeURIComponent(
+          message
+        );
 
 
       window.open(
@@ -3857,13 +3572,220 @@ document
 
 
 /* =====================================================
+   MODAL EVENTS
+===================================================== */
+
+document.addEventListener(
+  "click",
+  event => {
+
+    const drinkButton =
+      event.target.closest(
+        "[data-drink-index]"
+      );
+
+
+    if (
+      drinkButton
+    ) {
+
+      document
+        .querySelectorAll(
+          "[data-drink-index]"
+        )
+        .forEach(
+          button =>
+            button.classList.remove(
+              "selected"
+            )
+        );
+
+
+      drinkButton.classList.add(
+        "selected"
+      );
+
+
+      selectedMealDrink =
+        drinkOptions[
+          Number(
+            drinkButton.dataset.drinkIndex
+          )
+        ];
+
+    }
+
+
+    const sideQty =
+      event.target.closest(
+        "[data-side-qty]"
+      );
+
+
+    if (
+      sideQty
+    ) {
+
+      document
+        .querySelectorAll(
+          "[data-side-qty]"
+        )
+        .forEach(
+          button =>
+            button.classList.remove(
+              "selected"
+            )
+        );
+
+
+      sideQty.classList.add(
+        "selected"
+      );
+
+    }
+
+
+    const mealModal =
+      document.getElementById(
+        "meal-drink-modal"
+      );
+
+
+    const sideModal =
+      document.getElementById(
+        "side-config-modal"
+      );
+
+
+    if (
+      event.target ===
+      mealModal
+    ) {
+
+      closeMealConfigurator();
+
+    }
+
+
+    if (
+      event.target ===
+      sideModal
+    ) {
+
+      closeSideConfigurator();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   MAIN MENU BUTTONS
+===================================================== */
+
+document.addEventListener(
+  "click",
+  event => {
+
+    const button =
+      event.target.closest(
+        ".menu-add"
+      );
+
+
+    if (!button) return;
+
+
+    const categoryIndex =
+      Number(
+        button.dataset.categoryIndex
+      );
+
+
+    const itemIndex =
+      Number(
+        button.dataset.itemIndex
+      );
+
+
+    const item =
+      menuData[
+        categoryIndex
+      ].items[
+        itemIndex
+      ];
+
+
+    if (
+      categoryIndex === 0
+    ) {
+
+      openMealConfigurator(
+        item.name
+      );
+
+      return;
+
+    }
+
+
+    if (
+      categoryIndex === 4 &&
+      itemIndex >= 2 &&
+      itemIndex <= 6
+    ) {
+
+      openSideConfigurator(
+        item.name
+      );
+
+      return;
+
+    }
+
+
+    addFromMainMenu(
+      button.dataset.key
+    );
+
+  }
+);
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "Escape"
+    ) {
+
+      closeSideConfigurator();
+
+      closeMealConfigurator();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
    START
 ===================================================== */
 
 renderMenu();
 
-</script>
+updateMainMenuButtons();
 
+updateTotal();
+
+</script>
 
 </body>
 </html>
