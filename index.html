@@ -1,3476 +1,5319 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Flamingo Grill – Burgare & Middle Eastern Food i Mariehamn</title>
-
-<meta name="description" content="Flamingo Grill i Mariehamn på Åland. Saftiga högrevburgare, wraps, tallrikar och krispiga tillbehör. Beställ enkelt för avhämtning.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WP8XVNNBSH"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-WP8XVNNBSH');
-</script>
-
-<style>
-
-:root{
-  --orange:#ff6b2d;
-  --orange-dark:#e9571d;
-  --cyan:#18d5d8;
-  --green:#25D366;
-  --bg:#090909;
-  --bg2:#111111;
-  --card:#161616;
-  --card2:#1c1c1c;
-  --text:#ffffff;
-  --muted:#aaa;
-  --border:rgba(255,255,255,.09);
-}
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:85px;
-}
-
-body{
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-  line-height:1.6;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-button,
-input,
-textarea,
-select{
-  font:inherit;
-}
-
-.container{
-  width:min(1180px,92%);
-  margin:auto;
-}
-
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(8,8,8,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--border);
-}
-
-.nav-inner{
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.logo{
-  font-family:Anton,sans-serif;
-  font-size:28px;
-  letter-spacing:1px;
-  white-space:nowrap;
-}
-
-.logo span{
-  color:var(--orange);
-}
-
-.nav-links{
-  list-style:none;
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-
-.nav-links a{
-  display:block;
-  padding:10px 13px;
-  border-radius:9px;
-  font-size:14px;
-  font-weight:700;
-  transition:.2s;
-}
-
-.nav-links a:hover{
-  color:var(--orange);
-  background:rgba(255,107,45,.08);
-}
-
-.nav-order{
-  background:var(--orange);
-  color:#fff!important;
-}
-
-.nav-order:hover{
-  background:var(--orange-dark)!important;
-  color:#fff!important;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  min-height:680px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.58),rgba(0,0,0,.82)),
-    url("f.rum.jpg") center/cover;
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  width:450px;
-  height:450px;
-  right:-180px;
-  top:-150px;
-  border-radius:50%;
-  background:var(--orange);
-  filter:blur(130px);
-  opacity:.16;
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:750px;
-}
-
-.hero-badge{
-  display:inline-block;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(0,0,0,.35);
-  padding:8px 14px;
-  border-radius:50px;
-  color:#ddd;
-  font-size:14px;
-  margin-bottom:22px;
-}
-
-.hero h1{
-  font-family:Anton,sans-serif;
-  font-size:clamp(70px,12vw,150px);
-  line-height:.83;
-  letter-spacing:2px;
-}
-
-.hero h1 span{
-  color:var(--orange);
-}
-
-.hero p{
-  margin-top:25px;
-  font-size:clamp(19px,3vw,28px);
-  font-weight:600;
-  color:#ddd;
-}
-
-.hero-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:32px;
-}
-
-.btn{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  min-height:50px;
-  padding:0 22px;
-  border-radius:10px;
-  font-weight:800;
-  transition:.2s;
-  border:1px solid transparent;
-}
-
-.btn-primary{
-  background:var(--orange);
-}
-
-.btn-primary:hover{
-  background:var(--orange-dark);
-  transform:translateY(-2px);
-}
-
-.btn-secondary{
-  background:rgba(255,255,255,.06);
-  border-color:rgba(255,255,255,.15);
-}
-
-.btn-secondary:hover{
-  border-color:var(--cyan);
-  color:var(--cyan);
-}
-
-
-/* =========================
-   INTRO
-========================= */
-
-.intro{
-  padding:90px 0;
-  background:var(--bg);
-}
-
-.intro-grid{
-  display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:60px;
-  align-items:center;
-}
-
-.intro h2{
-  font-family:Anton,sans-serif;
-  font-size:48px;
-  margin-bottom:22px;
-}
-
-.intro p{
-  color:#ccc;
-  margin-bottom:18px;
-  font-size:17px;
-}
-
-.info-box{
-  background:linear-gradient(145deg,#181818,#101010);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:30px;
-  box-shadow:0 20px 60px rgba(0,0,0,.25);
-}
-
-.info-box h3{
-  font-size:22px;
-  margin-bottom:20px;
-}
-
-.info-list{
-  display:grid;
-  gap:11px;
-}
-
-.info-item{
-  background:#202020;
-  border-radius:10px;
-  padding:12px 15px;
-  color:#eee;
-}
-
-
-/* =========================
-   FEATURED BURGER
-========================= */
-
-.featured{
-  padding:30px 0 90px;
-}
-
-.featured-card{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:24px;
-  overflow:hidden;
-}
-
-.featured-image{
-  min-height:430px;
-  background:url("oktm.jpg") center/cover;
-}
-
-.featured-content{
-  padding:50px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.featured-label{
-  color:var(--orange);
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  font-size:13px;
-  margin-bottom:10px;
-}
-
-.featured-content h2{
-  font-family:Anton,sans-serif;
-  font-size:50px;
-  margin-bottom:18px;
-}
-
-.featured-content p{
-  color:#ccc;
-  font-size:17px;
-  margin-bottom:20px;
-}
-
-
-/* =========================
-   GENERAL SECTIONS
-========================= */
-
-.menu-section,
-.room,
-.contact-section,
-.order-section{
-  padding:90px 0;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:45px;
-}
-
-.section-title h2{
-  font-family:Anton,sans-serif;
-  font-size:56px;
-  letter-spacing:1px;
-}
-
-.section-title p{
-  color:#aaa;
-  margin-top:8px;
-}
-
-
-/* =========================
-   MENU
-========================= */
-
-.menu-categories{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:40px;
-}
-
-.menu-categories a{
-  padding:10px 16px;
-  background:#171717;
-  border:1px solid var(--border);
-  border-radius:50px;
-  font-size:14px;
-  font-weight:700;
-  transition:.2s;
-}
-
-.menu-categories a:hover{
-  color:#fff;
-  background:var(--orange);
-  border-color:var(--orange);
-}
-
-.menu-category{
-  margin-top:55px;
-  scroll-margin-top:95px;
-}
-
-.menu-category-title{
-  font-family:Anton,sans-serif;
-  font-size:34px;
-  margin-bottom:20px;
-  padding-bottom:12px;
-  border-bottom:1px solid var(--border);
-}
-
-.menu-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.menu-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:17px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  transition:.2s;
-}
-
-.menu-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(255,107,45,.35);
-}
-
-.menu-image{
-  width:100%;
-  aspect-ratio:1.35/1;
-  object-fit:cover;
-}
-
-.menu-card-content{
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  flex:1;
-}
-
-.menu-card h4{
-  font-size:19px;
-  margin-bottom:6px;
-}
-
-.menu-description{
-  color:#999;
-  font-size:13px;
-  margin-bottom:12px;
-  flex:1;
-}
-
-.menu-bottom{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-top:10px;
-}
-
-.menu-price{
-  font-size:20px;
-  font-weight:800;
-  color:var(--orange);
-}
-
-.add-btn{
-  border:0;
-  background:var(--orange);
-  color:#fff;
-  border-radius:9px;
-  padding:9px 13px;
-  cursor:pointer;
-  font-weight:800;
-  transition:.2s;
-}
-
-.add-btn:hover{
-  background:var(--orange-dark);
-  transform:scale(1.03);
-}
-
-
-/* =========================
-   DRINK CARDS
-========================= */
-
-.drink-card{
-  min-height:135px;
-  justify-content:center;
-}
-
-.drink-icon{
-  font-size:38px;
-  margin-bottom:8px;
-}
-
-
-/* =========================
-   ORDER SECTION
-========================= */
-
-.order-section{
-  background:
-    radial-gradient(circle at 20% 20%,rgba(255,107,45,.09),transparent 30%),
-    #0c0c0c;
-}
-
-.order-layout{
-  display:grid;
-  grid-template-columns:1fr .9fr;
-  gap:25px;
-  align-items:start;
-}
-
-.order-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:28px;
-}
-
-.order-card h3{
-  font-size:25px;
-  margin-bottom:20px;
-}
-
-.cart-empty{
-  color:#888;
-  text-align:center;
-  padding:30px 10px;
-}
-
-.cart-item{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  padding:15px 0;
-  border-bottom:1px solid var(--border);
-}
-
-.cart-item-name{
-  font-weight:700;
-}
-
-.cart-item-details{
-  color:#999;
-  font-size:13px;
-  margin-top:3px;
-}
-
-.cart-item-price{
-  color:var(--orange);
-  font-weight:800;
-  white-space:nowrap;
-}
-
-.cart-remove{
-  border:0;
-  background:transparent;
-  color:#888;
-  cursor:pointer;
-  font-size:12px;
-  margin-top:5px;
-}
-
-.cart-remove:hover{
-  color:#ff4d4d;
-}
-
-.cart-total{
-  display:flex;
-  justify-content:space-between;
-  font-size:22px;
-  font-weight:800;
-  margin-top:20px;
-}
-
-.form-group{
-  margin-bottom:17px;
-}
-
-.form-group label{
-  display:block;
-  margin-bottom:7px;
-  font-size:14px;
-  font-weight:700;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-  width:100%;
-  border:1px solid #333;
-  background:#0c0c0c;
-  color:#fff;
-  border-radius:10px;
-  padding:13px 14px;
-  outline:none;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus{
-  border-color:var(--orange);
-}
-
-.form-group textarea{
-  min-height:100px;
-  resize:vertical;
-}
-
-.pickup-note{
-  color:#888;
-  font-size:12px;
-  margin-top:6px;
-}
-
-.security-box{
-  padding:15px;
-  background:#111;
-  border:1px solid rgba(24,213,216,.2);
-  border-radius:12px;
-  margin-top:20px;
-}
-
-.security-box p{
-  color:var(--cyan);
-  font-weight:800;
-  margin-bottom:10px;
-}
-
-.confirm-row{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  margin:18px 0;
-}
-
-.confirm-row input{
-  margin-top:5px;
-  width:18px;
-  height:18px;
-  accent-color:var(--orange);
-}
-
-.confirm-row label{
-  color:#bbb;
-  font-size:13px;
-}
-
-.hp-field{
-  position:absolute!important;
-  left:-9999px!important;
-  width:1px!important;
-  height:1px!important;
-  opacity:0!important;
-}
-
-.whatsapp-submit{
-  width:100%;
-  border:0;
-  padding:16px;
-  background:var(--green);
-  color:#fff;
-  border-radius:11px;
-  font-size:16px;
-  font-weight:800;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.whatsapp-submit:hover{
-  background:#1ebe57;
-  transform:translateY(-2px);
-}
-
-.order-note{
-  color:#777;
-  text-align:center;
-  font-size:12px;
-  margin-top:12px;
-}
-
-.confirmation-message{
-  margin-top:15px;
-  text-align:center;
-  font-weight:700;
-}
-
-
-/* =========================
-   ROOM
-========================= */
-
-.room{
-  background:#101010;
-}
-
-.room-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center;
-}
-
-.room-image{
-  min-height:560px;
-  border-radius:22px;
-  background:
-    linear-gradient(rgba(0,0,0,.05),rgba(0,0,0,.35)),
-    url("f.rum.jpg") center/cover;
-}
-
-.room-content h2{
-  font-family:Anton,sans-serif;
-  font-size:55px;
-  margin-bottom:20px;
-}
-
-.room-content p{
-  color:#ccc;
-  font-size:17px;
-  margin-bottom:18px;
-}
-
-.room-gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:35px;
-}
-
-.room-gallery img{
-  width:100%;
-  aspect-ratio:1;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.contact-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:17px;
-  padding:25px;
-}
-
-.contact-card h3{
-  font-size:20px;
-  margin-bottom:15px;
-}
-
-.contact-card p{
-  color:#bbb;
-}
-
-.contact-card a{
-  color:#ddd;
-}
-
-.contact-card a:hover{
-  color:var(--orange);
-}
-
-.social{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-
-.social a{
-  background:#171717;
-  border:1px solid var(--border);
-  padding:11px 17px;
-  border-radius:10px;
-  font-weight:700;
-}
-
-
-/* =========================
-   MODAL
-========================= */
-
-.modal{
-  position:fixed;
-  inset:0;
-  z-index:2000;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  background:rgba(0,0,0,.78);
-  backdrop-filter:blur(7px);
-}
-
-.modal.active{
-  display:flex;
-}
-
-.modal-box{
-  width:min(500px,100%);
-  max-height:90vh;
-  overflow:auto;
-  background:#181818;
-  border:1px solid #333;
-  border-radius:20px;
-  padding:26px;
-  box-shadow:0 30px 100px rgba(0,0,0,.5);
-}
-
-.modal-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  margin-bottom:20px;
-}
-
-.modal-head h3{
-  font-size:23px;
-}
-
-.modal-close{
-  border:0;
-  background:#292929;
-  color:#fff;
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  cursor:pointer;
-  font-size:18px;
-}
-
-.option-title{
-  font-weight:800;
-  margin:20px 0 10px;
-}
-
-.option-grid{
-  display:grid;
-  gap:9px;
-}
-
-.option{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:12px;
-  background:#101010;
-  border:1px solid #292929;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-.option:has(input:checked){
-  border-color:var(--orange);
-  background:rgba(255,107,45,.08);
-}
-
-.option input{
-  accent-color:var(--orange);
-}
-
-.modal-actions{
-  display:flex;
-  gap:10px;
-  margin-top:22px;
-}
-
-.modal-actions button{
-  flex:1;
-  border:0;
-  padding:13px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:800;
-}
-
-.modal-cancel{
-  background:#292929;
-  color:#fff;
-}
-
-.modal-confirm{
-  background:var(--orange);
-  color:#fff;
-}
-
-
-/* =========================
-   FLOATING ORDER BUTTON
-========================= */
-
-.order-button{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:900;
-  background:var(--orange);
-  color:#fff;
-  padding:14px 19px;
-  border-radius:50px;
-  font-weight:800;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
-  transition:.2s;
-}
-
-.order-button:hover{
-  background:var(--orange-dark);
-  transform:translateY(-2px);
-}
-
-.cart-count{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:20px;
-  height:20px;
-  padding:0 5px;
-  border-radius:20px;
-  background:#fff;
-  color:var(--orange);
-  font-size:11px;
-  margin-left:5px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-  border-top:1px solid var(--border);
-  padding:30px 0;
-  text-align:center;
-  color:#777;
-  font-size:13px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:850px){
-
-  .nav-inner{
-    min-height:62px;
-  }
-
-  .logo{
-    font-size:23px;
-  }
-
-  .nav-links{
-    gap:1px;
-  }
-
-  .nav-links a{
-    padding:8px 7px;
-    font-size:11px;
-  }
-
-  .hero{
-    min-height:600px;
-  }
-
-  .hero h1{
-    font-size:72px;
-  }
-
-  .intro-grid,
-  .featured-card,
-  .order-layout,
-  .room-grid{
-    grid-template-columns:1fr;
-  }
-
-  .featured-image{
-    min-height:330px;
-  }
-
-  .featured-content{
-    padding:30px;
-  }
-
-  .menu-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .contact-grid{
-    grid-template-columns:1fr;
-  }
-
-  .room-image{
-    min-height:400px;
-  }
-
-  .room-gallery{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-@media(max-width:520px){
-
-  .container{
-    width:min(94%,1180px);
-  }
-
-  .hero{
-    min-height:570px;
-  }
-
-  .hero h1{
-    font-size:60px;
-  }
-
-  .hero p{
-    font-size:17px;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-  }
-
-  .btn{
-    width:100%;
-  }
-
-  .intro,
-  .menu-section,
-  .room,
-  .contact-section,
-  .order-section{
-    padding:65px 0;
-  }
-
-  .intro h2,
-  .room-content h2{
-    font-size:39px;
-  }
-
-  .section-title h2{
-    font-size:44px;
-  }
-
-  .menu-grid{
-    grid-template-columns:1fr;
-  }
-
-  .menu-category-title{
-    font-size:29px;
-  }
-
-  .featured-content h2{
-    font-size:39px;
-  }
-
-  .featured-image{
-    min-height:280px;
-  }
-
-  .room-gallery{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .order-button{
-    right:12px;
-    bottom:12px;
-    padding:13px 16px;
-    font-size:14px;
-  }
-}
-
-</style>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Flamingo Grill – Burgare & Middle Eastern Food i Mariehamn
+  </title>
+
+  <meta
+    name="description"
+    content="Flamingo Grill i Mariehamn, Åland. Högrevburgare, wraps, tallrikar, tillbehör och kalla drycker. Beställ enkelt för avhämtning."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       GOOGLE ANALYTICS
+  ====================================================== -->
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-WP8XVNNBSH"
+  ></script>
+
+  <script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-WP8XVNNBSH');
+
+  </script>
+
+
+  <!-- =====================================================
+       CSS
+  ====================================================== -->
+
+  <style>
+
+    :root {
+
+      --orange: #ff6b2d;
+      --orange-dark: #e9571d;
+
+      --cyan: #16d7dc;
+
+      --green: #25D366;
+
+      --black: #080808;
+      --dark: #101010;
+      --card: #171717;
+      --card2: #1d1d1d;
+
+      --white: #ffffff;
+      --muted: #aaaaaa;
+
+      --border: rgba(255,255,255,.10);
+
+    }
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+
+    body {
+
+      background: var(--black);
+
+      color: var(--white);
+
+      font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+      line-height: 1.6;
+
+    }
+
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+
+    .container {
+
+      width: min(1180px, 92%);
+
+      margin: 0 auto;
+
+    }
+
+
+    /* =====================================================
+       NAVBAR
+    ====================================================== */
+
+    .navbar {
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      background: rgba(5,5,5,.96);
+
+      backdrop-filter: blur(14px);
+
+      border-bottom:
+        1px solid var(--border);
+
+    }
+
+
+    .nav-inner {
+
+      min-height: 72px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+    }
+
+
+    .logo {
+
+      font-family: Anton, sans-serif;
+
+      font-size: 28px;
+
+      letter-spacing: .5px;
+
+      white-space: nowrap;
+
+    }
+
+
+    .logo span {
+      color: var(--orange);
+    }
+
+
+    .nav-links {
+
+      list-style: none;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 4px;
+
+    }
+
+
+    .nav-links a {
+
+      display: block;
+
+      padding: 9px 11px;
+
+      border-radius: 8px;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      transition: .2s;
+
+    }
+
+
+    .nav-links a:hover {
+
+      color: var(--orange);
+
+      background:
+        rgba(255,107,45,.08);
+
+    }
+
+
+    .nav-order {
+
+      background: var(--orange);
+
+      color: white !important;
+
+    }
+
+
+    .nav-order:hover {
+
+      background:
+        var(--orange-dark) !important;
+
+      color: white !important;
+
+    }
+
+
+    /* =====================================================
+       HERO
+    ====================================================== */
+
+    .hero {
+
+      min-height: 680px;
+
+      display: flex;
+
+      align-items: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.92),
+          rgba(0,0,0,.60),
+          rgba(0,0,0,.82)
+        ),
+
+        url("f.rum.jpg")
+        center / cover;
+
+    }
+
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -220px;
+      top: -180px;
+
+      border-radius: 50%;
+
+      background: var(--orange);
+
+      filter: blur(130px);
+
+      opacity: .14;
+
+    }
+
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 780px;
+
+    }
+
+
+    .hero-badge {
+
+      display: inline-block;
+
+      padding: 8px 14px;
+
+      border:
+        1px solid rgba(255,255,255,.18);
+
+      border-radius: 50px;
+
+      background:
+        rgba(0,0,0,.35);
+
+      color: #ddd;
+
+      font-size: 14px;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .hero h1 {
+
+      font-family: Anton, sans-serif;
+
+      font-size:
+        clamp(70px, 12vw, 150px);
+
+      line-height: .84;
+
+      letter-spacing: 2px;
+
+    }
+
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+
+    .hero p {
+
+      margin-top: 25px;
+
+      font-size:
+        clamp(18px, 3vw, 28px);
+
+      font-weight: 600;
+
+      color: #ddd;
+
+    }
+
+
+    .hero-buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 32px;
+
+    }
+
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 50px;
+
+      padding:
+        0 22px;
+
+      border-radius: 10px;
+
+      font-weight: 800;
+
+      border:
+        1px solid transparent;
+
+      transition: .2s;
+
+      cursor: pointer;
+
+    }
+
+
+    .btn-primary {
+
+      background:
+        var(--orange);
+
+      color: white;
+
+    }
+
+
+    .btn-primary:hover {
+
+      background:
+        var(--orange-dark);
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .btn-secondary {
+
+      background:
+        rgba(255,255,255,.06);
+
+      border-color:
+        rgba(255,255,255,.15);
+
+    }
+
+
+    .btn-secondary:hover {
+
+      border-color:
+        var(--cyan);
+
+      color:
+        var(--cyan);
+
+    }
+
+
+    /* =====================================================
+       INTRO
+    ====================================================== */
+
+    .intro {
+
+      padding:
+        90px 0;
+
+    }
+
+
+    .intro-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1.3fr .7fr;
+
+      gap: 60px;
+
+      align-items: center;
+
+    }
+
+
+    .intro h2 {
+
+      font-family:
+        Anton,
+        sans-serif;
+
+      font-size: 48px;
+
+      margin-bottom: 22px;
+
+    }
+
+
+    .intro p {
+
+      color: #ccc;
+
+      font-size: 17px;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .info-box {
+
+      padding: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #191919,
+          #101010
+        );
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 20px;
+
+    }
+
+
+    .info-box h3 {
+
+      font-size: 22px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .info-list {
+
+      display: grid;
+
+      gap: 10px;
+
+    }
+
+
+    .info-item {
+
+      padding: 12px 15px;
+
+      background: #202020;
+
+      border-radius: 10px;
+
+      color: #eee;
+
+    }
+
+
+    /* =====================================================
+       FEATURED BURGER
+    ====================================================== */
+
+    .featured {
+
+      padding:
+        20px 0 90px;
+
+    }
+
+
+    .featured-card {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      overflow: hidden;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 24px;
+
+    }
+
+
+    .featured-image {
+
+      min-height: 430px;
+
+      background:
+        url("oktm.jpg")
+        center / cover;
+
+    }
+
+
+    .featured-content {
+
+      padding: 50px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+    }
+
+
+    .featured-label {
+
+      color: var(--orange);
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .featured-content h2 {
+
+      font-family:
+        Anton,
+        sans-serif;
+
+      font-size: 50px;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .featured-content p {
+
+      color: #ccc;
+
+      font-size: 17px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    /* =====================================================
+       GENERAL SECTIONS
+    ====================================================== */
+
+    .menu-section,
+    .order-section,
+    .room,
+    .contact-section {
+
+      padding:
+        90px 0;
+
+    }
+
+
+    .section-title {
+
+      text-align: center;
+
+      margin-bottom: 45px;
+
+    }
+
+
+    .section-title h2 {
+
+      font-family:
+        Anton,
+        sans-serif;
+
+      font-size: 56px;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    .section-title p {
+
+      color: #aaa;
+
+      margin-top: 8px;
+
+      font-size: 17px;
+
+    }
+
+
+    /* =====================================================
+       MENU CATEGORY BUTTONS
+    ====================================================== */
+
+    .menu-categories {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 10px;
+
+      margin-bottom: 45px;
+
+    }
+
+
+    .menu-categories a {
+
+      padding:
+        10px 16px;
+
+      background:
+        #171717;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 50px;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      transition: .2s;
+
+    }
+
+
+    .menu-categories a:hover {
+
+      background:
+        var(--orange);
+
+      border-color:
+        var(--orange);
+
+    }
+
+
+    /* =====================================================
+       MENU
+    ====================================================== */
+
+    .menu-category {
+
+      margin-top: 55px;
+
+      scroll-margin-top: 90px;
+
+    }
+
+
+    .menu-category-title {
+
+      font-family:
+        Anton,
+        sans-serif;
+
+      font-size: 34px;
+
+      margin-bottom: 20px;
+
+      padding-bottom: 12px;
+
+      border-bottom:
+        1px solid var(--border);
+
+    }
+
+
+    .menu-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+    }
+
+
+    .menu-card {
+
+      display: flex;
+
+      flex-direction: column;
+
+      overflow: hidden;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 17px;
+
+      transition: .2s;
+
+    }
+
+
+    .menu-card:hover {
+
+      transform:
+        translateY(-4px);
+
+      border-color:
+        rgba(255,107,45,.35);
+
+    }
+
+
+    .menu-image {
+
+      width: 100%;
+
+      aspect-ratio:
+        1.35 / 1;
+
+      object-fit: cover;
+
+    }
+
+
+    .menu-card-content {
+
+      padding: 18px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      flex: 1;
+
+    }
+
+
+    .menu-card h4 {
+
+      font-size: 19px;
+
+      margin-bottom: 7px;
+
+    }
+
+
+    .menu-description {
+
+      color: #999;
+
+      font-size: 13px;
+
+      margin-bottom: 14px;
+
+      flex: 1;
+
+    }
+
+
+    .menu-bottom {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 10px;
+
+      margin-top: 10px;
+
+    }
+
+
+    .menu-price {
+
+      color: var(--orange);
+
+      font-size: 20px;
+
+      font-weight: 800;
+
+    }
+
+
+    .add-btn {
+
+      border: 0;
+
+      background:
+        var(--cyan);
+
+      color:
+        #050505;
+
+      border-radius: 50%;
+
+      width: 52px;
+
+      height: 52px;
+
+      font-size: 29px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition: .2s;
+
+      box-shadow:
+        0 0 18px
+        rgba(22,215,220,.15);
+
+    }
+
+
+    .add-btn:hover {
+
+      transform:
+        scale(1.08);
+
+      background:
+        #3fecef;
+
+    }
+
+
+    .simple-add {
+
+      width: auto;
+
+      height: auto;
+
+      border-radius: 9px;
+
+      padding:
+        9px 13px;
+
+      font-size: 14px;
+
+    }
+
+
+    /* =====================================================
+       DRINKS
+    ====================================================== */
+
+    .drink-card {
+
+      min-height: 190px;
+
+      justify-content: center;
+
+    }
+
+
+    .drink-icon {
+
+      font-size: 45px;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    /* =====================================================
+       ORDER
+       IMPORTANT:
+       NO MENU HERE
+    ====================================================== */
+
+    .order-section {
+
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(255,107,45,.10),
+          transparent 30%
+        ),
+
+        #0c0c0c;
+
+    }
+
+
+    .order-layout {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr .9fr;
+
+      gap: 25px;
+
+      align-items: start;
+
+    }
+
+
+    .order-card {
+
+      background:
+        var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 20px;
+
+      padding: 28px;
+
+    }
+
+
+    .order-card h3 {
+
+      font-size: 25px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    /* =====================================================
+       CART
+    ====================================================== */
+
+    .cart-empty {
+
+      padding: 35px 10px;
+
+      text-align: center;
+
+      color: #777;
+
+    }
+
+
+    .cart-item {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding:
+        15px 0;
+
+      border-bottom:
+        1px solid var(--border);
+
+    }
+
+
+    .cart-item-name {
+
+      font-weight: 800;
+
+    }
+
+
+    .cart-item-details {
+
+      color: #999;
+
+      font-size: 13px;
+
+      margin-top: 3px;
+
+    }
+
+
+    .cart-item-price {
+
+      color:
+        var(--orange);
+
+      font-weight: 800;
+
+      white-space: nowrap;
+
+    }
+
+
+    .cart-remove {
+
+      display: block;
+
+      margin-top: 5px;
+
+      padding: 0;
+
+      border: 0;
+
+      background: transparent;
+
+      color: #777;
+
+      font-size: 12px;
+
+      cursor: pointer;
+
+    }
+
+
+    .cart-remove:hover {
+
+      color: #ff5555;
+
+    }
+
+
+    .cart-total {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      margin-top: 22px;
+
+      font-size: 23px;
+
+      font-weight: 800;
+
+    }
+
+
+    /* =====================================================
+       ORDER FORM
+    ====================================================== */
+
+    .form-group {
+
+      margin-bottom: 17px;
+
+    }
+
+
+    .form-group label {
+
+      display: block;
+
+      margin-bottom: 7px;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+    }
+
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+
+      width: 100%;
+
+      padding:
+        13px 14px;
+
+      border:
+        1px solid #333;
+
+      border-radius: 10px;
+
+      background:
+        #0b0b0b;
+
+      color: white;
+
+      outline: none;
+
+    }
+
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+
+      border-color:
+        var(--orange);
+
+    }
+
+
+    .form-group textarea {
+
+      min-height: 105px;
+
+      resize: vertical;
+
+    }
+
+
+    .pickup-note {
+
+      color: #777;
+
+      font-size: 12px;
+
+      margin-top: 6px;
+
+    }
+
+
+    .security-box {
+
+      padding: 15px;
+
+      background: #111;
+
+      border:
+        1px solid
+        rgba(22,215,220,.20);
+
+      border-radius: 12px;
+
+      margin-top: 20px;
+
+    }
+
+
+    .security-box > p {
+
+      color:
+        var(--cyan);
+
+      font-weight: 800;
+
+      margin-bottom: 10px;
+
+    }
+
+
+    .confirm-row {
+
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 10px;
+
+      margin:
+        18px 0;
+
+    }
+
+
+    .confirm-row input {
+
+      width: 18px;
+
+      height: 18px;
+
+      margin-top: 4px;
+
+      accent-color:
+        var(--orange);
+
+    }
+
+
+    .confirm-row label {
+
+      color: #aaa;
+
+      font-size: 13px;
+
+    }
+
+
+    .whatsapp-submit {
+
+      width: 100%;
+
+      border: 0;
+
+      padding: 16px;
+
+      border-radius: 11px;
+
+      background:
+        var(--green);
+
+      color: white;
+
+      font-size: 16px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition: .2s;
+
+    }
+
+
+    .whatsapp-submit:hover {
+
+      background:
+        #1ebe57;
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .order-note {
+
+      color: #666;
+
+      text-align: center;
+
+      font-size: 12px;
+
+      margin-top: 12px;
+
+    }
+
+
+    .confirmation-message {
+
+      text-align: center;
+
+      font-weight: 800;
+
+      margin-top: 15px;
+
+    }
+
+
+    .hp-field {
+
+      position: absolute !important;
+
+      left: -9999px !important;
+
+      width: 1px !important;
+
+      height: 1px !important;
+
+      opacity: 0 !important;
+
+    }
+
+
+    /* =====================================================
+       ROOM
+    ====================================================== */
+
+    .room {
+
+      background:
+        #101010;
+
+    }
+
+
+    .room-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 50px;
+
+      align-items: center;
+
+    }
+
+
+    .room-image {
+
+      min-height: 560px;
+
+      border-radius: 22px;
+
+      background:
+
+        linear-gradient(
+          rgba(0,0,0,.05),
+          rgba(0,0,0,.35)
+        ),
+
+        url("f.rum.jpg")
+        center / cover;
+
+    }
+
+
+    .room-content h2 {
+
+      font-family:
+        Anton,
+        sans-serif;
+
+      font-size: 55px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .room-content p {
+
+      color: #ccc;
+
+      font-size: 17px;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .room-gallery {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 12px;
+
+      margin-top: 35px;
+
+    }
+
+
+    .room-gallery img {
+
+      width: 100%;
+
+      aspect-ratio: 1;
+
+      object-fit: cover;
+
+      border-radius: 12px;
+
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ====================================================== */
+
+    .contact-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+    }
+
+
+    .contact-card {
+
+      padding: 25px;
+
+      background:
+        var(--card);
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 17px;
+
+    }
+
+
+    .contact-card h3 {
+
+      font-size: 20px;
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .contact-card p {
+
+      color: #bbb;
+
+    }
+
+
+    .contact-card a:hover {
+
+      color:
+        var(--orange);
+
+    }
+
+
+    .social {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 30px;
+
+    }
+
+
+    .social a {
+
+      padding:
+        11px 17px;
+
+      background:
+        #171717;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 10px;
+
+      font-weight: 800;
+
+    }
+
+
+    /* =====================================================
+       MODAL
+    ====================================================== */
+
+    .modal {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 2000;
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(0,0,0,.80);
+
+      backdrop-filter:
+        blur(7px);
+
+    }
+
+
+    .modal.active {
+
+      display: flex;
+
+    }
+
+
+    .modal-box {
+
+      width:
+        min(500px, 100%);
+
+      max-height:
+        90vh;
+
+      overflow-y: auto;
+
+      padding: 26px;
+
+      background:
+        #181818;
+
+      border:
+        1px solid #333;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.55);
+
+    }
+
+
+    .modal-head {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+
+      margin-bottom: 20px;
+
+    }
+
+
+    .modal-head h3 {
+
+      font-size: 23px;
+
+    }
+
+
+    .modal-close {
+
+      width: 36px;
+
+      height: 36px;
+
+      border: 0;
+
+      border-radius: 50%;
+
+      background:
+        #292929;
+
+      color: white;
+
+      cursor: pointer;
+
+      font-size: 20px;
+
+    }
+
+
+    .option-title {
+
+      font-weight: 800;
+
+      margin:
+        20px 0 10px;
+
+    }
+
+
+    .option-grid {
+
+      display: grid;
+
+      gap: 9px;
+
+    }
+
+
+    .option {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 12px;
+
+      background:
+        #101010;
+
+      border:
+        1px solid #292929;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+    }
+
+
+    .option input {
+
+      accent-color:
+        var(--orange);
+
+    }
+
+
+    .option:has(input:checked) {
+
+      border-color:
+        var(--orange);
+
+      background:
+        rgba(255,107,45,.08);
+
+    }
+
+
+    .modal-actions {
+
+      display: flex;
+
+      gap: 10px;
+
+      margin-top: 22px;
+
+    }
+
+
+    .modal-actions button {
+
+      flex: 1;
+
+      padding: 13px;
+
+      border: 0;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      font-weight: 800;
+
+    }
+
+
+    .modal-cancel {
+
+      background:
+        #292929;
+
+      color: white;
+
+    }
+
+
+    .modal-confirm {
+
+      background:
+        var(--orange);
+
+      color: white;
+
+    }
+
+
+    /* =====================================================
+       FLOATING ORDER BUTTON
+    ====================================================== */
+
+    .order-button {
+
+      position: fixed;
+
+      right: 18px;
+
+      bottom: 18px;
+
+      z-index: 900;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      padding:
+        14px 19px;
+
+      border-radius: 50px;
+
+      background:
+        var(--orange);
+
+      color: white;
+
+      font-weight: 800;
+
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.45);
+
+      transition: .2s;
+
+    }
+
+
+    .order-button:hover {
+
+      background:
+        var(--orange-dark);
+
+      transform:
+        translateY(-2px);
+
+    }
+
+
+    .cart-count {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-width: 21px;
+
+      height: 21px;
+
+      padding: 0 5px;
+
+      border-radius: 50px;
+
+      background: white;
+
+      color: var(--orange);
+
+      font-size: 11px;
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ====================================================== */
+
+    .footer {
+
+      padding: 30px 0;
+
+      text-align: center;
+
+      color: #666;
+
+      font-size: 13px;
+
+      border-top:
+        1px solid var(--border);
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 900px) {
+
+      .intro-grid,
+      .featured-card,
+      .order-layout,
+      .room-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .menu-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+
+      .contact-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .featured-image {
+
+        min-height: 350px;
+
+      }
+
+
+      .room-image {
+
+        min-height: 420px;
+
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .container {
+
+        width: 94%;
+
+      }
+
+
+      .nav-inner {
+
+        min-height: 62px;
+
+      }
+
+
+      .logo {
+
+        font-size: 22px;
+
+      }
+
+
+      .nav-links {
+
+        gap: 0;
+
+      }
+
+
+      .nav-links a {
+
+        padding:
+          7px 6px;
+
+        font-size: 10px;
+
+      }
+
+
+      .hero {
+
+        min-height: 570px;
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 61px;
+
+      }
+
+
+      .hero-buttons {
+
+        flex-direction: column;
+
+      }
+
+
+      .btn {
+
+        width: 100%;
+
+      }
+
+
+      .intro,
+      .menu-section,
+      .order-section,
+      .room,
+      .contact-section {
+
+        padding:
+          65px 0;
+
+      }
+
+
+      .intro h2,
+      .room-content h2 {
+
+        font-size: 40px;
+
+      }
+
+
+      .section-title h2 {
+
+        font-size: 45px;
+
+      }
+
+
+      .section-title p {
+
+        font-size: 15px;
+
+      }
+
+
+      .menu-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .featured-content {
+
+        padding: 30px;
+
+      }
+
+
+      .featured-content h2 {
+
+        font-size: 40px;
+
+      }
+
+
+      .room-gallery {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+
+      .order-button {
+
+        right: 12px;
+
+        bottom: 12px;
+
+        padding:
+          13px 17px;
+
+        font-size: 14px;
+
+      }
+
+    }
+
+
+  </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
 
-<nav class="navbar">
+  <nav class="navbar">
 
-  <div class="container nav-inner">
+    <div class="container nav-inner">
 
-    <a href="#" class="logo">
-      FLAMINGO<span>GRILL</span>
-    </a>
-
-    <ul class="nav-links">
-
-      <li>
-        <a href="#">Hem</a>
-      </li>
-
-      <li>
-        <a href="#meny">Meny</a>
-      </li>
-
-      <li>
-        <a href="#rummet">Rummet</a>
-      </li>
-
-      <li>
-        <a href="#kontakt">Kontakt</a>
-      </li>
-
-      <li>
-        <a href="#bestall" class="nav-order">
-          Beställ
-        </a>
-      </li>
-
-    </ul>
-
-  </div>
-
-</nav>
+      <a
+        href="#"
+        class="logo"
+      >
+        FLAMINGO<span>GRILL</span>
+      </a>
 
 
-<!-- =========================
-     HERO
-========================= -->
+      <ul class="nav-links">
 
-<section class="hero">
+        <li>
+          <a href="#">
+            Hem
+          </a>
+        </li>
 
-  <div class="container">
+        <li>
+          <a href="#meny">
+            Meny
+          </a>
+        </li>
 
-    <div class="hero-content">
+        <li>
+          <a href="#rummet">
+            Rummet
+          </a>
+        </li>
 
-      <div class="hero-badge">
-        📍 Mariehamn · Åland
-      </div>
+        <li>
+          <a href="#kontakt">
+            Kontakt
+          </a>
+        </li>
 
-      <h1>
-        FLAMINGO<br>
-        <span>GRILL</span>
-      </h1>
+        <li>
+          <a
+            href="#bestall"
+            class="nav-order"
+          >
+            Beställ
+          </a>
+        </li>
 
-      <p>
-        Smashburgare & Middle Eastern food
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="#bestall" class="btn btn-primary">
-          🍔 Beställ nu
-        </a>
-
-        <a href="#meny" class="btn btn-secondary">
-          Se menyn
-        </a>
-
-      </div>
+      </ul>
 
     </div>
 
-  </div>
-
-</section>
+  </nav>
 
 
-<!-- =========================
-     INTRO
-========================= -->
 
-<section class="intro">
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
 
-  <div class="container intro-grid">
+  <section class="hero">
 
-    <div class="intro-text">
+    <div class="container">
 
-      <h2>
-        Mat som gör dig hungrig. 🔥
-      </h2>
+      <div class="hero-content">
 
-      <p>
-        Hos Flamingo Grill hittar du saftiga burgare,
-        smakrika wraps och Middle Eastern food –
-        tillagade med noggrant utvalda råvaror.
-      </p>
-
-      <p>
-        Våra burgare görs med högrevskött och våra
-        rätter serveras med fokus på smak, kvalitet
-        och bra råvaror.
-      </p>
-
-      <p>
-        Ta med maten eller slå dig ner i vårt rum
-        och njut av maten i en varm och välkomnande
-        miljö.
-      </p>
-
-    </div>
-
-
-    <div class="info-box">
-
-      <h3>
-        🔥 Därför Flamingo Grill
-      </h3>
-
-      <div class="info-list">
-
-        <div class="info-item">
-          🍔 Saftiga högrevburgare
+        <div class="hero-badge">
+          📍 Mariehamn · Åland
         </div>
 
-        <div class="info-item">
-          🌯 Wraps & Middle Eastern food
-        </div>
 
-        <div class="info-item">
-          🍟 Krispiga tillbehör
-        </div>
+        <h1>
+          FLAMINGO<br>
+          <span>GRILL</span>
+        </h1>
 
-        <div class="info-item">
-          🥩 120 g högrevskött
-        </div>
-
-        <div class="info-item">
-          ❤️ Tillagat med passion
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     MÅNADENS
-========================= -->
-
-<section class="featured">
-
-  <div class="container">
-
-    <div class="featured-card">
-
-      <div class="featured-image"></div>
-
-      <div class="featured-content">
-
-        <div class="featured-label">
-          Månadens burgare
-        </div>
-
-        <h2>
-          Oktober Burger 🔥
-        </h2>
 
         <p>
-          120 g högrevsbiff, cheddarost, bacon,
-          karamelliserad lök, saltgurka, tomat,
-          issallad, BBQ-sås, BBQ-majo och rostad
-          lök på toppen.
+          Smashburgare & Middle Eastern food
         </p>
 
-        <strong style="font-size:26px;color:#ff6b2d;">
-          14,90€
-        </strong>
 
-        <button
-          class="add-btn"
-          style="margin-top:20px;width:max-content;"
-          onclick="addProduct('Månadens Meal',14.90,'monthly-meal')"
-        >
-          + Lägg till
-        </button>
+        <div class="hero-buttons">
+
+          <a
+            href="#meny"
+            class="btn btn-primary"
+          >
+            🍔 Se menyn
+          </a>
+
+
+          <a
+            href="#bestall"
+            class="btn btn-secondary"
+          >
+            🛒 Beställ
+          </a>
+
+        </div>
 
       </div>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =========================
-     MENY
-========================= -->
 
-<section id="meny" class="menu-section">
+  <!-- =====================================================
+       INTRO
+  ====================================================== -->
 
-  <div class="container">
+  <section class="intro">
 
-    <div class="section-title">
-
-      <h2>
-        MENY
-      </h2>
-
-      <p>
-        Välj din favorit och lägg direkt i beställningen.
-      </p>
-
-    </div>
+    <div class="container intro-grid">
 
 
-    <div class="menu-categories">
+      <div class="intro-text">
 
-      <a href="#menyburgare">
-        🍔 Burgare Meny
-      </a>
-
-      <a href="#burgare">
-        🍔 Endast Burgare
-      </a>
-
-      <a href="#wraps">
-        🌯 Wraps
-      </a>
-
-      <a href="#tallrikar">
-        🍽️ Tallrikar
-      </a>
-
-      <a href="#sides">
-        🍟 Tillbehör
-      </a>
-
-      <a href="#drycker">
-        🥤 Drycker
-      </a>
-
-    </div>
+        <h2>
+          Mat som gör dig hungrig. 🔥
+        </h2>
 
 
-    <!-- JAVASCRIPT RENDERAR MENYN HÄR -->
-
-    <div id="dynamic-menu"></div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     BESTÄLL
-     INGEN DUPLICERAD MENY
-========================= -->
-
-<section id="bestall" class="order-section">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>
-        BESTÄLL
-      </h2>
-
-      <p>
-        Kontrollera din kundvagn och fyll i dina uppgifter.
-      </p>
-
-    </div>
+        <p>
+          Hos Flamingo Grill hittar du högkvalitetsburgare
+          och smakrika Middle Eastern wraps – tillagade med
+          färska råvaror, hemlagade såser och noggrant
+          utvalt högrevskött.
+        </p>
 
 
-    <div class="order-layout">
+        <p>
+          Vi kompromissar aldrig med smaken.
+          Varje rätt görs med passion, kvalitet och respekt
+          för hantverket.
+        </p>
 
 
-      <!-- CART -->
+        <p>
+          Du kan ta med maten eller slå dig ner i vårt rum
+          med sittplatser och njuta av maten i en varm och
+          välkomnande miljö.
+        </p>
 
-      <div class="order-card">
+      </div>
+
+
+
+      <div class="info-box">
 
         <h3>
-          🛒 Din beställning
+          🔥 Därför Flamingo Grill
         </h3>
 
-        <div id="cart-container">
 
-          <div class="cart-empty">
-            Din kundvagn är tom.<br>
-            Gå upp till menyn och välj något gott! 🍔
+        <div class="info-list">
+
+          <div class="info-item">
+            🍔 Saftiga högrevburgare
+          </div>
+
+          <div class="info-item">
+            🌯 Wraps & Middle Eastern food
+          </div>
+
+          <div class="info-item">
+            🍟 Krispiga tillbehör
+          </div>
+
+          <div class="info-item">
+            🥩 120 g högrevskött
+          </div>
+
+          <div class="info-item">
+            ❤️ Tillagat med passion
           </div>
 
         </div>
 
-        <div class="cart-total">
+      </div>
 
-          <span>
-            Totalt
-          </span>
+    </div>
 
-          <span id="order-total">
-            0,00€
-          </span>
+  </section>
+
+
+
+  <!-- =====================================================
+       MÅNADENS BURGARE
+  ====================================================== -->
+
+  <section class="featured">
+
+    <div class="container">
+
+      <div class="featured-card">
+
+
+        <div class="featured-image"></div>
+
+
+        <div class="featured-content">
+
+          <div class="featured-label">
+            Månadens burgare
+          </div>
+
+
+          <h2>
+            Oktober Burger 🔥
+          </h2>
+
+
+          <p>
+            120 g högrevsbiff, cheddarost, bacon,
+            karamelliserad lök, saltgurka, tomat,
+            issallad, BBQ-sås, BBQ-majo och rostad
+            lök på toppen.
+          </p>
+
+
+          <strong
+            style="
+              font-size:26px;
+              color:#ff6b2d;
+            "
+          >
+            14,90€
+          </strong>
+
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            style="
+              margin-top:20px;
+              width:max-content;
+            "
+            onclick="
+              openMealModal({
+                name:'Månadens Meal',
+                price:14.90,
+                image:'oktm.jpg'
+              })
+            "
+          >
+            + Lägg till
+          </button>
 
         </div>
 
       </div>
 
+    </div>
 
-      <!-- FORM -->
-
-      <div class="order-card">
-
-        <h3>
-          📲 Hämta din beställning
-        </h3>
+  </section>
 
 
-        <div class="form-group">
 
-          <label for="customer-name">
-            Namn *
-          </label>
+  <!-- =====================================================
+       MENY
+       DEN ENDA MENYN PÅ HELA SIDAN
+  ====================================================== -->
 
-          <input
-            id="customer-name"
-            type="text"
-            placeholder="Ditt namn"
-            autocomplete="name"
-          >
+  <section
+    id="meny"
+    class="menu-section"
+  >
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <h2>
+          MENY
+        </h2>
+
+        <p>
+          Välj din favorit och tryck på + för att lägga till
+          i beställningen.
+        </p>
+
+      </div>
+
+
+      <div class="menu-categories">
+
+        <a href="#menyburgare">
+          🍔 Burgare Meny
+        </a>
+
+        <a href="#burgare">
+          🍔 Endast Burgare
+        </a>
+
+        <a href="#wraps">
+          🌯 Wraps
+        </a>
+
+        <a href="#tallrikar">
+          🍽️ Tallrikar
+        </a>
+
+        <a href="#sides">
+          🍟 Tillbehör
+        </a>
+
+        <a href="#drycker">
+          🥤 Drycker
+        </a>
+
+      </div>
+
+
+      <!-- =================================================
+           JAVASCRIPT SKAPAR MENYN HÄR
+           INGEN ANNAN MENY FINNS
+      ================================================== -->
+
+      <div id="dynamic-menu"></div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       BESTÄLL
+       VIKTIGT:
+       INGEN MENY HÄR
+  ====================================================== -->
+
+  <section
+    id="bestall"
+    class="order-section"
+  >
+
+    <div class="container">
+
+
+      <div class="section-title">
+
+        <h2>
+          🛒 Beställ
+        </h2>
+
+        <p>
+          Din valda mat visas här. Fyll i dina uppgifter
+          och skicka beställningen via WhatsApp.
+        </p>
+
+      </div>
+
+
+      <div class="order-layout">
+
+
+        <!-- ===============================================
+             KUNDVAGN
+        ================================================ -->
+
+        <div class="order-card">
+
+          <h3>
+            🛒 Din beställning
+          </h3>
+
+
+          <div id="cart-container">
+
+            <div class="cart-empty">
+
+              Din kundvagn är tom.<br>
+
+              Gå upp till menyn och välj något gott! 🍔
+
+            </div>
+
+          </div>
+
+
+          <div class="cart-total">
+
+            <span>
+              Totalt
+            </span>
+
+            <span id="order-total">
+              0,00€
+            </span>
+
+          </div>
 
         </div>
 
 
-        <div class="form-group">
 
-          <label for="customer-phone">
-            Telefonnummer *
-          </label>
+        <!-- ===============================================
+             KUNDUPPGIFTER
+        ================================================ -->
 
-          <input
-            id="customer-phone"
-            type="tel"
-            placeholder="045-..."
-            autocomplete="tel"
-          >
+        <div class="order-card">
 
-        </div>
+          <h3>
+            📲 Dina uppgifter
+          </h3>
 
 
-        <div class="form-group">
+          <div class="form-group">
 
-          <label for="pickup-time">
-            Hämtningstid *
-          </label>
-
-          <select id="pickup-time">
-
-            <option value="">
-              Välj hämtningstid
-            </option>
-
-          </select>
-
-          <div
-            id="pickup-note"
-            class="pickup-note"
-          ></div>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label for="order-notes">
-            Allergier / övriga önskemål
-          </label>
-
-          <textarea
-            id="order-notes"
-            placeholder="T.ex. ingen lök, ingen sås, allergier..."
-          ></textarea>
-
-        </div>
-
-
-        <!-- SECURITY -->
-
-        <div class="security-box">
-
-          <p>
-            🔐 Snabb säkerhetskontroll
-          </p>
-
-          <div class="form-group" style="margin-bottom:0;">
-
-            <label for="anti-bot">
-              Vad blir 3 + 4?
+            <label for="customer-name">
+              Namn *
             </label>
 
             <input
-              id="anti-bot"
+              id="customer-name"
               type="text"
-              inputmode="numeric"
-              placeholder="Skriv svaret"
-              autocomplete="off"
+              placeholder="Ditt namn"
+              autocomplete="name"
             >
 
           </div>
 
-        </div>
+
+          <div class="form-group">
+
+            <label for="customer-phone">
+              Telefonnummer *
+            </label>
+
+            <input
+              id="customer-phone"
+              type="tel"
+              placeholder="045-..."
+              autocomplete="tel"
+            >
+
+          </div>
 
 
-        <!-- HONEYPOT -->
+          <div class="form-group">
 
-        <input
-          type="text"
-          id="website"
-          class="hp-field"
-          tabindex="-1"
-          autocomplete="off"
-        >
+            <label for="pickup-time">
+              Hämtningstid *
+            </label>
+
+            <select id="pickup-time">
+
+              <option value="">
+                Välj hämtningstid
+              </option>
+
+            </select>
 
 
-        <!-- CONFIRM -->
+            <div
+              id="pickup-note"
+              class="pickup-note"
+            ></div>
 
-        <div class="confirm-row">
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="order-notes">
+              Allergier / övriga önskemål
+            </label>
+
+            <textarea
+              id="order-notes"
+              placeholder="T.ex. ingen lök, allergier eller andra önskemål..."
+            ></textarea>
+
+          </div>
+
+
+
+          <!-- SECURITY -->
+
+          <div class="security-box">
+
+            <p>
+              🔐 Snabb säkerhetskontroll
+            </p>
+
+
+            <div class="form-group"
+                 style="margin-bottom:0;">
+
+              <label for="anti-bot">
+
+                Vad blir 3 + 4?
+
+              </label>
+
+
+              <input
+                id="anti-bot"
+                type="text"
+                inputmode="numeric"
+                placeholder="Skriv svaret"
+                autocomplete="off"
+              >
+
+            </div>
+
+          </div>
+
+
+
+          <!-- HONEYPOT -->
 
           <input
-            type="checkbox"
-            id="order-confirmed"
+            type="text"
+            id="website"
+            class="hp-field"
+            tabindex="-1"
+            autocomplete="off"
           >
 
-          <label for="order-confirmed">
-            Jag har kontrollerat min beställning,
-            telefonnummer och hämtningstid och
-            allt stämmer.
-          </label>
+
+
+          <!-- CONFIRM -->
+
+          <div class="confirm-row">
+
+            <input
+              type="checkbox"
+              id="order-confirmed"
+            >
+
+
+            <label for="order-confirmed">
+
+              Jag har kontrollerat min beställning,
+              telefonnummer och hämtningstid och
+              allt stämmer.
+
+            </label>
+
+          </div>
+
+
+
+          <!-- SEND -->
+
+          <button
+            type="button"
+            id="order-submit"
+            class="whatsapp-submit"
+          >
+            📲 Bekräfta & skicka beställning
+          </button>
+
+
+          <div
+            id="confirmation-message"
+            class="confirmation-message"
+          ></div>
+
+
+          <p class="order-note">
+
+            ⚠️ Beställningen är inte bekräftad förrän
+            Flamingo Grill har bekräftat den via WhatsApp.
+
+          </p>
 
         </div>
-
-
-        <button
-          type="button"
-          class="whatsapp-submit"
-          id="order-submit"
-        >
-          📲 Bekräfta & skicka beställning
-        </button>
-
-
-        <div
-          id="confirmation-message"
-          class="confirmation-message"
-        ></div>
-
-
-        <p class="order-note">
-          ⚠️ Beställningen är inte bekräftad förrän
-          Flamingo Grill har bekräftat den via WhatsApp.
-        </p>
 
       </div>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =========================
-     RUMMET
-========================= -->
 
-<section id="rummet" class="room">
+  <!-- =====================================================
+       RUMMET
+  ====================================================== -->
 
-  <div class="container">
+  <section
+    id="rummet"
+    class="room"
+  >
 
-    <div class="section-title">
-
-      <h2>
-        Rummet 🦩
-      </h2>
-
-      <p>
-        En del av Flamingo Grill – inte bara en plats att äta.
-      </p>
-
-    </div>
+    <div class="container">
 
 
-    <div class="room-grid">
-
-      <div class="room-image"></div>
-
-
-      <div class="room-content">
+      <div class="section-title">
 
         <h2>
-          Mer än bara mat.
+          Rummet 🦩
         </h2>
 
         <p>
-          Bakom Flamingo Grill finns ett rum där maten
-          möter kreativitet och personlighet.
+          En del av Flamingo Grill.
         </p>
 
-        <p>
-          Väggarna är handmålade av konstnären
-          <strong>RG Salazar</strong> och ger rummet
-          en unik karaktär som passar Flamingo Grill.
-        </p>
+      </div>
 
-        <p>
-          Vill du äta på plats? Slå dig ner, njut av
-          maten och ta in miljön.
-        </p>
+
+      <div class="room-grid">
+
+
+        <div class="room-image"></div>
+
+
+        <div class="room-content">
+
+          <h2>
+            Mer än bara mat.
+          </h2>
+
+
+          <p>
+            Bakom Flamingo Grill finns ett rum där maten
+            möter kreativitet och personlighet.
+          </p>
+
+
+          <p>
+            Väggarna är handmålade av konstnären
+            <strong>RG Salazar</strong> och ger rummet
+            en unik karaktär.
+          </p>
+
+
+          <p>
+            Vill du äta på plats?
+            Slå dig ner, njut av maten och ta in miljön.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="room-gallery">
+
+        <img
+          src="rum1.jpg"
+          alt="Flamingo Grill Rummet"
+        >
+
+        <img
+          src="rum2.jpg"
+          alt="Flamingo Grill Rummet"
+        >
+
+        <img
+          src="rum3.jpg"
+          alt="Flamingo Grill Rummet"
+        >
+
+        <img
+          src="rum4.jpg"
+          alt="Flamingo Grill Rummet"
+        >
+
+        <img
+          src="rum5.jpg"
+          alt="Flamingo Grill Rummet"
+        >
+
+        <img
+          src="rum6.jpg"
+          alt="Flamingo Grill Rummet"
+        >
+
+        <img
+          src="rum7.jpg"
+          alt="Flamingo Grill Rummet"
+        >
+
+        <img
+          src="rum8.jpg"
+          alt="Flamingo Grill Rummet"
+        >
+
+        <img
+          src="rum9.jpg"
+          alt="Flamingo Grill Rummet"
+        >
 
       </div>
 
     </div>
 
-
-    <div class="room-gallery">
-
-      <img src="rum1.jpg" alt="Flamingo Grill Rummet">
-      <img src="rum2.jpg" alt="Flamingo Grill Rummet">
-      <img src="rum3.jpg" alt="Flamingo Grill Rummet">
-      <img src="rum4.jpg" alt="Flamingo Grill Rummet">
-      <img src="rum5.jpg" alt="Flamingo Grill Rummet">
-      <img src="rum6.jpg" alt="Flamingo Grill Rummet">
-      <img src="rum7.jpg" alt="Flamingo Grill Rummet">
-      <img src="rum8.jpg" alt="Flamingo Grill Rummet">
-      <img src="rum9.jpg" alt="Flamingo Grill Rummet">
-
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =========================
-     KONTAKT
-========================= -->
 
-<section id="kontakt" class="contact-section">
+  <!-- =====================================================
+       KONTAKT
+  ====================================================== -->
 
-  <div class="container">
+  <section
+    id="kontakt"
+    class="contact-section"
+  >
 
-    <div class="section-title">
-
-      <h2>
-        📍 Hitta oss & Kontakt
-      </h2>
-
-      <p>
-        Vi finns i Mariehamn, Åland.
-      </p>
-
-    </div>
+    <div class="container">
 
 
-    <div class="contact-grid">
+      <div class="section-title">
 
-
-      <div class="contact-card">
-
-        <h3>
-          📍 Hitta oss
-        </h3>
+        <h2>
+          📍 Hitta oss & Kontakt
+        </h2>
 
         <p>
-          Mariehamn<br>
-          Åland
+          Vi finns i Mariehamn, Åland.
         </p>
 
-        <br>
+      </div>
+
+
+      <div class="contact-grid">
+
+
+        <div class="contact-card">
+
+          <h3>
+            📍 Hitta oss
+          </h3>
+
+          <p>
+            Mariehamn<br>
+            Åland
+          </p>
+
+          <br>
+
+          <a
+            href="https://maps.app.goo.gl/fbeEeaCCaRqumc6T9?g_st=ic"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-secondary"
+          >
+            Öppna Google Maps
+          </a>
+
+        </div>
+
+
+
+        <div class="contact-card">
+
+          <h3>
+            📞 Kontakt
+          </h3>
+
+          <p>
+
+            <a href="tel:+3584573484221">
+              045-73484221
+            </a>
+
+            <br><br>
+
+            <a href="tel:+3584575392162">
+              045-75392162
+            </a>
+
+            <br><br>
+
+            <a href="mailto:info@flamingogrill.ax">
+              info@flamingogrill.ax
+            </a>
+
+          </p>
+
+        </div>
+
+
+
+        <div class="contact-card">
+
+          <h3>
+            ⏰ Öppettider
+          </h3>
+
+          <p>
+
+            <strong>Tis–Fre</strong><br>
+            16:00 – 20:00
+
+            <br><br>
+
+            <strong>Lör</strong><br>
+            12:00 – 21:00
+
+            <br><br>
+
+            <strong>Sön</strong><br>
+            16:00 – 20:00
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="social">
 
         <a
-          class="btn btn-secondary"
-          href="https://maps.app.goo.gl/fbeEeaCCaRqumc6T9?g_st=ic"
+          href="https://instagram.com/flamingogrill_aland"
           target="_blank"
           rel="noopener"
         >
-          Öppna Google Maps
+          📸 Instagram
+        </a>
+
+
+        <a
+          href="https://www.facebook.com/100076166498554/"
+          target="_blank"
+          rel="noopener"
+        >
+          👍 Facebook
+        </a>
+
+
+        <a
+          href="mailto:info@flamingogrill.ax"
+        >
+          ✉️ E-post
         </a>
 
       </div>
 
-
-      <div class="contact-card">
-
-        <h3>
-          📞 Kontakt
-        </h3>
-
-        <p>
-
-          <a href="tel:+3584573484221">
-            045-73484221
-          </a>
-
-          <br><br>
-
-          <a href="tel:+3584575392162">
-            045-75392162
-          </a>
-
-          <br><br>
-
-          <a href="mailto:info@flamingogrill.ax">
-            info@flamingogrill.ax
-          </a>
-
-        </p>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <h3>
-          ⏰ Öppettider
-        </h3>
-
-        <p>
-
-          <strong>Tis–Fre</strong><br>
-          16:00 – 20:00
-
-          <br><br>
-
-          <strong>Lör</strong><br>
-          12:00 – 21:00
-
-          <br><br>
-
-          <strong>Sön</strong><br>
-          16:00 – 20:00
-
-        </p>
-
-      </div>
-
     </div>
 
+  </section>
 
-    <div class="social">
 
-      <a
-        href="https://instagram.com/flamingogrill_aland"
-        target="_blank"
-        rel="noopener"
-      >
-        📸 Instagram
-      </a>
 
-      <a
-        href="https://www.facebook.com/100076166498554/"
-        target="_blank"
-        rel="noopener"
-      >
-        👍 Facebook
-      </a>
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
 
-      <a
-        href="mailto:info@flamingogrill.ax"
-      >
-        ✉️ E-post
-      </a>
+  <footer class="footer">
 
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="footer">
-
-  <p>
-    © 2026 Flamingo Grill – Mariehamn, Åland
-  </p>
-
-</footer>
-
-
-<!-- =========================
-     FLOATING ORDER BUTTON
-========================= -->
-
-<a
-  href="#bestall"
-  class="order-button"
->
-  🍔 Beställ
-  <span
-    id="cart-count"
-    class="cart-count"
-  >
-    0
-  </span>
-</a>
-
-
-<!-- =========================
-     MODAL
-========================= -->
-
-<div
-  id="add-modal"
-  class="modal"
->
-
-  <div class="modal-box">
-
-    <div class="modal-head">
-
-      <h3 id="modal-title">
-        Lägg till
-      </h3>
-
-      <button
-        class="modal-close"
-        type="button"
-        onclick="closeModal()"
-      >
-        ×
-      </button>
-
-    </div>
-
-
-    <div id="modal-content"></div>
-
-
-    <div class="modal-actions">
-
-      <button
-        type="button"
-        class="modal-cancel"
-        onclick="closeModal()"
-      >
-        Avbryt
-      </button>
-
-      <button
-        type="button"
-        class="modal-confirm"
-        onclick="confirmModal()"
-      >
-        Lägg till
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<script>
-
-/* =====================================================
-   SETTINGS
-===================================================== */
-
-const WHATSAPP_NUMBER = "3584573484221";
-
-
-/* =====================================================
-   MENU DATA
-===================================================== */
-
-const menuData = [
-
-  {
-    id:"menyburgare",
-    title:"🍔 Burgare Meny 🍟🥤",
-    type:"meal",
-    items:[
-
-      {
-        name:"Månadens Meal",
-        price:14.90,
-        image:"oktm.jpg",
-        id:"monthly-meal"
-      },
-
-      {
-        name:"Cheese Meal",
-        price:13.50,
-        image:"CheeseMeal.jpg"
-      },
-
-      {
-        name:"Cheese & Bacon Meal",
-        price:14.50,
-        image:"Cheese&BaconMeal.jpg"
-      },
-
-      {
-        name:"Chipotle Meal",
-        price:14.50,
-        image:"ChipotleMeal.jpg"
-      },
-
-      {
-        name:"Tryffel Meal",
-        price:14.90,
-        image:"TryffelMeal.jpg"
-      },
-
-      {
-        name:"Double Meal",
-        price:16.90,
-        image:"DoubleMeal.jpg"
-      },
-
-      {
-        name:"BBQ Meal",
-        price:14.50,
-        image:"BBQMeal.jpg"
-      },
-
-      {
-        name:"Hawaii Meal",
-        price:14.50,
-        image:"HawaiiMeal.jpg"
-      },
-
-      {
-        name:"Bookmaker Meal",
-        price:14.90,
-        image:"BookmakerMeal.jpg"
-      },
-
-      {
-        name:"Kids Meal",
-        price:10.00,
-        image:"KidsMeal.jpg"
-      },
-
-      {
-        name:"Halloumi Meal",
-        price:14.50,
-        image:"HalloumiMeal.jpg"
-      },
-
-      {
-        name:"Vegetarisk Meal",
-        price:14.90,
-        image:"VeganskMeal.jpg"
-      }
-
-    ]
-  },
-
-
-  {
-    id:"burgare",
-    title:"🍔 Endast Burgare",
-    type:"normal",
-    items:[
-
-      {
-        name:"Månadens burgare",
-        price:11.00,
-        image:"oktb.jpg"
-      },
-
-      {
-        name:"Cheese burgare",
-        price:9.50,
-        image:"Cheese.png"
-      },
-
-      {
-        name:"Cheese & Bacon burgare",
-        price:10.50,
-        image:"Cheese&Bacon.jpg"
-      },
-
-      {
-        name:"Chipotle burgare",
-        price:10.50,
-        image:"Chipotle.jpg"
-      },
-
-      {
-        name:"Tryffel burgare",
-        price:11.00,
-        image:"Tryffel.jpg"
-      },
-
-      {
-        name:"Double burgare",
-        price:12.90,
-        image:"Double.jpg"
-      },
-
-      {
-        name:"BBQ burgare",
-        price:10.50,
-        image:"BBQ.jpg"
-      },
-
-      {
-        name:"Hawaii burgare",
-        price:11.00,
-        image:"Hawaii b.jpg"
-      },
-
-      {
-        name:"Bookmaker burgare",
-        price:11.00,
-        image:"Bookmaker.jpg"
-      },
-
-      {
-        name:"Barn burgare",
-        price:6.50,
-        image:"Kids.jpg"
-      },
-
-      {
-        name:"Halloumi burgare",
-        price:10.50,
-        image:"Halloumi.jpg"
-      },
-
-      {
-        name:"Vegetarisk burgare",
-        price:11.00,
-        image:"Veg.jpg"
-      }
-
-    ]
-  },
-
-
-  {
-    id:"wraps",
-    title:"🌯 Wraps",
-    type:"normal",
-    items:[
-
-      {
-        name:"Shawarma kyckling wrap",
-        price:9.00,
-        image:"Shawrma.jpg"
-      },
-
-      {
-        name:"Shich Tawook wrap",
-        price:10.50,
-        image:"shichtawook.jpg"
-      },
-
-      {
-        name:"Falafel wrap",
-        price:10.00,
-        image:"falafel.jpg"
-      }
-
-    ]
-  },
-
-
-  {
-    id:"tallrikar",
-    title:"🍽️ Tallrikar",
-    type:"normal",
-    items:[
-
-      {
-        name:"Shawarma Tallrik",
-        price:12.50,
-        image:"shawarma-tallrik.jpg"
-      },
-
-      {
-        name:"Shich Tawook Tallrik",
-        price:13.50,
-        image:"tawook.jpg"
-      },
-
-      {
-        name:"Falafel Tallrik",
-        price:13.50,
-        image:"falafeltal.jpg"
-      }
-
-    ]
-  },
-
-
-  {
-    id:"sides",
-    title:"🍟 Tillbehör",
-    type:"side",
-    items:[
-
-      {
-        name:"Pommes",
-        price:4.00
-      },
-
-      {
-        name:"Crispers",
-        price:4.90
-      },
-
-      {
-        name:"Chicken Nuggets",
-        prices:{
-          3:3.50,
-          6:6.20
-        }
-      },
-
-      {
-        name:"Chicken Wings",
-        prices:{
-          3:4.90,
-          6:7.90
-        }
-      },
-
-      {
-        name:"Onion Rings",
-        prices:{
-          3:3.50,
-          6:5.50
-        }
-      },
-
-      {
-        name:"Halloumi Sticks",
-        prices:{
-          3:3.90,
-          6:7.90
-        }
-      },
-
-      {
-        name:"Cheddar Jalapeños",
-        prices:{
-          3:4.20,
-          6:7.90
-        }
-      }
-
-    ]
-  },
-
-
-  {
-    id:"drycker",
-    title:"🥤 Drycker",
-    type:"normal",
-    items:[
-
-      {
-        name:"Cola",
-        price:2.70,
-        drink:true
-      },
-
-      {
-        name:"Cola Zero",
-        price:2.70,
-        drink:true
-      },
-
-      {
-        name:"Fanta",
-        price:2.70,
-        drink:true
-      },
-
-      {
-        name:"Ponqa – bubbelvatten",
-        price:2.70,
-        drink:true
-      },
-
-      {
-        name:"Trip",
-        price:2.00,
-        drink:true
-      }
-
-    ]
-  }
-
-];
-
-
-const dips = [
-  "Flamingos Dressing",
-  "Flamingos Jalapeonmajo",
-  "Flamingos Aioli",
-  "Flamingos Sweet chili",
-  "Flamingos BBQ"
-];
-
-
-const drinks = [
-  "Cola",
-  "Cola Zero",
-  "Fanta",
-  "Ponqa – bubbelvatten",
-  "Trip"
-];
-
-
-let cart = [];
-
-let modalState = null;
-
-
-/* =====================================================
-   RENDER MENU
-===================================================== */
-
-function renderMainMenu(){
-
-  const container =
-    document.getElementById("dynamic-menu");
-
-  container.innerHTML = "";
-
-  menuData.forEach(category => {
-
-    const section =
-      document.createElement("div");
-
-    section.className = "menu-category";
-    section.id = category.id;
-
-    const title =
-      document.createElement("h3");
-
-    title.className = "menu-category-title";
-    title.textContent = category.title;
-
-    section.appendChild(title);
-
-
-    const grid =
-      document.createElement("div");
-
-    grid.className = "menu-grid";
-
-
-    category.items.forEach(item => {
-
-      const card =
-        document.createElement("div");
-
-      card.className = "menu-card";
-
-
-      if(item.image){
-
-        const img =
-          document.createElement("img");
-
-        img.className = "menu-image";
-        img.src = item.image;
-        img.alt = item.name;
-
-        card.appendChild(img);
-
-      }else{
-
-        const icon =
-          document.createElement("div");
-
-        icon.className = "drink-icon";
-        icon.textContent =
-          item.drink ? "🥤" : "🍟";
-
-        icon.style.padding = "25px 18px 0";
-
-        card.appendChild(icon);
-
-      }
-
-
-      const content =
-        document.createElement("div");
-
-      content.className =
-        "menu-card-content";
-
-
-      const title =
-        document.createElement("h4");
-
-      title.textContent = item.name;
-
-      content.appendChild(title);
-
-
-      const desc =
-        document.createElement("div");
-
-      desc.className =
-        "menu-description";
-
-
-      if(category.type === "meal"){
-
-        desc.textContent =
-          "120 g högrevsbiff · pommes · valfri dryck";
-
-      }else if(category.type === "side"){
-
-        if(item.prices){
-
-          desc.textContent =
-            "Välj 3 eller 6 st · en dip ingår";
-
-        }else{
-
-          desc.textContent =
-            "Krispigt och gott till maten";
-
-        }
-
-      }else if(item.drink){
-
-        desc.textContent =
-          "Kall dryck";
-
-      }else{
-
-        desc.textContent =
-          "Tillagat med noggrant utvalda råvaror";
-
-      }
-
-
-      content.appendChild(desc);
-
-
-      const bottom =
-        document.createElement("div");
-
-      bottom.className =
-        "menu-bottom";
-
-
-      const price =
-        document.createElement("span");
-
-      price.className =
-        "menu-price";
-
-
-      if(item.prices){
-
-        price.textContent =
-          `från ${item.prices[3].toFixed(2).replace(".",",")}€`;
-
-      }else{
-
-        price.textContent =
-          `${item.price.toFixed(2).replace(".",",")}€`;
-
-      }
-
-
-      const button =
-        document.createElement("button");
-
-      button.className =
-        "add-btn";
-
-      button.type = "button";
-
-      button.textContent =
-        "+ Lägg till";
-
-
-      button.onclick = () => {
-
-        if(category.type === "meal"){
-
-          openMealModal(item);
-
-        }else if(category.type === "side"){
-
-          openSideModal(item);
-
-        }else{
-
-          addProduct(
-            item.name,
-            item.price,
-            item.id || item.name
-          );
-
-        }
-
-      };
-
-
-      bottom.appendChild(price);
-      bottom.appendChild(button);
-
-      content.appendChild(bottom);
-
-      card.appendChild(content);
-
-      grid.appendChild(card);
-
-    });
-
-
-    section.appendChild(grid);
-
-    container.appendChild(section);
-
-  });
-
-}
-
-
-/* =====================================================
-   ADD NORMAL PRODUCT
-===================================================== */
-
-function addProduct(name, price, id){
-
-  cart.push({
-
-    name:name,
-    price:Number(price),
-    details:"",
-    id:id || name
-
-  });
-
-  renderCart();
-
-  updateCartCount();
-
-}
-
-
-/* =====================================================
-   MEAL MODAL
-===================================================== */
-
-function openMealModal(item){
-
-  modalState = {
-    type:"meal",
-    item:item
-  };
-
-
-  const modal =
-    document.getElementById("add-modal");
-
-  const title =
-    document.getElementById("modal-title");
-
-  const content =
-    document.getElementById("modal-content");
-
-
-  title.textContent =
-    item.name;
-
-
-  let html = `
-
-    <p style="color:#aaa;">
-      Måltiden innehåller pommes och
-      en valfri dryck.
+    <p>
+      © <span id="year"></span>
+      Flamingo Grill – Mariehamn, Åland
     </p>
 
-    <div class="option-title">
-      🥤 Välj dryck
-    </div>
-
-    <div class="option-grid">
-  `;
+  </footer>
 
 
-  drinks.forEach((drink,index) => {
 
-    html += `
+  <!-- =====================================================
+       FLOATING BESTÄLL
+  ====================================================== -->
 
-      <label class="option">
+  <a
+    href="#bestall"
+    class="order-button"
+  >
 
-        <input
-          type="radio"
-          name="meal-drink"
-          value="${drink}"
-          ${index === 0 ? "checked" : ""}
+    🍔 Beställ
+
+    <span
+      id="cart-count"
+      class="cart-count"
+    >
+      0
+    </span>
+
+  </a>
+
+
+
+  <!-- =====================================================
+       MODAL
+  ====================================================== -->
+
+  <div
+    id="add-modal"
+    class="modal"
+  >
+
+    <div class="modal-box">
+
+
+      <div class="modal-head">
+
+        <h3 id="modal-title">
+          Lägg till
+        </h3>
+
+
+        <button
+          type="button"
+          class="modal-close"
+          onclick="closeModal()"
         >
-
-        <span>${drink}</span>
-
-      </label>
-
-    `;
-
-  });
-
-
-  html += `
-
-    </div>
-
-    <div class="option-title">
-      ➕ Extra dip
-    </div>
-
-    <div class="option-grid">
-
-      <label class="option">
-
-        <input
-          type="radio"
-          name="meal-dip"
-          value=""
-          checked
-        >
-
-        <span>
-          Ingen extra dip
-        </span>
-
-      </label>
-
-  `;
-
-
-  dips.forEach(dip => {
-
-    html += `
-
-      <label class="option">
-
-        <input
-          type="radio"
-          name="meal-dip"
-          value="${dip}"
-        >
-
-        <span>
-          ${dip} +1,50€
-        </span>
-
-      </label>
-
-    `;
-
-  });
-
-
-  html += `</div>`;
-
-
-  content.innerHTML = html;
-
-  modal.classList.add("active");
-
-}
-
-
-/* =====================================================
-   SIDE MODAL
-===================================================== */
-
-function openSideModal(item){
-
-  modalState = {
-    type:"side",
-    item:item
-  };
-
-
-  const modal =
-    document.getElementById("add-modal");
-
-  const title =
-    document.getElementById("modal-title");
-
-  const content =
-    document.getElementById("modal-content");
-
-
-  title.textContent =
-    item.name;
-
-
-  let html = "";
-
-
-  if(item.prices){
-
-    html += `
-
-      <div class="option-title">
-        📦 Välj antal
-      </div>
-
-      <div class="option-grid">
-
-        <label class="option">
-
-          <input
-            type="radio"
-            name="side-size"
-            value="3"
-            checked
-          >
-
-          <span>
-            3 st – ${item.prices[3].toFixed(2).replace(".",",")}€
-          </span>
-
-        </label>
-
-        <label class="option">
-
-          <input
-            type="radio"
-            name="side-size"
-            value="6"
-          >
-
-          <span>
-            6 st – ${item.prices[6].toFixed(2).replace(".",",")}€
-          </span>
-
-        </label>
+          ×
+        </button>
 
       </div>
 
-    `;
 
-  }
+      <div id="modal-content"></div>
 
 
-  html += `
+      <div class="modal-actions">
 
-    <div class="option-title">
-      🥣 Välj en dip – ingår
+        <button
+          type="button"
+          class="modal-cancel"
+          onclick="closeModal()"
+        >
+          Avbryt
+        </button>
+
+
+        <button
+          type="button"
+          class="modal-confirm"
+          onclick="confirmModal()"
+        >
+          Lägg till
+        </button>
+
+      </div>
+
     </div>
 
-    <div class="option-grid">
-
-  `;
+  </div>
 
 
-  dips.forEach((dip,index) => {
 
-    html += `
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
-      <label class="option">
-
-        <input
-          type="radio"
-          name="side-dip"
-          value="${dip}"
-          ${index === 0 ? "checked" : ""}
-        >
-
-        <span>
-          ${dip}
-        </span>
-
-      </label>
-
-    `;
-
-  });
+  <script>
 
 
-  html += `</div>`;
+    /* =====================================================
+       INSTÄLLNINGAR
+    ====================================================== */
+
+    const WHATSAPP_NUMBER =
+      "3584573484221";
 
 
-  content.innerHTML = html;
+    const dips = [
 
-  modal.classList.add("active");
+      "Flamingos Dressing",
 
-}
+      "Flamingos Jalapeonmajo",
 
+      "Flamingos Aioli",
 
-/* =====================================================
-   CONFIRM MODAL
-===================================================== */
+      "Flamingos Sweet chili",
 
-function confirmModal(){
+      "Flamingos BBQ"
 
-  if(!modalState){
-    return;
-  }
+    ];
 
 
-  if(modalState.type === "meal"){
+    const drinks = [
 
-    const item =
-      modalState.item;
+      "Cola",
 
+      "Cola Zero",
 
-    const drink =
-      document.querySelector(
-        'input[name="meal-drink"]:checked'
-      )?.value;
+      "Fanta",
 
+      "Ponqa – bubbelvatten",
 
-    const dip =
-      document.querySelector(
-        'input[name="meal-dip"]:checked'
-      )?.value || "";
+      "Trip"
+
+    ];
 
 
-    let price =
-      Number(item.price);
+    let cart = [];
+
+    let modalState = null;
 
 
-    if(dip){
-      price += 1.50;
-    }
+
+    /* =====================================================
+       MENYDATA
+    ====================================================== */
+
+    const menuData = [
 
 
-    let details =
-      `Dryck: ${drink}`;
+      /* ---------------------------------------------------
+         BURGARE MENY
+      ---------------------------------------------------- */
+
+      {
+
+        id: "menyburgare",
+
+        title: "🍔 Burgare Meny 🍟🥤",
+
+        type: "meal",
+
+        items: [
 
 
-    if(dip){
-      details += ` · Extra dip: ${dip}`;
-    }
+          {
+            name: "Månadens Meal",
+            price: 14.90,
+            image: "oktm.jpg",
+
+            description:
+              "120 g högrevsbiff, cheddarost, bacon, karamelliserad lök, saltgurka, tomat, issallad, BBQ-sås, BBQ-majo och rostad lök på toppen."
+          },
 
 
-    cart.push({
+          {
+            name: "Cheese Meal",
+            price: 13.50,
+            image: "CheeseMeal.jpg",
 
-      name:item.name,
-      price:price,
-      details:details,
-      id:item.id || item.name
-
-    });
-
-
-  }else if(modalState.type === "side"){
-
-    const item =
-      modalState.item;
+            description:
+              "120 g högrevsbiff, cheddarost, sallad, tomat, lök & Flamingos dressing."
+          },
 
 
-    let quantity = 1;
-    let price = Number(item.price);
+          {
+            name: "Cheese & Bacon Meal",
+            price: 14.50,
+            image: "Cheese&BaconMeal.jpg",
+
+            description:
+              "120 g högrevsbiff, cheddarost, bacon, sallad, tomat, lök & Flamingos dressing."
+          },
 
 
-    if(item.prices){
+          {
+            name: "Chipotle Meal",
+            price: 14.50,
+            image: "ChipotleMeal.jpg",
 
-      quantity =
-        Number(
-          document.querySelector(
-            'input[name="side-size"]:checked'
-          )?.value || 3
+            description:
+              "120 g högrevsbiff med cheddarost, sallad, tomat, lök & chipotlesås."
+          },
+
+
+          {
+            name: "Tryffel Meal",
+            price: 14.90,
+            image: "TryffelMeal.jpg",
+
+            description:
+              "120 g högrevsbiff med cheddarost, sallad, tomat, lök & tryffelsås."
+          },
+
+
+          {
+            name: "Double Meal",
+            price: 16.90,
+            image: "DoubleMeal.jpg",
+
+            description:
+              "Dubbel högrevsbiff med cheddarost och Flamingos tillbehör."
+          },
+
+
+          {
+            name: "BBQ Meal",
+            price: 14.50,
+            image: "BBQMeal.jpg",
+
+            description:
+              "120 g högrevsbiff med BBQ-smaker och Flamingos dressing."
+          },
+
+
+          {
+            name: "Hawaii Meal",
+            price: 14.50,
+            image: "HawaiiMeal.jpg",
+
+            description:
+              "120 g högrevsbiff med ost och Hawaii-inspirerade smaker."
+          },
+
+
+          {
+            name: "Bookmaker Meal",
+            price: 14.90,
+            image: "BookmakerMeal.jpg",
+
+            description:
+              "Saftig högrevsbiff med smakrika tillbehör."
+          },
+
+
+          {
+            name: "Kids Meal",
+            price: 10.00,
+            image: "KidsMeal.jpg",
+
+            description:
+              "Barnvänlig burgare med pommes och valfri dryck."
+          },
+
+
+          {
+            name: "Halloumi Meal",
+            price: 14.50,
+            image: "HalloumiMeal.jpg",
+
+            description:
+              "Halloumi-burgare med fräscha tillbehör, pommes och valfri dryck."
+          },
+
+
+          {
+            name: "Vegetarisk Meal",
+            price: 14.90,
+            image: "VeganskMeal.jpg",
+
+            description:
+              "Vegetarisk burgare med fräscha tillbehör, pommes och valfri dryck."
+          }
+
+        ]
+
+      },
+
+
+      /* ---------------------------------------------------
+         ENDAST BURGARE
+      ---------------------------------------------------- */
+
+      {
+
+        id: "burgare",
+
+        title: "🍔 Endast Burgare",
+
+        type: "normal",
+
+        items: [
+
+
+          {
+            name: "Månadens burgare",
+            price: 11.00,
+            image: "oktb.jpg",
+
+            description:
+              "120 g högrevsbiff, cheddarost, bacon, karamelliserad lök, saltgurka, tomat, issallad, BBQ-sås, BBQ-majo och rostad lök."
+          },
+
+
+          {
+            name: "Cheese burgare",
+            price: 9.50,
+            image: "Cheese.png",
+
+            description:
+              "120 g högrevsbiff, cheddarost, sallad, tomat, lök & Flamingos dressing."
+          },
+
+
+          {
+            name: "Cheese & Bacon burgare",
+            price: 10.50,
+            image: "Cheese&Bacon.jpg",
+
+            description:
+              "120 g högrevsbiff, cheddarost, bacon, sallad, tomat, lök & Flamingos dressing."
+          },
+
+
+          {
+            name: "Chipotle burgare",
+            price: 10.50,
+            image: "Chipotle.jpg",
+
+            description:
+              "120 g högrevsbiff med cheddarost och chipotle-smaker."
+          },
+
+
+          {
+            name: "Tryffel burgare",
+            price: 11.00,
+            image: "Tryffel.jpg",
+
+            description:
+              "120 g högrevsbiff med cheddarost och tryffelsås."
+          },
+
+
+          {
+            name: "Double burgare",
+            price: 12.90,
+            image: "Double.jpg",
+
+            description:
+              "Dubbel högrevsbiff med cheddarost och Flamingos tillbehör."
+          },
+
+
+          {
+            name: "BBQ burgare",
+            price: 10.50,
+            image: "BBQ.jpg",
+
+            description:
+              "120 g högrevsbiff med BBQ-smaker."
+          },
+
+
+          {
+            name: "Hawaii burgare",
+            price: 11.00,
+            image: "Hawaii b.jpg",
+
+            description:
+              "120 g högrevsbiff med ost och Hawaii-inspirerade smaker."
+          },
+
+
+          {
+            name: "Bookmaker burgare",
+            price: 11.00,
+            image: "Bookmaker.jpg",
+
+            description:
+              "Saftig högrevsbiff med smakrika tillbehör."
+          },
+
+
+          {
+            name: "Barn burgare",
+            price: 6.50,
+            image: "Kids.jpg",
+
+            description:
+              "En mindre burgare för våra yngre gäster."
+          },
+
+
+          {
+            name: "Halloumi burgare",
+            price: 10.50,
+            image: "Halloumi.jpg",
+
+            description:
+              "Halloumi-burgare med fräscha tillbehör."
+          },
+
+
+          {
+            name: "Vegetarisk burgare",
+            price: 11.00,
+            image: "Veg.jpg",
+
+            description:
+              "Vegetarisk burgare med fräscha tillbehör."
+          }
+
+        ]
+
+      },
+
+
+      /* ---------------------------------------------------
+         WRAPS
+      ---------------------------------------------------- */
+
+      {
+
+        id: "wraps",
+
+        title: "🌯 Wraps",
+
+        type: "normal",
+
+        items: [
+
+
+          {
+            name: "Shawarma kyckling wrap",
+            price: 9.00,
+            image: "Shawrma.jpg",
+
+            description:
+              "Smakrik kyckling shawarma i wrap."
+          },
+
+
+          {
+            name: "Shich Tawook wrap",
+            price: 10.50,
+            image: "shichtawook.jpg",
+
+            description:
+              "Marinerad Shich Tawook-kyckling i wrap."
+          },
+
+
+          {
+            name: "Falafel wrap",
+            price: 10.00,
+            image: "falafel.jpg",
+
+            description:
+              "Krispig falafel med fräscha tillbehör."
+          }
+
+        ]
+
+      },
+
+
+      /* ---------------------------------------------------
+         TALLRIKAR
+      ---------------------------------------------------- */
+
+      {
+
+        id: "tallrikar",
+
+        title: "🍽️ Tallrikar",
+
+        type: "normal",
+
+        items: [
+
+
+          {
+            name: "Shawarma Tallrik",
+            price: 12.50,
+            image: "shawarma-tallrik.jpg",
+
+            description:
+              "Shawarma serverad som tallrik med tillbehör."
+          },
+
+
+          {
+            name: "Shich Tawook Tallrik",
+            price: 13.50,
+            image: "tawook.jpg",
+
+            description:
+              "Shich Tawook serverad som tallrik med tillbehör."
+          },
+
+
+          {
+            name: "Falafel Tallrik",
+            price: 13.50,
+            image: "falafeltal.jpg",
+
+            description:
+              "Falafel serverad som tallrik med tillbehör."
+          }
+
+        ]
+
+      },
+
+
+      /* ---------------------------------------------------
+         TILLBEHÖR
+      ---------------------------------------------------- */
+
+      {
+
+        id: "sides",
+
+        title: "🍟 Tillbehör",
+
+        type: "side",
+
+        items: [
+
+
+          {
+            name: "Pommes",
+            price: 4.00,
+
+            description:
+              "Krispiga pommes."
+          },
+
+
+          {
+            name: "Crispers",
+            price: 4.90,
+
+            description:
+              "Krispiga Crispers."
+          },
+
+
+          {
+            name: "Chicken Nuggets",
+            prices: {
+              3: 3.50,
+              6: 6.20
+            },
+
+            description:
+              "Krispiga chicken nuggets."
+          },
+
+
+          {
+            name: "Chicken Wings",
+            prices: {
+              3: 4.90,
+              6: 7.90
+            },
+
+            description:
+              "Krispiga chicken wings."
+          },
+
+
+          {
+            name: "Onion Rings",
+            prices: {
+              3: 3.50,
+              6: 5.50
+            },
+
+            description:
+              "Krispiga onion rings."
+          },
+
+
+          {
+            name: "Halloumi Sticks",
+            prices: {
+              3: 3.90,
+              6: 7.90
+            },
+
+            description:
+              "Krispiga halloumi sticks."
+          },
+
+
+          {
+            name: "Cheddar Jalapeños",
+            prices: {
+              3: 4.20,
+              6: 7.90
+            },
+
+            description:
+              "Cheddar Jalapeños med krispigt skal."
+          }
+
+        ]
+
+      },
+
+
+      /* ---------------------------------------------------
+         DRYCKER
+      ---------------------------------------------------- */
+
+      {
+
+        id: "drycker",
+
+        title: "🥤 Drycker",
+
+        type: "drink",
+
+        items: [
+
+
+          {
+            name: "Cola",
+            price: 2.70,
+            drink: true
+          },
+
+
+          {
+            name: "Cola Zero",
+            price: 2.70,
+            drink: true
+          },
+
+
+          {
+            name: "Fanta",
+            price: 2.70,
+            drink: true
+          },
+
+
+          {
+            name: "Ponqa – bubbelvatten",
+            price: 2.70,
+            drink: true
+          },
+
+
+          {
+            name: "Trip",
+            price: 2.00,
+            drink: true
+          }
+
+        ]
+
+      }
+
+    ];
+
+
+
+    /* =====================================================
+       RENDERA MENYN
+    ====================================================== */
+
+    function renderMainMenu() {
+
+      const container =
+        document.getElementById(
+          "dynamic-menu"
         );
 
-      price =
-        Number(item.prices[quantity]);
+
+      container.innerHTML = "";
+
+
+      menuData.forEach(category => {
+
+
+        const section =
+          document.createElement("div");
+
+
+        section.className =
+          "menu-category";
+
+
+        section.id =
+          category.id;
+
+
+        const title =
+          document.createElement("h3");
+
+
+        title.className =
+          "menu-category-title";
+
+
+        title.textContent =
+          category.title;
+
+
+        section.appendChild(title);
+
+
+        const grid =
+          document.createElement("div");
+
+
+        grid.className =
+          "menu-grid";
+
+
+        category.items.forEach(item => {
+
+
+          const card =
+            document.createElement("div");
+
+
+          card.className =
+            "menu-card";
+
+
+          if (item.image) {
+
+
+            const img =
+              document.createElement("img");
+
+
+            img.className =
+              "menu-image";
+
+
+            img.src =
+              item.image;
+
+
+            img.alt =
+              item.name;
+
+
+            img.loading =
+              "lazy";
+
+
+            card.appendChild(img);
+
+
+          } else {
+
+
+            const icon =
+              document.createElement("div");
+
+
+            icon.className =
+              "drink-icon";
+
+
+            icon.textContent =
+              item.drink
+                ? "🥤"
+                : "🍟";
+
+
+            icon.style.padding =
+              "25px 18px 0";
+
+
+            card.appendChild(icon);
+
+          }
+
+
+          const content =
+            document.createElement("div");
+
+
+          content.className =
+            "menu-card-content";
+
+
+          const name =
+            document.createElement("h4");
+
+
+          name.textContent =
+            item.name;
+
+
+          content.appendChild(name);
+
+
+          const description =
+            document.createElement("div");
+
+
+          description.className =
+            "menu-description";
+
+
+          if (category.type === "meal") {
+
+            description.textContent =
+              item.description +
+              " Måltiden inkluderar pommes och valfri dryck.";
+
+          } else {
+
+            description.textContent =
+              item.description ||
+              "Kall dryck.";
+
+          }
+
+
+          if (category.type === "side") {
+
+            if (item.prices) {
+
+              description.textContent =
+                item.description +
+                " Välj 3 eller 6 st – en dip ingår.";
+
+            }
+
+          }
+
+
+          content.appendChild(description);
+
+
+          const bottom =
+            document.createElement("div");
+
+
+          bottom.className =
+            "menu-bottom";
+
+
+          const price =
+            document.createElement("span");
+
+
+          price.className =
+            "menu-price";
+
+
+          if (item.prices) {
+
+            price.textContent =
+              "från " +
+              formatPrice(
+                item.prices[3]
+              );
+
+          } else {
+
+            price.textContent =
+              formatPrice(
+                item.price
+              );
+
+          }
+
+
+          bottom.appendChild(price);
+
+
+          const button =
+            document.createElement("button");
+
+
+          button.type =
+            "button";
+
+
+          button.className =
+            "add-btn";
+
+
+          button.setAttribute(
+            "aria-label",
+            "Lägg till " + item.name
+          );
+
+
+          button.textContent =
+            "+";
+
+
+          button.onclick =
+            function() {
+
+
+              if (
+                category.type ===
+                "meal"
+              ) {
+
+                openMealModal(item);
+
+
+              } else if (
+                category.type ===
+                "side"
+              ) {
+
+                openSideModal(item);
+
+
+              } else {
+
+                addProduct(
+                  item.name,
+                  item.price,
+                  "",
+                  item.name
+                );
+
+              }
+
+            };
+
+
+          bottom.appendChild(button);
+
+
+          content.appendChild(bottom);
+
+
+          card.appendChild(content);
+
+
+          grid.appendChild(card);
+
+        });
+
+
+        section.appendChild(grid);
+
+
+        container.appendChild(section);
+
+      });
 
     }
 
 
-    const dip =
-      document.querySelector(
-        'input[name="side-dip"]:checked'
-      )?.value;
+
+    /* =====================================================
+       FORMATERA PRIS
+    ====================================================== */
+
+    function formatPrice(price) {
+
+      return Number(price)
+        .toFixed(2)
+        .replace(".", ",") + "€";
+
+    }
 
 
-    cart.push({
 
-      name:
-        item.prices
-          ? `${item.name} ${quantity} st`
-          : item.name,
+    /* =====================================================
+       LÄGG TILL VANLIG PRODUKT
+    ====================================================== */
 
-      price:price,
-
-      details:
-        dip
-          ? `Dip: ${dip}`
-          : "",
-
-      id:
-        `${item.name}-${quantity}-${Date.now()}`
-
-    });
-
-  }
+    function addProduct(
+      name,
+      price,
+      details = "",
+      id = ""
+    ) {
 
 
-  closeModal();
+      cart.push({
 
-  renderCart();
+        name:
+          name,
 
-  updateCartCount();
+        price:
+          Number(price),
 
-}
+        details:
+          details,
 
+        id:
+          id || name
 
-/* =====================================================
-   CLOSE MODAL
-===================================================== */
+      });
 
-function closeModal(){
-
-  document
-    .getElementById("add-modal")
-    .classList.remove("active");
-
-  modalState = null;
-
-}
-
-
-/* =====================================================
-   CART
-===================================================== */
-
-function renderCart(){
-
-  const container =
-    document.getElementById("cart-container");
-
-  const totalElement =
-    document.getElementById("order-total");
-
-
-  if(!cart.length){
-
-    container.innerHTML = `
-
-      <div class="cart-empty">
-
-        Din kundvagn är tom.<br>
-
-        Gå upp till menyn och välj något gott! 🍔
-
-      </div>
-
-    `;
-
-    totalElement.textContent =
-      "0,00€";
-
-    return;
-
-  }
-
-
-  container.innerHTML = "";
-
-
-  cart.forEach((item,index) => {
-
-    const row =
-      document.createElement("div");
-
-    row.className =
-      "cart-item";
-
-
-    const left =
-      document.createElement("div");
-
-
-    const name =
-      document.createElement("div");
-
-    name.className =
-      "cart-item-name";
-
-    name.textContent =
-      item.name;
-
-
-    const details =
-      document.createElement("div");
-
-    details.className =
-      "cart-item-details";
-
-    details.textContent =
-      item.details || "";
-
-
-    const remove =
-      document.createElement("button");
-
-    remove.className =
-      "cart-remove";
-
-    remove.type = "button";
-
-    remove.textContent =
-      "Ta bort";
-
-
-    remove.onclick = () => {
-
-      cart.splice(index,1);
 
       renderCart();
 
       updateCartCount();
 
-    };
-
-
-    left.appendChild(name);
-
-    if(item.details){
-      left.appendChild(details);
     }
 
-    left.appendChild(remove);
 
 
-    const price =
-      document.createElement("div");
+    /* =====================================================
+       MEAL MODAL
+    ====================================================== */
 
-    price.className =
-      "cart-item-price";
-
-    price.textContent =
-      `${item.price.toFixed(2).replace(".",",")}€`;
+    function openMealModal(item) {
 
 
-    row.appendChild(left);
-    row.appendChild(price);
+      modalState = {
 
-    container.appendChild(row);
+        type:
+          "meal",
 
-  });
+        item:
+          item
 
-
-  const total =
-    getCartTotal();
-
-
-  totalElement.textContent =
-    `${total.toFixed(2).replace(".",",")}€`;
-
-}
+      };
 
 
-/* =====================================================
-   TOTAL
-===================================================== */
-
-function getCartTotal(){
-
-  return cart.reduce(
-    (sum,item) =>
-      sum + Number(item.price),
-    0
-  );
-
-}
+      document
+        .getElementById("modal-title")
+        .textContent =
+          item.name;
 
 
-/* =====================================================
-   CART COUNT
-===================================================== */
+      let html = `
 
-function updateCartCount(){
-
-  const count =
-    document.getElementById("cart-count");
-
-  count.textContent =
-    cart.length;
-
-}
+        <p style="color:#aaa;">
+          Måltiden inkluderar pommes och
+          en valfri dryck.
+        </p>
 
 
-/* =====================================================
-   PICKUP TIME
-===================================================== */
-
-function setupPickupTime(){
-
-  const select =
-    document.getElementById("pickup-time");
-
-  const note =
-    document.getElementById("pickup-note");
+        <div class="option-title">
+          🥤 Välj dryck
+        </div>
 
 
-  function update(){
+        <div class="option-grid">
 
-    select.innerHTML = "";
-
-    const now =
-      new Date();
-
-
-    const day =
-      now.getDay();
-
-
-    let start;
-    let end;
-
-
-    /*
-      0 = Sunday
-      1 = Monday
-      2 = Tuesday
-      ...
-      6 = Saturday
-    */
-
-
-    if(day === 1){
-
-      select.innerHTML = `
-        <option value="">
-          Vi har stängt på måndagar
-        </option>
       `;
 
-      note.textContent =
-        "Nästa öppet är tisdag.";
 
-      return;
-
-    }
+      drinks.forEach(
+        (drink, index) => {
 
 
-    if(day >= 2 && day <= 5){
+          html += `
 
-      start = 16 * 60;
-      end = 20 * 60;
+            <label class="option">
 
-    }else if(day === 6){
+              <input
+                type="radio"
+                name="meal-drink"
+                value="${escapeHtml(drink)}"
+                ${index === 0 ? "checked" : ""}
+              >
 
-      start = 12 * 60;
-      end = 21 * 60;
+              <span>
+                ${escapeHtml(drink)}
+              </span>
 
-    }else{
+            </label>
 
-      start = 16 * 60;
-      end = 20 * 60;
+          `;
 
-    }
-
-
-    const current =
-      now.getHours() * 60 +
-      now.getMinutes();
-
-
-    const minimum =
-      current + 10;
-
-
-    let first =
-      Math.max(
-        start,
-        Math.ceil(minimum / 10) * 10
+        }
       );
 
 
-    if(first >= end){
+      html += `
 
-      select.innerHTML = `
-        <option value="">
-          Inga tider kvar idag
-        </option>
+        </div>
+
+
+        <div class="option-title">
+          ➕ Extra dip
+        </div>
+
+
+        <div class="option-grid">
+
+          <label class="option">
+
+            <input
+              type="radio"
+              name="meal-dip"
+              value=""
+              checked
+            >
+
+            <span>
+              Ingen extra dip
+            </span>
+
+          </label>
+
       `;
 
-      note.textContent =
-        "Vi har stängt för idag.";
 
-      return;
-
-    }
+      dips.forEach(
+        dip => {
 
 
-    const placeholder =
-      document.createElement("option");
+          html += `
 
-    placeholder.value = "";
+            <label class="option">
 
-    placeholder.textContent =
-      "Välj hämtningstid";
+              <input
+                type="radio"
+                name="meal-dip"
+                value="${escapeHtml(dip)}"
+              >
 
-    select.appendChild(placeholder);
+              <span>
+                ${escapeHtml(dip)}
+                +1,50€
+              </span>
 
+            </label>
 
-    for(
-      let minutes = first;
-      minutes <= end - 10;
-      minutes += 10
-    ){
+          `;
 
-      const hour =
-        Math.floor(minutes / 60);
-
-      const minute =
-        minutes % 60;
-
-
-      const time =
-        `${String(hour).padStart(2,"0")}:${String(minute).padStart(2,"0")}`;
+        }
+      );
 
 
-      const option =
-        document.createElement("option");
+      html += `
 
-      option.value =
-        time;
+        </div>
 
-      option.textContent =
-        time;
+      `;
 
-      select.appendChild(option);
+
+      document
+        .getElementById("modal-content")
+        .innerHTML =
+          html;
+
+
+      openModal();
 
     }
 
 
-    note.textContent =
-      "Tid bokas med minst 10 minuters framförhållning.";
 
-  }
+    /* =====================================================
+       SIDE MODAL
+    ====================================================== */
 
+    function openSideModal(item) {
 
-  update();
 
-}
+      modalState = {
 
+        type:
+          "side",
 
-/* =====================================================
-   SEND WHATSAPP
-===================================================== */
+        item:
+          item
 
-function sendWhatsAppOrder(){
+      };
 
-  const name =
-    document
-      .getElementById("customer-name")
-      .value
-      .trim();
 
+      document
+        .getElementById("modal-title")
+        .textContent =
+          item.name;
 
-  const phone =
-    document
-      .getElementById("customer-phone")
-      .value
-      .trim();
 
+      let html = "";
 
-  const pickup =
-    document
-      .getElementById("pickup-time")
-      .value;
 
+      if (item.prices) {
 
-  const notes =
-    document
-      .getElementById("order-notes")
-      .value
-      .trim();
 
+        html += `
 
-  const antiBot =
-    document
-      .getElementById("anti-bot")
-      .value
-      .trim();
+          <div class="option-title">
+            📦 Välj antal
+          </div>
 
 
-  const website =
-    document
-      .getElementById("website")
-      .value
-      .trim();
+          <div class="option-grid">
 
+            <label class="option">
 
-  const confirmed =
-    document
-      .getElementById("order-confirmed")
-      .checked;
+              <input
+                type="radio"
+                name="side-size"
+                value="3"
+                checked
+              >
 
+              <span>
+                3 st –
+                ${formatPrice(item.prices[3])}
+              </span>
 
-  const message =
-    document
-      .getElementById("confirmation-message");
+            </label>
 
 
-  message.textContent = "";
+            <label class="option">
 
+              <input
+                type="radio"
+                name="side-size"
+                value="6"
+              >
 
-  if(website){
+              <span>
+                6 st –
+                ${formatPrice(item.prices[6])}
+              </span>
 
-    return;
+            </label>
 
-  }
+          </div>
 
-
-  if(!cart.length){
-
-    message.style.color =
-      "#ff6b2d";
-
-    message.textContent =
-      "Lägg först till något från menyn.";
-
-    document
-      .getElementById("meny")
-      .scrollIntoView({
-        behavior:"smooth"
-      });
-
-    return;
-
-  }
-
-
-  if(!name){
-
-    message.style.color =
-      "#ff6b2d";
-
-    message.textContent =
-      "Fyll i ditt namn.";
-
-    return;
-
-  }
-
-
-  if(!phone){
-
-    message.style.color =
-      "#ff6b2d";
-
-    message.textContent =
-      "Fyll i ditt telefonnummer.";
-
-    return;
-
-  }
-
-
-  if(!pickup){
-
-    message.style.color =
-      "#ff6b2d";
-
-    message.textContent =
-      "Välj en hämtningstid.";
-
-    return;
-
-  }
-
-
-  if(antiBot !== "7"){
-
-    message.style.color =
-      "#ff6b2d";
-
-    message.textContent =
-      "Säkerhetskontrollen är inte korrekt.";
-
-    return;
-
-  }
-
-
-  if(!confirmed){
-
-    message.style.color =
-      "#ff6b2d";
-
-    message.textContent =
-      "Bekräfta att du har kontrollerat beställningen.";
-
-    return;
-
-  }
-
-
-  let orderText =
-    "🍔 *NY BESTÄLLNING – FLAMINGO GRILL*%0A%0A";
-
-
-  orderText +=
-    `👤 *Namn:* ${name}%0A`;
-
-  orderText +=
-    `📞 *Telefon:* ${phone}%0A`;
-
-  orderText +=
-    `⏰ *Hämtning:* ${pickup}%0A%0A`;
-
-
-  orderText +=
-    "🛒 *Beställning:*%0A";
-
-
-  cart.forEach((item,index) => {
-
-    orderText +=
-      `${index + 1}. ${item.name}`;
-
-    if(item.details){
-
-      orderText +=
-        ` (${item.details})`;
-
-    }
-
-    orderText +=
-      ` – ${item.price.toFixed(2).replace(".",",")}€%0A`;
-
-  });
-
-
-  orderText +=
-    `%0A💰 *TOTALT: ${getCartTotal().toFixed(2).replace(".",",")}€*%0A`;
-
-
-  if(notes){
-
-    orderText +=
-      `%0A📝 *Allergier / önskemål:*%0A${notes}%0A`;
-
-  }
-
-
-  orderText +=
-    `%0A⚠️ Kunden har bekräftat beställningen.`;
-
-
-
-  const whatsappUrl =
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${orderText}`;
-
-
-  window.open(
-    whatsappUrl,
-    "_blank"
-  );
-
-
-  message.style.color =
-    "#25D366";
-
-  message.textContent =
-    "Beställningen öppnas i WhatsApp. Kontrollera och skicka den där.";
-
-}
-
-
-/* =====================================================
-   EVENTS
-===================================================== */
-
-document
-  .getElementById("order-submit")
-  .addEventListener(
-    "click",
-    sendWhatsAppOrder
-  );
-
-
-document
-  .getElementById("add-modal")
-  .addEventListener(
-    "click",
-    function(event){
-
-      if(event.target === this){
-
-        closeModal();
+        `;
 
       }
 
+
+      html += `
+
+        <div class="option-title">
+          🥣 Välj en dip – ingår
+        </div>
+
+
+        <div class="option-grid">
+
+      `;
+
+
+      dips.forEach(
+        (dip, index) => {
+
+
+          html += `
+
+            <label class="option">
+
+              <input
+                type="radio"
+                name="side-dip"
+                value="${escapeHtml(dip)}"
+                ${index === 0 ? "checked" : ""}
+              >
+
+              <span>
+                ${escapeHtml(dip)}
+              </span>
+
+            </label>
+
+          `;
+
+        }
+      );
+
+
+      html += `
+
+        </div>
+
+      `;
+
+
+      document
+        .getElementById("modal-content")
+        .innerHTML =
+          html;
+
+
+      openModal();
+
     }
-  );
 
 
-document.addEventListener(
-  "keydown",
-  function(event){
 
-    if(event.key === "Escape"){
+    /* =====================================================
+       MODAL OPEN
+    ====================================================== */
+
+    function openModal() {
+
+      document
+        .getElementById("add-modal")
+        .classList.add("active");
+
+
+      document.body.classList.add(
+        "modal-open"
+      );
+
+    }
+
+
+
+    /* =====================================================
+       MODAL CLOSE
+    ====================================================== */
+
+    function closeModal() {
+
+      document
+        .getElementById("add-modal")
+        .classList.remove("active");
+
+
+      document.body.classList.remove(
+        "modal-open"
+      );
+
+
+      modalState =
+        null;
+
+    }
+
+
+
+    /* =====================================================
+       CONFIRM MODAL
+    ====================================================== */
+
+    function confirmModal() {
+
+
+      if (!modalState) {
+        return;
+      }
+
+
+      if (
+        modalState.type ===
+        "meal"
+      ) {
+
+
+        const item =
+          modalState.item;
+
+
+        const drink =
+          document.querySelector(
+            'input[name="meal-drink"]:checked'
+          )?.value || "";
+
+
+        const dip =
+          document.querySelector(
+            'input[name="meal-dip"]:checked'
+          )?.value || "";
+
+
+        let price =
+          Number(item.price);
+
+
+        if (dip) {
+
+          price += 1.50;
+
+        }
+
+
+        let details =
+          "Dryck: " + drink;
+
+
+        if (dip) {
+
+          details +=
+            " · Extra dip: " +
+            dip;
+
+        }
+
+
+        cart.push({
+
+          name:
+            item.name,
+
+          price:
+            price,
+
+          details:
+            details,
+
+          id:
+            item.name +
+            Date.now()
+
+        });
+
+
+      }
+
+
+      if (
+        modalState.type ===
+        "side"
+      ) {
+
+
+        const item =
+          modalState.item;
+
+
+        let quantity =
+          1;
+
+
+        let price =
+          Number(item.price);
+
+
+        if (item.prices) {
+
+
+          quantity =
+            Number(
+              document.querySelector(
+                'input[name="side-size"]:checked'
+              )?.value || 3
+            );
+
+
+          price =
+            Number(
+              item.prices[
+                quantity
+              ]
+            );
+
+        }
+
+
+        const dip =
+          document.querySelector(
+            'input[name="side-dip"]:checked'
+          )?.value || "";
+
+
+        cart.push({
+
+          name:
+            item.prices
+              ? item.name +
+                " " +
+                quantity +
+                " st"
+              : item.name,
+
+          price:
+            price,
+
+          details:
+            dip
+              ? "Dip: " + dip
+              : "",
+
+          id:
+            item.name +
+            quantity +
+            Date.now()
+
+        });
+
+      }
+
 
       closeModal();
 
+      renderCart();
+
+      updateCartCount();
+
     }
 
-  }
-);
 
 
-/* =====================================================
-   INITIALIZE
-===================================================== */
+    /* =====================================================
+       CART
+    ====================================================== */
 
-renderMainMenu();
-
-renderCart();
-
-updateCartCount();
-
-setupPickupTime();
+    function renderCart() {
 
 
-/* =====================================================
-   YEAR
-===================================================== */
+      const container =
+        document.getElementById(
+          "cart-container"
+        );
 
-document
-  .querySelectorAll(".footer")
-  .forEach(footer => {
 
-    footer.innerHTML =
-      footer.innerHTML.replace(
-        "2026",
-        new Date().getFullYear()
+      const totalElement =
+        document.getElementById(
+          "order-total"
+        );
+
+
+      if (!cart.length) {
+
+
+        container.innerHTML = `
+
+          <div class="cart-empty">
+
+            Din kundvagn är tom.<br>
+
+            Gå upp till menyn och
+            välj något gott! 🍔
+
+          </div>
+
+        `;
+
+
+        totalElement.textContent =
+          "0,00€";
+
+
+        return;
+
+      }
+
+
+      container.innerHTML =
+        "";
+
+
+      cart.forEach(
+        (item, index) => {
+
+
+          const row =
+            document.createElement(
+              "div"
+            );
+
+
+          row.className =
+            "cart-item";
+
+
+          const left =
+            document.createElement(
+              "div"
+            );
+
+
+          const name =
+            document.createElement(
+              "div"
+            );
+
+
+          name.className =
+            "cart-item-name";
+
+
+          name.textContent =
+            item.name;
+
+
+          left.appendChild(name);
+
+
+          if (item.details) {
+
+
+            const details =
+              document.createElement(
+                "div"
+              );
+
+
+            details.className =
+              "cart-item-details";
+
+
+            details.textContent =
+              item.details;
+
+
+            left.appendChild(
+              details
+            );
+
+          }
+
+
+          const remove =
+            document.createElement(
+              "button"
+            );
+
+
+          remove.type =
+            "button";
+
+
+          remove.className =
+            "cart-remove";
+
+
+          remove.textContent =
+            "Ta bort";
+
+
+          remove.onclick =
+            function() {
+
+              cart.splice(
+                index,
+                1
+              );
+
+              renderCart();
+
+              updateCartCount();
+
+            };
+
+
+          left.appendChild(
+            remove
+          );
+
+
+          const price =
+            document.createElement(
+              "div"
+            );
+
+
+          price.className =
+            "cart-item-price";
+
+
+          price.textContent =
+            formatPrice(
+              item.price
+            );
+
+
+          row.appendChild(
+            left
+          );
+
+
+          row.appendChild(
+            price
+          );
+
+
+          container.appendChild(
+            row
+          );
+
+        }
       );
 
-  });
 
-</script>
+      totalElement.textContent =
+        formatPrice(
+          getCartTotal()
+        );
+
+    }
+
+
+
+    /* =====================================================
+       TOTAL
+    ====================================================== */
+
+    function getCartTotal() {
+
+      return cart.reduce(
+        function(total, item) {
+
+          return total +
+            Number(item.price);
+
+        },
+        0
+      );
+
+    }
+
+
+
+    /* =====================================================
+       CART COUNT
+    ====================================================== */
+
+    function updateCartCount() {
+
+      document
+        .getElementById("cart-count")
+        .textContent =
+          cart.length;
+
+    }
+
+
+
+    /* =====================================================
+       HÄMTNINGSTID
+    ====================================================== */
+
+    function setupPickupTime() {
+
+
+      const select =
+        document.getElementById(
+          "pickup-time"
+        );
+
+
+      const note =
+        document.getElementById(
+          "pickup-note"
+        );
+
+
+      function updateTimes() {
+
+
+        select.innerHTML =
+          "";
+
+
+        const now =
+          new Date();
+
+
+        const day =
+          now.getDay();
+
+
+        let start;
+
+        let end;
+
+
+        /*
+          Söndag = 0
+          Måndag = 1
+          Tisdag = 2
+          Onsdag = 3
+          Torsdag = 4
+          Fredag = 5
+          Lördag = 6
+        */
+
+
+        if (day === 1) {
+
+
+          select.innerHTML = `
+
+            <option value="">
+              Vi har stängt på måndagar
+            </option>
+
+          `;
+
+
+          note.textContent =
+            "Nästa öppet är tisdag.";
+
+
+          return;
+
+        }
+
+
+        if (
+          day >= 2 &&
+          day <= 5
+        ) {
+
+
+          start =
+            16 * 60;
+
+
+          end =
+            20 * 60;
+
+        }
+
+
+        if (day === 6) {
+
+
+          start =
+            12 * 60;
+
+
+          end =
+            21 * 60;
+
+        }
+
+
+        if (day === 0) {
+
+
+          start =
+            16 * 60;
+
+
+          end =
+            20 * 60;
+
+        }
+
+
+        const current =
+          now.getHours() * 60 +
+          now.getMinutes();
+
+
+        const minimum =
+          current + 10;
+
+
+        let first =
+          Math.max(
+            start,
+            Math.ceil(
+              minimum / 10
+            ) * 10
+          );
+
+
+        if (first >= end) {
+
+
+          select.innerHTML = `
+
+            <option value="">
+              Inga tider kvar idag
+            </option>
+
+          `;
+
+
+          note.textContent =
+            "Vi har stängt för idag.";
+
+
+          return;
+
+        }
+
+
+        const placeholder =
+          document.createElement(
+            "option"
+          );
+
+
+        placeholder.value =
+          "";
+
+
+        placeholder.textContent =
+          "Välj hämtningstid";
+
+
+        select.appendChild(
+          placeholder
+        );
+
+
+        for (
+          let minutes = first;
+          minutes <= end - 10;
+          minutes += 10
+        ) {
+
+
+          const hour =
+            Math.floor(
+              minutes / 60
+            );
+
+
+          const minute =
+            minutes % 60;
+
+
+          const time =
+            String(hour)
+              .padStart(2,"0") +
+            ":" +
+            String(minute)
+              .padStart(2,"0");
+
+
+          const option =
+            document.createElement(
+              "option"
+            );
+
+
+          option.value =
+            time;
+
+
+          option.textContent =
+            time;
+
+
+          select.appendChild(
+            option
+          );
+
+        }
+
+
+        note.textContent =
+          "Minst 10 minuters framförhållning.";
+
+      }
+
+
+      updateTimes();
+
+    }
+
+
+
+    /* =====================================================
+       WHATSAPP BESTÄLLNING
+    ====================================================== */
+
+    function sendWhatsAppOrder() {
+
+
+      const name =
+        document
+          .getElementById(
+            "customer-name"
+          )
+          .value
+          .trim();
+
+
+      const phone =
+        document
+          .getElementById(
+            "customer-phone"
+          )
+          .value
+          .trim();
+
+
+      const pickup =
+        document
+          .getElementById(
+            "pickup-time"
+          )
+          .value;
+
+
+      const notes =
+        document
+          .getElementById(
+            "order-notes"
+          )
+          .value
+          .trim();
+
+
+      const antiBot =
+        document
+          .getElementById(
+            "anti-bot"
+          )
+          .value
+          .trim();
+
+
+      const website =
+        document
+          .getElementById(
+            "website"
+          )
+          .value
+          .trim();
+
+
+      const confirmed =
+        document
+          .getElementById(
+            "order-confirmed"
+          )
+          .checked;
+
+
+      const message =
+        document
+          .getElementById(
+            "confirmation-message"
+          );
+
+
+      message.textContent =
+        "";
+
+
+      if (website) {
+
+        return;
+
+      }
+
+
+      if (!cart.length) {
+
+        message.style.color =
+          "#ff6b2d";
+
+        message.textContent =
+          "Din kundvagn är tom. Välj något från menyn.";
+
+        return;
+
+      }
+
+
+      if (!name) {
+
+        message.style.color =
+          "#ff6b2d";
+
+        message.textContent =
+          "Fyll i ditt namn.";
+
+        return;
+
+      }
+
+
+      if (!phone) {
+
+        message.style.color =
+          "#ff6b2d";
+
+        message.textContent =
+          "Fyll i ditt telefonnummer.";
+
+        return;
+
+      }
+
+
+      if (!pickup) {
+
+        message.style.color =
+          "#ff6b2d";
+
+        message.textContent =
+          "Välj en hämtningstid.";
+
+        return;
+
+      }
+
+
+      if (antiBot !== "7") {
+
+        message.style.color =
+          "#ff6b2d";
+
+        message.textContent =
+          "Säkerhetskontrollen är inte korrekt.";
+
+        return;
+
+      }
+
+
+      if (!confirmed) {
+
+        message.style.color =
+          "#ff6b2d";
+
+        message.textContent =
+          "Bekräfta att du har kontrollerat beställningen.";
+
+        return;
+
+      }
+
+
+      let orderLines = [];
+
+
+      orderLines.push(
+        "🍔 NY BESTÄLLNING – FLAMINGO GRILL"
+      );
+
+
+      orderLines.push("");
+
+      orderLines.push(
+        "👤 Namn: " + name
+      );
+
+
+      orderLines.push(
+        "📞 Telefon: " + phone
+      );
+
+
+      orderLines.push(
+        "⏰ Hämtning: " + pickup
+      );
+
+
+      orderLines.push("");
+
+
+      orderLines.push(
+        "🛒 BESTÄLLNING:"
+      );
+
+
+      cart.forEach(
+        function(item, index) {
+
+
+          let line =
+            (index + 1) +
+            ". " +
+            item.name;
+
+
+          if (item.details) {
+
+            line +=
+              " (" +
+              item.details +
+              ")";
+
+          }
+
+
+          line +=
+            " – " +
+            formatPrice(
+              item.price
+            );
+
+
+          orderLines.push(
+            line
+          );
+
+        }
+      );
+
+
+      orderLines.push("");
+
+
+      orderLines.push(
+        "💰 TOTALT: " +
+        formatPrice(
+          getCartTotal()
+        )
+      );
+
+
+      if (notes) {
+
+        orderLines.push("");
+
+
+        orderLines.push(
+          "📝 Allergier / önskemål:"
+        );
+
+
+        orderLines.push(
+          notes
+        );
+
+      }
+
+
+      orderLines.push("");
+
+
+      orderLines.push(
+        "⚠️ Kunden har kontrollerat och bekräftat beställningen."
+      );
+
+
+      const whatsappUrl =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(
+          orderLines.join("\n")
+        );
+
+
+      window.open(
+        whatsappUrl,
+        "_blank"
+      );
+
+
+      message.style.color =
+        "#25D366";
+
+
+      message.textContent =
+        "Beställningen öppnas i WhatsApp. Kontrollera och skicka den där.";
+
+    }
+
+
+
+    /* =====================================================
+       ESC STÄNGER MODAL
+    ====================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeModal();
+
+        }
+
+      }
+    );
+
+
+
+    /* =====================================================
+       KLICKA UTANFÖR MODAL
+    ====================================================== */
+
+    document
+      .getElementById("add-modal")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (
+            event.target === this
+          ) {
+
+            closeModal();
+
+          }
+
+        }
+      );
+
+
+
+    /* =====================================================
+       SKICKA BESTÄLLNING
+    ====================================================== */
+
+    document
+      .getElementById(
+        "order-submit"
+      )
+      .addEventListener(
+        "click",
+        sendWhatsAppOrder
+      );
+
+
+
+    /* =====================================================
+       ESCAPE HTML
+    ====================================================== */
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+
+    /* =====================================================
+       STARTA SIDAN
+    ====================================================== */
+
+    renderMainMenu();
+
+    renderCart();
+
+    updateCartCount();
+
+    setupPickupTime();
+
+
+    document
+      .getElementById("year")
+      .textContent =
+        new Date()
+          .getFullYear();
+
+
+  </script>
+
 
 </body>
+
 </html>
